@@ -391,22 +391,6 @@
     color: #003739;
 }
 
-/* Логотип в углу слайда */
-.slide__logo {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 132px;
-    height: auto;
-    z-index: 10;
-    opacity: 0.9;
-    transition: opacity var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
-}
-
-.slide__logo:hover {
-    opacity: 1;
-}
-
 .slide--final {
     background: linear-gradient(135deg, var(--md-sys-color-primary) 0%, var(--md-sys-color-secondary) 100%);
     color: var(--md-sys-color-on-primary);
@@ -481,14 +465,6 @@
 
 .hero__avatar {
     flex-shrink: 0;
-}
-
-.hero__avatar-img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: var(--md-sys-elevation-3);
 }
 
 .hero__info {
@@ -1453,7 +1429,7 @@
         text-align: center;
     }
 
-    .hero__avatar-img {
+    .hero__avatar {
         width: 80px;
         height: 80px;
     }
@@ -1583,13 +1559,6 @@
     .qr-code {
         max-width: 200px;
     }
-
-    /* Логотип в углу */
-    .slide__logo {
-        width: 80px;
-        top: 15px;
-        right: 15px;
-    }
 }
 
 /* Мобильные телефоны (до 480px) */
@@ -1650,7 +1619,7 @@
     }
 
     /* Герой */
-    .hero__avatar-img {
+    .hero__avatar {
         width: 70px;
         height: 70px;
     }
@@ -1782,13 +1751,6 @@
     .slide img {
         max-width: 100%;
         height: auto;
-    }
-
-    /* Логотип в углу */
-    .slide__logo {
-        width: 60px;
-        top: 12px;
-        right: 12px;
     }
 }
 
