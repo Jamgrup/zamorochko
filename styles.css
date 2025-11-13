@@ -391,6 +391,22 @@
     color: #003739;
 }
 
+/* Логотип в углу слайда */
+.slide__logo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 120px;
+    height: auto;
+    z-index: 10;
+    opacity: 0.9;
+    transition: opacity var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+}
+
+.slide__logo:hover {
+    opacity: 1;
+}
+
 .slide--final {
     background: linear-gradient(135deg, var(--md-sys-color-primary) 0%, var(--md-sys-color-secondary) 100%);
     color: var(--md-sys-color-on-primary);
