@@ -467,6 +467,14 @@
     flex-shrink: 0;
 }
 
+.hero__avatar-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: var(--md-sys-elevation-3);
+}
+
 .hero__info {
     text-align: left;
 }
@@ -1429,7 +1437,7 @@
         text-align: center;
     }
 
-    .hero__avatar {
+    .hero__avatar-img {
         width: 80px;
         height: 80px;
     }
@@ -1619,7 +1627,7 @@
     }
 
     /* Герой */
-    .hero__avatar {
+    .hero__avatar-img {
         width: 70px;
         height: 70px;
     }
