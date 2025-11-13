@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Old files
+old/
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# Editor directories
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build outputs (if any)
+dist/
+build/
