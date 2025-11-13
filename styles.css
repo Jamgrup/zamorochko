@@ -1331,3 +1331,502 @@
     font-size: 24px;
     color: var(--md-sys-color-primary);
 }
+
+/* ========================================
+   АДАПТИВНЫЕ СТИЛИ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ
+   ======================================== */
+
+/* Планшеты и маленькие ноутбуки (до 1024px) */
+@media (max-width: 1024px) {
+    :root {
+        --md-sys-spacing-xl: 32px;
+        --md-sys-spacing-xxl: 48px;
+    }
+
+    .slide {
+        padding: 60px 40px;
+    }
+
+    .hero__title {
+        font-size: 42px;
+    }
+
+    .section__title {
+        font-size: 38px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--md-sys-spacing-lg);
+    }
+
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Планшеты портретная ориентация (до 768px) */
+@media (max-width: 768px) {
+    :root {
+        --md-sys-spacing-md: 12px;
+        --md-sys-spacing-lg: 16px;
+        --md-sys-spacing-xl: 24px;
+        --md-sys-spacing-xxl: 32px;
+    }
+
+    body {
+        font-size: 16px;
+    }
+
+    .slide {
+        padding: 40px 24px;
+        min-height: auto;
+    }
+
+    /* Навигация */
+    .navigation {
+        padding: 12px 16px;
+        gap: 12px;
+    }
+
+    .navigation__logo {
+        font-size: 20px;
+    }
+
+    .navigation__progress {
+        font-size: 14px;
+    }
+
+    .navigation__button {
+        width: 36px;
+        height: 36px;
+        font-size: 20px;
+    }
+
+    /* Заголовки */
+    .hero__title {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    .hero__subtitle {
+        font-size: 18px;
+    }
+
+    .section__title {
+        font-size: 28px;
+        margin-bottom: var(--md-sys-spacing-lg);
+    }
+
+    .section__subtitle {
+        font-size: 16px;
+    }
+
+    /* Герой */
+    .hero__speaker {
+        flex-direction: column;
+        gap: var(--md-sys-spacing-md);
+        text-align: center;
+    }
+
+    .hero__avatar {
+        width: 80px;
+        height: 80px;
+    }
+
+    .hero__info {
+        text-align: center;
+    }
+
+    .hero__name {
+        font-size: 20px;
+    }
+
+    .hero__role {
+        font-size: 14px;
+    }
+
+    /* Карточки */
+    .cards {
+        grid-template-columns: 1fr;
+        gap: var(--md-sys-spacing-md);
+    }
+
+    .card {
+        padding: var(--md-sys-spacing-lg);
+    }
+
+    .card__icon {
+        width: 48px;
+        height: 48px;
+        font-size: 28px;
+    }
+
+    .card__title {
+        font-size: 18px;
+    }
+
+    .card__description {
+        font-size: 15px;
+    }
+
+    /* Цитаты */
+    .quote__text {
+        font-size: 22px;
+        line-height: 1.4;
+    }
+
+    /* Features */
+    .features {
+        grid-template-columns: 1fr;
+        gap: var(--md-sys-spacing-md);
+    }
+
+    .feature {
+        padding: var(--md-sys-spacing-md);
+    }
+
+    .feature__icon {
+        width: 48px;
+        height: 48px;
+        font-size: 28px;
+    }
+
+    .feature__text {
+        font-size: 15px;
+    }
+
+    /* Цветные карточки */
+    .card-blue,
+    .card-red,
+    .card-teal {
+        padding: var(--md-sys-spacing-lg);
+    }
+
+    .card-blue h3,
+    .card-red h3,
+    .card-teal h3 {
+        font-size: 20px;
+    }
+
+    .card-blue p,
+    .card-red p,
+    .card-teal p,
+    .card-blue li,
+    .card-red li,
+    .card-teal li {
+        font-size: 15px;
+    }
+
+    /* Процесс */
+    .process__step {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--md-sys-spacing-lg);
+    }
+
+    .process__number {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin-bottom: var(--md-sys-spacing-sm);
+    }
+
+    .process__title {
+        font-size: 18px;
+    }
+
+    .process__description {
+        font-size: 15px;
+    }
+
+    /* Контакты */
+    .contact__qr {
+        max-width: 250px;
+    }
+
+    .contact__item {
+        font-size: 16px;
+    }
+
+    /* QR коды на последнем слайде */
+    .qr-codes {
+        flex-direction: column;
+        gap: var(--md-sys-spacing-lg);
+    }
+
+    .qr-code {
+        max-width: 200px;
+    }
+}
+
+/* Мобильные телефоны (до 480px) */
+@media (max-width: 480px) {
+    :root {
+        --md-sys-spacing-sm: 6px;
+        --md-sys-spacing-md: 10px;
+        --md-sys-spacing-lg: 14px;
+        --md-sys-spacing-xl: 20px;
+        --md-sys-spacing-xxl: 28px;
+    }
+
+    body {
+        font-size: 15px;
+    }
+
+    .slide {
+        padding: 32px 16px;
+    }
+
+    /* Навигация */
+    .navigation {
+        padding: 10px 12px;
+        gap: 8px;
+    }
+
+    .navigation__logo {
+        font-size: 18px;
+    }
+
+    .navigation__progress {
+        font-size: 13px;
+    }
+
+    .navigation__button {
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+    }
+
+    /* Заголовки */
+    .hero__title {
+        font-size: 26px;
+        line-height: 1.2;
+    }
+
+    .hero__subtitle {
+        font-size: 16px;
+    }
+
+    .section__title {
+        font-size: 24px;
+        margin-bottom: var(--md-sys-spacing-md);
+    }
+
+    .section__subtitle {
+        font-size: 15px;
+    }
+
+    /* Герой */
+    .hero__avatar {
+        width: 70px;
+        height: 70px;
+    }
+
+    .hero__name {
+        font-size: 18px;
+    }
+
+    .hero__role {
+        font-size: 13px;
+    }
+
+    /* Карточки */
+    .card {
+        padding: var(--md-sys-spacing-md);
+    }
+
+    .card__icon {
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+    }
+
+    .card__title {
+        font-size: 16px;
+    }
+
+    .card__description {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    /* Цитаты */
+    .quote__text {
+        font-size: 20px;
+        line-height: 1.3;
+        padding: var(--md-sys-spacing-lg);
+    }
+
+    /* Features */
+    .feature {
+        padding: var(--md-sys-spacing-md);
+        gap: var(--md-sys-spacing-sm);
+    }
+
+    .feature__icon {
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+    }
+
+    .feature__text {
+        font-size: 14px;
+    }
+
+    /* Цветные карточки */
+    .card-blue,
+    .card-red,
+    .card-teal {
+        padding: var(--md-sys-spacing-md);
+    }
+
+    .card-blue h3,
+    .card-red h3,
+    .card-teal h3 {
+        font-size: 18px;
+        margin-bottom: var(--md-sys-spacing-sm);
+    }
+
+    .card-blue p,
+    .card-red p,
+    .card-teal p,
+    .card-blue li,
+    .card-red li,
+    .card-teal li {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    /* Процесс */
+    .process__step {
+        padding: var(--md-sys-spacing-md);
+    }
+
+    .process__number {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+
+    .process__title {
+        font-size: 16px;
+    }
+
+    .process__description {
+        font-size: 14px;
+    }
+
+    /* Контакты */
+    .contact__qr {
+        max-width: 200px;
+    }
+
+    .contact__item {
+        font-size: 15px;
+        flex-wrap: wrap;
+    }
+
+    .contact__item .material-symbols-outlined {
+        font-size: 20px;
+    }
+
+    /* QR коды на последнем слайде */
+    .qr-code {
+        max-width: 180px;
+    }
+
+    .qr-code__title {
+        font-size: 16px;
+    }
+
+    /* Анимация дыхания */
+    .breathing-demo__circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* Изображения */
+    .slide img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Очень маленькие экраны (до 360px) */
+@media (max-width: 360px) {
+    :root {
+        --md-sys-spacing-sm: 4px;
+        --md-sys-spacing-md: 8px;
+        --md-sys-spacing-lg: 12px;
+        --md-sys-spacing-xl: 16px;
+        --md-sys-spacing-xxl: 24px;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    .slide {
+        padding: 24px 12px;
+    }
+
+    .navigation__logo {
+        font-size: 16px;
+    }
+
+    .hero__title {
+        font-size: 22px;
+    }
+
+    .section__title {
+        font-size: 20px;
+    }
+
+    .card__title,
+    .process__title {
+        font-size: 15px;
+    }
+
+    .card__description,
+    .process__description,
+    .feature__text {
+        font-size: 13px;
+    }
+
+    .quote__text {
+        font-size: 18px;
+    }
+}
+
+/* Ландшафтная ориентация для мобильных */
+@media (max-height: 500px) and (orientation: landscape) {
+    .slide {
+        padding: 20px 16px;
+    }
+
+    .hero__title {
+        font-size: 24px;
+        margin-bottom: var(--md-sys-spacing-md);
+    }
+
+    .section__title {
+        font-size: 22px;
+        margin-bottom: var(--md-sys-spacing-sm);
+    }
+
+    .cards,
+    .features {
+        gap: var(--md-sys-spacing-sm);
+    }
+
+    .card,
+    .feature {
+        padding: var(--md-sys-spacing-sm);
+    }
+
+    .navigation {
+        padding: 8px 12px;
+    }
+}
