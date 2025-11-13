@@ -396,11 +396,15 @@
     position: absolute;
     top: 20px;
     right: 20px;
-    width: 138px;
-    height: auto;
+    width: 138px !important;
+    max-width: 138px !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain;
     z-index: 10;
     opacity: 0.9;
     transition: opacity var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+    display: block;
 }
 
 .slide__logo:hover {
