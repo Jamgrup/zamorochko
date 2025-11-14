@@ -5,7 +5,7 @@
 
 .feature {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: var(--md-sys-spacing-md);
   padding: var(--md-sys-spacing-md);
   background-color: var(--md-sys-color-surface);
