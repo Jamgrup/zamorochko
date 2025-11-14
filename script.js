@@ -157,50 +157,88 @@ class PresentationController {
             return;
         }
 
-        shareBtn.addEventListener('click', async () => {
+        shareBtn.addEventListener('click', async (event) => {
+            // Prevent default and stop propagation
+            event.preventDefault();
+            event.stopPropagation();
+
             const shareData = {
                 title: 'Здоровье тазового дна | BloomCare',
                 text: 'Важность укрепления мышц тазового дна для всех!',
                 url: window.location.href
             };
 
+            const originalIcon = shareBtn.querySelector('.navigation__icon');
+            const originalText = originalIcon.textContent;
+
+            const showFeedback = (success = true) => {
+                originalIcon.textContent = success ? 'check' : 'error';
+                setTimeout(() => {
+                    originalIcon.textContent = originalText;
+                }, 2000);
+            };
+
             try {
-                // Check if Web Share API is supported
-                if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
-                    await navigator.share(shareData);
-                    console.log('Shared successfully');
+                // iOS/Safari requires user gesture for share/clipboard
+                // Check Web Share API first (works best on mobile)
+                if (navigator.share) {
+                    try {
+                        await navigator.share(shareData);
+                        console.log('Shared successfully via Web Share API');
+                        return;
+                    } catch (shareError) {
+                        // User cancelled sharing or error occurred
+                        if (shareError.name === 'AbortError') {
+                            console.log('Share cancelled by user');
+                            return;
+                        }
+                        console.warn('Share API failed, trying clipboard:', shareError);
+                    }
+                }
+
+                // Fallback: Try Clipboard API
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    try {
+                        await navigator.clipboard.writeText(window.location.href);
+                        console.log('Link copied to clipboard');
+                        showFeedback(true);
+                        return;
+                    } catch (clipboardError) {
+                        console.warn('Clipboard API failed:', clipboardError);
+                    }
+                }
+
+                // iOS Safari fallback: Create temporary input element
+                // This works when Clipboard API is blocked
+                const tempInput = document.createElement('input');
+                tempInput.style.position = 'absolute';
+                tempInput.style.left = '-9999px';
+                tempInput.style.top = '0';
+                tempInput.value = window.location.href;
+                document.body.appendChild(tempInput);
+
+                // Select and copy
+                tempInput.select();
+                tempInput.setSelectionRange(0, 99999); // For mobile devices
+
+                const successful = document.execCommand('copy');
+                document.body.removeChild(tempInput);
+
+                if (successful) {
+                    console.log('Link copied using execCommand fallback');
+                    showFeedback(true);
                 } else {
-                    // Fallback: copy link to clipboard
-                    await navigator.clipboard.writeText(window.location.href);
-                    console.log('Link copied to clipboard');
-
-                    // Show temporary feedback
-                    const originalIcon = shareBtn.querySelector('.navigation__icon');
-                    const originalText = originalIcon.textContent;
-                    originalIcon.textContent = 'check';
-
-                    setTimeout(() => {
-                        originalIcon.textContent = originalText;
-                    }, 2000);
+                    // Final fallback: show alert with URL
+                    console.error('All copy methods failed');
+                    const copyText = prompt('Скопируйте ссылку:', window.location.href);
+                    if (copyText) {
+                        showFeedback(true);
+                    }
                 }
+
             } catch (error) {
-                // User cancelled or error occurred
                 console.error('Share failed:', error);
-
-                // Try clipboard as final fallback
-                try {
-                    await navigator.clipboard.writeText(window.location.href);
-                    const originalIcon = shareBtn.querySelector('.navigation__icon');
-                    const originalText = originalIcon.textContent;
-                    originalIcon.textContent = 'check';
-
-                    setTimeout(() => {
-                        originalIcon.textContent = originalText;
-                    }, 2000);
-                } catch (clipboardError) {
-                    console.error('Clipboard fallback also failed:', clipboardError);
-                    alert('Ссылка: ' + window.location.href);
-                }
+                showFeedback(false);
             }
         });
     }
