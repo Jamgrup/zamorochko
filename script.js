@@ -102,37 +102,48 @@ class PresentationController {
 
     setupScrollDetection() {
         const presentation = document.getElementById('presentation');
+        let scrollTimeout;
 
-        // Intersection Observer для определения текущего слайда
-        const observerOptions = {
-            root: presentation,
-            threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
-            rootMargin: '-20% 0px -20% 0px' // Trigger when slide is in middle 60% of viewport
-        };
+        const updateCurrentSlide = () => {
+            const viewportHeight = window.innerHeight;
+            const scrollTop = presentation.scrollTop;
+            const viewportCenter = scrollTop + (viewportHeight / 2);
 
-        const observer = new IntersectionObserver((entries) => {
-            // Find the most visible slide
-            let mostVisible = null;
-            let maxRatio = 0;
+            // Находим слайд, в котором находится центр viewport
+            let currentSlideNumber = 1;
 
-            entries.forEach(entry => {
-                if (entry.intersectionRatio > maxRatio) {
-                    maxRatio = entry.intersectionRatio;
-                    mostVisible = entry.target;
-                }
-            });
+            for (let i = 0; i < this.slides.length; i++) {
+                const slide = this.slides[i];
+                const slideTop = slide.offsetTop;
+                const slideBottom = slideTop + slide.offsetHeight;
 
-            if (mostVisible && maxRatio > 0.3) {
-                const slideNumber = parseInt(mostVisible.dataset.slide);
-                if (slideNumber !== this.currentSlide) {
-                    this.currentSlide = slideNumber;
-                    this.updateProgress();
-                    this.updateCounter();
+                // Если центр viewport находится в пределах этого слайда
+                if (viewportCenter >= slideTop && viewportCenter < slideBottom) {
+                    currentSlideNumber = parseInt(slide.dataset.slide);
+                    break;
                 }
             }
-        }, observerOptions);
 
-        this.slides.forEach(slide => observer.observe(slide));
+            // Обновляем только если слайд изменился
+            if (currentSlideNumber !== this.currentSlide) {
+                this.currentSlide = currentSlideNumber;
+                this.updateProgress();
+                this.updateCounter();
+            }
+        };
+
+        // Обработчик скролла с debounce для производительности
+        presentation.addEventListener('scroll', () => {
+            if (scrollTimeout) {
+                clearTimeout(scrollTimeout);
+            }
+
+            // Немедленное обновление для отзывчивости
+            updateCurrentSlide();
+
+            // Дополнительная проверка после остановки скролла
+            scrollTimeout = setTimeout(updateCurrentSlide, 100);
+        }, { passive: true });
     }
 
     nextSlide() {
