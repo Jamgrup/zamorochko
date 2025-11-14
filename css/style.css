@@ -32,6 +32,7 @@
 @import url('blocks/checklist/checklist.css');
 @import url('blocks/comparison/comparison.css');
 @import url('blocks/process/process.css');
+@import url('blocks/highlight/highlight.css');
 
 /* ========================================
    UTILITY CLASSES

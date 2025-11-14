@@ -1,0 +1,111 @@
+/**
+ * Block: highlight
+ * Highlighted text block for emphasis
+ */
+
+.highlight {
+  padding: var(--md-sys-spacing-lg) var(--md-sys-spacing-xl);
+  background: linear-gradient(135deg,
+    rgba(26, 115, 232, 0.08) 0%,
+    rgba(26, 115, 232, 0.04) 100%);
+  border-left: 4px solid var(--md-sys-color-primary);
+  border-radius: var(--md-sys-shape-corner-md);
+  text-align: center;
+}
+
+/* ========================================
+   HIGHLIGHT ELEMENTS
+   ======================================== */
+
+.highlight__text {
+  font-size: var(--md-sys-typescale-title-medium-size);
+  font-weight: 600;
+  color: var(--md-sys-color-on-surface);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ========================================
+   HIGHLIGHT MODIFIERS
+   ======================================== */
+
+/* Secondary variant */
+.highlight--secondary {
+  background: linear-gradient(135deg,
+    rgba(102, 157, 246, 0.08) 0%,
+    rgba(102, 157, 246, 0.04) 100%);
+  border-left-color: var(--md-sys-color-secondary);
+}
+
+/* Success variant */
+.highlight--success {
+  background: linear-gradient(135deg,
+    rgba(52, 168, 83, 0.08) 0%,
+    rgba(52, 168, 83, 0.04) 100%);
+  border-left-color: #34A853;
+}
+
+/* Warning variant */
+.highlight--warning {
+  background: linear-gradient(135deg,
+    rgba(251, 188, 4, 0.08) 0%,
+    rgba(251, 188, 4, 0.04) 100%);
+  border-left-color: #FBBC04;
+}
+
+/* ========================================
+   DESKTOP: VIEWPORT HEIGHT ADAPTATION
+   ======================================== */
+
+@media (min-width: 1024px) {
+  .highlight {
+    padding: clamp(0.75rem, 2vh, 1.5rem) clamp(1rem, 2.5vh, 2rem);
+  }
+
+  .highlight__text {
+    font-size: clamp(1.125rem, 2vh, 1.4rem);
+    line-height: 1.4;
+  }
+}
+
+/* ========================================
+   RESPONSIVE: TABLET
+   ======================================== */
+
+@media (max-width: 768px) {
+  .highlight {
+    padding: var(--md-sys-spacing-md) var(--md-sys-spacing-lg);
+  }
+
+  .highlight__text {
+    font-size: var(--md-sys-typescale-title-small-size);
+  }
+}
+
+/* ========================================
+   RESPONSIVE: MOBILE
+   ======================================== */
+
+@media (max-width: 480px) {
+  .highlight {
+    padding: var(--md-sys-spacing-sm) var(--md-sys-spacing-md);
+  }
+
+  .highlight__text {
+    font-size: var(--md-sys-typescale-body-large-size);
+  }
+}
+
+/* ========================================
+   RESPONSIVE: LANDSCAPE MOBILE
+   ======================================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .highlight {
+    padding: var(--md-sys-spacing-sm);
+  }
+
+  .highlight__text {
+    font-size: var(--md-sys-typescale-body-medium-size);
+  }
+}
