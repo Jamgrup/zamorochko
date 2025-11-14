@@ -28,7 +28,7 @@
   height: auto;
   border-radius: var(--md-sys-shape-corner-lg);
   box-shadow: var(--md-sys-elevation-2);
-  object-fit: contain;
+  object-fit: cover;
   transition: all var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
 }
 
