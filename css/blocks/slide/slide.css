@@ -52,7 +52,7 @@
 /* Logo in corner (for non-hero slides) */
 .slide__logo {
   position: absolute;
-  top: var(--md-sys-spacing-lg);
+  top: calc(64px + var(--md-sys-spacing-lg)); /* 64px navigation height + spacing */
   right: var(--md-sys-spacing-lg);
   width: 138px;
   height: auto;
@@ -183,9 +183,10 @@
 
   .slide__logo {
     width: 80px;
-    top: var(--md-sys-spacing-md);
+    top: calc(64px + var(--md-sys-spacing-md)); /* 64px navigation + spacing */
     right: var(--md-sys-spacing-md);
   }
+}
 
   .slide__title {
     font-size: var(--md-sys-typescale-headline-medium-size);
@@ -216,7 +217,7 @@
 
   .slide__logo {
     width: 60px;
-    top: var(--md-sys-spacing-sm);
+    top: calc(64px + var(--md-sys-spacing-sm)); /* 64px navigation + spacing */
     right: var(--md-sys-spacing-sm);
   }
 
@@ -247,7 +248,7 @@
 
   .slide__logo {
     width: 50px;
-    top: var(--md-sys-spacing-xs);
+    top: calc(64px + var(--md-sys-spacing-xs)); /* 64px navigation + spacing */
     right: var(--md-sys-spacing-xs);
   }
 }
