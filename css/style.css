@@ -30,6 +30,8 @@
 @import url('blocks/definition/definition.css');
 @import url('blocks/infographic/infographic.css');
 @import url('blocks/checklist/checklist.css');
+@import url('blocks/comparison/comparison.css');
+@import url('blocks/process/process.css');
 
 /* ========================================
    UTILITY CLASSES

@@ -1,0 +1,200 @@
+/**
+ * Block: comparison
+ * Two-column comparison layout for contrasting items
+ */
+
+.comparison {
+  display: flex;
+  gap: var(--md-sys-spacing-xl);
+  justify-content: center;
+  align-items: stretch;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   COMPARISON ELEMENTS
+   ======================================== */
+
+/* Comparison item */
+.comparison__item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--md-sys-spacing-lg);
+  padding: var(--md-sys-spacing-xxl) var(--md-sys-spacing-xl);
+  background-color: var(--md-sys-color-surface-container);
+  border-radius: var(--md-sys-shape-corner-xl);
+  box-shadow: var(--md-sys-elevation-2);
+  transition: all var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+  border: 2px solid transparent;
+}
+
+.comparison__item:hover {
+  box-shadow: var(--md-sys-elevation-3);
+  transform: translateY(-4px);
+}
+
+/* Icon */
+.comparison__icon {
+  font-size: 80px;
+  color: var(--md-sys-color-on-surface);
+  transition: color var(--md-sys-motion-duration-short);
+}
+
+/* Label */
+.comparison__label {
+  font-size: var(--md-sys-typescale-headline-medium-size);
+  font-weight: 600;
+  color: var(--md-sys-color-on-surface);
+  text-align: center;
+  margin: 0;
+  transition: color var(--md-sys-motion-duration-short);
+}
+
+/* ========================================
+   COMPARISON MODIFIERS
+   ======================================== */
+
+/* Danger variant (hyperactive) */
+.comparison__item--danger {
+  background: linear-gradient(135deg,
+    rgba(179, 38, 30, 0.08) 0%,
+    rgba(179, 38, 30, 0.04) 100%);
+  border-color: var(--md-sys-color-error);
+}
+
+.comparison__item--danger:hover {
+  background: linear-gradient(135deg,
+    rgba(179, 38, 30, 0.12) 0%,
+    rgba(179, 38, 30, 0.06) 100%);
+  border-color: var(--md-sys-color-error);
+}
+
+.comparison__item--danger .comparison__icon {
+  color: var(--md-sys-color-error);
+}
+
+.comparison__item--danger .comparison__label {
+  color: var(--md-sys-color-error);
+}
+
+/* Info variant (hypoactive) */
+.comparison__item--info {
+  background: linear-gradient(135deg,
+    rgba(26, 115, 232, 0.08) 0%,
+    rgba(26, 115, 232, 0.04) 100%);
+  border-color: var(--md-sys-color-primary);
+}
+
+.comparison__item--info:hover {
+  background: linear-gradient(135deg,
+    rgba(26, 115, 232, 0.12) 0%,
+    rgba(26, 115, 232, 0.06) 100%);
+  border-color: var(--md-sys-color-primary);
+}
+
+.comparison__item--info .comparison__icon {
+  color: var(--md-sys-color-primary);
+}
+
+.comparison__item--info .comparison__label {
+  color: var(--md-sys-color-primary);
+}
+
+/* ========================================
+   DESKTOP: VIEWPORT HEIGHT ADAPTATION
+   ======================================== */
+
+@media (min-width: 1024px) {
+  .comparison {
+    gap: clamp(2rem, 4vh, 3rem);
+  }
+
+  .comparison__item {
+    padding: clamp(2rem, 5vh, 4rem) clamp(1.5rem, 3vh, 3rem);
+    gap: clamp(1rem, 2.5vh, 2rem);
+  }
+
+  .comparison__icon {
+    font-size: clamp(64px, 10vh, 80px);
+  }
+
+  .comparison__label {
+    font-size: clamp(1.5rem, 3vh, 2rem);
+  }
+}
+
+/* ========================================
+   RESPONSIVE: TABLET
+   ======================================== */
+
+@media (max-width: 768px) {
+  .comparison {
+    flex-direction: column;
+    gap: var(--md-sys-spacing-lg);
+    max-width: 100%;
+  }
+
+  .comparison__item {
+    padding: var(--md-sys-spacing-xl) var(--md-sys-spacing-lg);
+    gap: var(--md-sys-spacing-md);
+  }
+
+  .comparison__icon {
+    font-size: 64px;
+  }
+
+  .comparison__label {
+    font-size: var(--md-sys-typescale-headline-small-size);
+  }
+}
+
+/* ========================================
+   RESPONSIVE: MOBILE
+   ======================================== */
+
+@media (max-width: 480px) {
+  .comparison {
+    gap: var(--md-sys-spacing-md);
+  }
+
+  .comparison__item {
+    padding: var(--md-sys-spacing-lg) var(--md-sys-spacing-md);
+    gap: var(--md-sys-spacing-sm);
+  }
+
+  .comparison__icon {
+    font-size: 56px;
+  }
+
+  .comparison__label {
+    font-size: var(--md-sys-typescale-title-large-size);
+  }
+}
+
+/* ========================================
+   RESPONSIVE: LANDSCAPE MOBILE
+   ======================================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .comparison {
+    flex-direction: row;
+    gap: var(--md-sys-spacing-md);
+  }
+
+  .comparison__item {
+    padding: var(--md-sys-spacing-md);
+    gap: var(--md-sys-spacing-sm);
+  }
+
+  .comparison__icon {
+    font-size: 48px;
+  }
+
+  .comparison__label {
+    font-size: var(--md-sys-typescale-title-medium-size);
+  }
+}
