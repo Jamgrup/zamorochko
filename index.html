@@ -4,40 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Здоровье тазового дна - презентация Кристины Заморочко, BloomCare">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
     <title>Здоровье тазового дна | BloomCare</title>
-    <link rel="stylesheet" href="styles.css?v=20251113-2">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Flex:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@200..700" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="page">
 
-    <!-- Навигация -->
-    <nav class="nav" id="nav">
-        <div class="nav__container">
-            <div class="nav__brand">
-                <span class="nav__logo">BloomCare</span>
+    <!-- Navigation -->
+    <nav class="navigation" id="navigation">
+        <div class="navigation__container">
+            <!-- Brand -->
+            <div class="navigation__brand">
+                <span class="navigation__logo">BloomCare</span>
             </div>
-            <div class="nav__progress">
-                <div class="nav__progress-bar" id="progress-bar"></div>
+
+            <!-- Progress -->
+            <div class="navigation__progress-wrapper">
+                <div class="navigation__progress-container">
+                    <div class="navigation__progress-bar" id="progressBar"></div>
+                </div>
             </div>
-            <div class="nav__controls">
-                <button class="nav__button nav__button--prev" id="prev-btn" aria-label="Предыдущий слайд">
-                    <span class="material-symbols-outlined">arrow_back</span>
+
+            <!-- Controls -->
+            <div class="navigation__controls">
+                <button class="navigation__button" id="prevBtn" aria-label="Предыдущий слайд" disabled>
+                    <span class="navigation__icon material-symbols-outlined">arrow_back</span>
                 </button>
-                <span class="nav__counter" id="counter">1 / 29</span>
-                <button class="nav__button nav__button--next" id="next-btn" aria-label="Следующий слайд">
-                    <span class="material-symbols-outlined">arrow_forward</span>
+                <span class="navigation__counter" id="counter">1 / 30</span>
+                <button class="navigation__button" id="nextBtn" aria-label="Следующий слайд">
+                    <span class="navigation__icon material-symbols-outlined">arrow_forward</span>
                 </button>
             </div>
         </div>
     </nav>
 
-    <main class="presentation" id="presentation">
+    <!-- Main presentation -->
+    <main class="page__presentation" id="presentation">
 
         <!-- СЛАЙД 1: Титульный -->
         <section class="slide slide--hero" data-slide="1">
@@ -45,9 +54,10 @@
                 <div class="hero">
                     <h1 class="hero__title">Важность укрепления мышц тазового дна для всех!</h1>
                     <p class="hero__subtitle">Проблемы, о которых мы не догадываемся</p>
+
                     <div class="hero__speaker">
                         <div class="hero__avatar">
-                            <img src="images/doctor-optimized.jpg" alt="Кристина Заморочко" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; box-shadow: var(--md-sys-elevation-3);">
+                            <img src="images/doctor-optimized.jpg" alt="Кристина Заморочко" class="hero__avatar-img">
                         </div>
                         <div class="hero__info">
                             <p class="hero__name">Кристина Заморочко</p>
@@ -59,87 +69,91 @@
             </div>
         </section>
 
-        <!-- СЛАЙД 2: Что такое тазовое дно и функции (merged) -->
-        <section class="slide" data-slide="2">
+        <!-- СЛАЙД 2: Что такое тазовое дно -->
+        <section class="slide slide--light" data-slide="2">
             <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
-            <div class="slide__container" style="padding: 2rem 3rem;">
-                <h2 class="slide__title" style="font-size: 2rem; margin-bottom: 1rem;">Что такое тазовое дно?</h2>
-                <div class="grid grid--2col" style="gap: 2rem;">
+            <div class="slide__container">
+                <h2 class="slide__title">Что такое тазовое дно?</h2>
+                <div class="grid grid--2col">
                     <div>
-                        <div class="definition definition--info" style="padding: 1rem 1.5rem; margin-bottom: 1rem;">
-                            <p class="definition__text" style="font-size: 1.05rem; line-height: 1.5;">
+                        <div class="definition definition--info mb-lg">
+                            <p class="definition__text">
                                 Тазовое дно – это <strong>слой мышц</strong>, который отделяет полость таза от промежности.
                                 Можно представить его как <strong>поддерживающую структуру</strong>, на которой располагаются внутренние органы.
                             </p>
                         </div>
-                        <h3 style="margin-top: 0.5rem; margin-bottom: 0.75rem; font-size: 1.25rem; font-weight: 600; color: var(--md-sys-color-primary);">Функции тазового дна:</h3>
-                        <div class="features" style="gap: 0.5rem;">
-                            <div class="feature" style="padding: 0.75rem 1rem;">
-                                <div class="feature__icon" style="width: 36px; height: 36px; min-width: 36px;">
-                                    <span class="material-symbols-outlined" style="font-size: 24px;">favorite</span>
+                        <h3 class="slide__section-title">Функции тазового дна:</h3>
+                        <div class="grid grid--2col grid--gap-sm">
+                            <div class="feature feature--compact">
+                                <div class="feature__icon">
+                                    <span class="material-symbols-outlined">favorite</span>
                                 </div>
-                                <p class="feature__text" style="font-size: 0.95rem;">Поддержка органов малого таза</p>
+                                <p class="feature__text">Поддержка органов малого таза</p>
                             </div>
-                            <div class="feature" style="padding: 0.75rem 1rem;">
-                                <div class="feature__icon" style="width: 36px; height: 36px; min-width: 36px;">
-                                    <span class="material-symbols-outlined" style="font-size: 24px;">orthopedics</span>
+                            <div class="feature feature--compact">
+                                <div class="feature__icon">
+                                    <span class="material-symbols-outlined">orthopedics</span>
                                 </div>
-                                <p class="feature__text" style="font-size: 0.95rem;">Стабилизация позвоночника и таза</p>
+                                <p class="feature__text">Стабилизация позвоночника и таза</p>
                             </div>
-                            <div class="feature" style="padding: 0.75rem 1rem;">
-                                <div class="feature__icon" style="width: 36px; height: 36px; min-width: 36px;">
-                                    <span class="material-symbols-outlined" style="font-size: 24px;">water_drop</span>
+                            <div class="feature feature--compact">
+                                <div class="feature__icon">
+                                    <span class="material-symbols-outlined">water_drop</span>
                                 </div>
-                                <p class="feature__text" style="font-size: 0.95rem;">Участие в мочеиспускании и дефекации</p>
+                                <p class="feature__text">Участие в мочеиспускании и дефекации</p>
                             </div>
-                            <div class="feature" style="padding: 0.75rem 1rem;">
-                                <div class="feature__icon" style="width: 36px; height: 36px; min-width: 36px;">
-                                    <span class="material-symbols-outlined" style="font-size: 24px;">volunteer_activism</span>
+                            <div class="feature feature--compact">
+                                <div class="feature__icon">
+                                    <span class="material-symbols-outlined">volunteer_activism</span>
                                 </div>
-                                <p class="feature__text" style="font-size: 0.95rem;">Сексуальная функция</p>
+                                <p class="feature__text">Сексуальная функция</p>
                             </div>
-                            <div class="feature" style="padding: 0.75rem 1rem;">
-                                <div class="feature__icon" style="width: 36px; height: 36px; min-width: 36px;">
-                                    <span class="material-symbols-outlined" style="font-size: 24px;">pregnant_woman</span>
+                            <div class="feature feature--compact">
+                                <div class="feature__icon">
+                                    <span class="material-symbols-outlined">pregnant_woman</span>
                                 </div>
-                                <p class="feature__text" style="font-size: 0.95rem;">У женщин: обеспечение родовой деятельности</p>
+                                <p class="feature__text">У женщин: обеспечение родовой деятельности</p>
                             </div>
                         </div>
                     </div>
-                    <div style="display: flex; align-items: center; justify-content: center;">
-                        <img src="images/слайд_4_врач+макет_таза.jpg" alt="Анатомия тазового дна"
-                             style="width: 100%; height: auto; border-radius: var(--md-sys-shape-corner-lg);
-                                    box-shadow: var(--md-sys-elevation-2); object-fit: cover; max-height: 550px;">
+                    <div class="d-flex align-items-center justify-content-center">
+                        <div class="infographic infographic--large infographic--cover infographic--h-550">
+                            <img src="images/слайд_4_врач+макет_таза.jpg"
+                                 alt="Анатомия тазового дна"
+                                 class="infographic__image">
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- СЛАЙД 3: Два слоя мышц -->
-        <section class="slide" data-slide="3">
+        <section class="slide slide--light" data-slide="3">
             <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
-            <div class="slide__container" style="padding: 2rem 3rem;">
-                <h2 class="slide__title" style="font-size: 2rem; margin-bottom: 1rem;">Два слоя мышц</h2>
-                <div class="grid grid--2col" style="gap: 2rem; align-items: start;">
+            <div class="slide__container">
+                <h2 class="slide__title">Два слоя мышц</h2>
+                <div class="grid grid--2col">
                     <div>
-                        <div class="card card--secondary" style="padding: 1rem 1.5rem;">
-                            <h3 class="card__title" style="font-size: 1.25rem;">Поверхностный слой</h3>
-                            <p class="card__text" style="font-size: 0.95rem;">На этот слой воздействуют упражнения Кегеля</p>
+                        <div class="card card--secondary mb-md">
+                            <h3 class="card__title">Поверхностный слой</h3>
+                            <p class="card__text">На этот слой воздействуют упражнения Кегеля</p>
                         </div>
-                        <div class="card card--primary" style="margin-top: 1rem; padding: 1rem 1.5rem;">
-                            <h3 class="card__title" style="font-size: 1.25rem;">Глубокий слой</h3>
-                            <p class="card__text" style="font-size: 0.95rem;">Включается только через работу с кором</p>
+                        <div class="card card--primary">
+                            <h3 class="card__title">Глубокий слой</h3>
+                            <p class="card__text">Включается только через работу с кором</p>
                         </div>
                     </div>
-                    <div class="infographic" style="display: flex; align-items: flex-start;">
-                        <img src="images/слайд_7_мышцы_таза.png" alt="Два слоя мышц тазового дна"
-                             style="width: 100%; height: auto; border-radius: var(--md-sys-shape-corner-lg);
-                                    box-shadow: var(--md-sys-elevation-2); max-height: 400px; object-fit: contain;">
+                    <div class="d-flex align-items-start">
+                        <div class="infographic infographic--medium">
+                            <img src="images/слайд_7_мышцы_таза.png"
+                                 alt="Два слоя мышц тазового дна"
+                                 class="infographic__image">
+                        </div>
                     </div>
                 </div>
-                <div class="alert alert--warning" style="margin-top: 1rem; padding: 1rem 1.5rem;">
-                    <span class="alert__icon material-symbols-outlined" style="font-size: 28px;">info</span>
-                    <p class="alert__text" style="font-size: 0.95rem;">
+                <div class="alert alert--info mt-lg">
+                    <span class="alert__icon material-symbols-outlined">info</span>
+                    <p class="alert__text">
                         <strong>Ключевая информация:</strong> Упражнения Кегеля воздействуют только на поверхностный слой,
                         не затрагивая глубокие мышцы.
                     </p>
@@ -147,87 +161,109 @@
             </div>
         </section>
 
-        <!-- СЛАЙД 8: Связь с диафрагмой -->
-        <section class="slide" data-slide="4">
+        <!-- СЛАЙД 4: Связь с диафрагмой -->
+        <section class="slide slide--light" data-slide="4">
             <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
-            <div class="slide__container" style="padding: 2rem 3rem;">
-                <h2 class="slide__title" style="font-size: 2rem; margin-bottom: 1.5rem;">Связь с диафрагмой</h2>
-                <div style="display: flex; gap: 2rem; align-items: center;">
-                    <div style="flex: 1;">
-                        <div class="info-box">
-                            <p style="font-size: 1.1rem; margin-bottom: 1rem; line-height: 1.6;">
+            <div class="slide__container">
+                <h2 class="slide__title">Связь с диафрагмой</h2>
+                <div class="d-flex flex-row-mobile-column gap-lg align-items-center">
+                    <div class="flex-1">
+                        <div class="definition definition--info">
+                            <p class="definition__text mb-md">
                                 Диафрагма – основная дыхательная мышца. При вдохе она опускается, и тазовое дно должно следовать за ней,
                                 также опускаясь. При выдохе обе структуры возвращаются в исходное положение.
                             </p>
-                            <p style="font-size: 1.2rem; font-weight: 600; color: var(--md-sys-color-secondary); margin-top: 1rem;">
+                            <p class="definition__highlight">
                                 Они работают синхронно, как единая система
                             </p>
                         </div>
                     </div>
-                    <div style="flex: 0 0 450px; display: flex; justify-content: center;">
-                        <img src="images/8слайд_диафрагма.gif" alt="Синхронное движение диафрагмы и тазового дна"
-                             style="width: 100%; height: auto; border-radius: var(--md-sys-shape-corner-lg);
-                                    box-shadow: var(--md-sys-elevation-2); max-height: 600px; object-fit: contain;">
+                    <div class="flex-fixed-450">
+                        <div class="infographic infographic--large">
+                            <img src="images/8слайд_диафрагма.gif"
+                                 alt="Синхронное движение диафрагмы и тазового дна"
+                                 class="infographic__image">
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- СЛАЙД 5: Работа тазового терапевта (merged) -->
-        <section class="slide" data-slide="5">
+        <!-- СЛАЙД 5: Работа тазового терапевта -->
+        <section class="slide slide--light" data-slide="5">
             <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
-            <div class="slide__container" style="padding: 1.5rem 3rem;">
-                <h2 class="slide__title" style="font-size: 1.8rem; margin-bottom: 0.3rem;">Работа тазового терапевта</h2>
-                <h3 class="slide__subtitle" style="font-size: 1.15rem; color: var(--md-sys-color-secondary); margin-bottom: 1rem;">Что делает тазовый терапевт</h3>
-                <div style="display: flex; gap: 1.5rem;">
-                    <div style="flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem 1rem;">
-                        <div class="checklist__item" style="padding: 0.75rem 1rem;">
-                            <span class="checklist__icon material-symbols-outlined" style="font-size: 24px;">description</span>
-                            <span class="checklist__text" style="font-size: 0.9rem;">Изучение истории болезни</span>
-                        </div>
-                        <div class="checklist__item" style="padding: 0.75rem 1rem;">
-                            <span class="checklist__icon material-symbols-outlined" style="font-size: 24px;">back_hand</span>
-                            <span class="checklist__text" style="font-size: 0.9rem;">Мануальный осмотр мышц тазового дна</span>
-                        </div>
-                        <div class="checklist__item" style="padding: 0.75rem 1rem;">
-                            <span class="checklist__icon material-symbols-outlined" style="font-size: 24px;">accessibility</span>
-                            <span class="checklist__text" style="font-size: 0.9rem;">Оценка осанки</span>
-                        </div>
-                        <div class="checklist__item" style="padding: 0.75rem 1rem;">
-                            <span class="checklist__icon material-symbols-outlined" style="font-size: 24px;">exercise</span>
-                            <span class="checklist__text" style="font-size: 0.9rem;">Тестирование мышц тазового дна</span>
-                        </div>
-                        <div class="checklist__item" style="padding: 0.75rem 1rem;">
-                            <span class="checklist__icon material-symbols-outlined" style="font-size: 24px;">local_hospital</span>
-                            <span class="checklist__text" style="font-size: 0.9rem;">Оценка работы кишечника и мочевого пузыря</span>
-                        </div>
-                        <div class="checklist__item" style="padding: 0.75rem 1rem;">
-                            <span class="checklist__icon material-symbols-outlined" style="font-size: 24px;">body_system</span>
-                            <span class="checklist__text" style="font-size: 0.9rem;">Оценка мобильности тазобедренных суставов</span>
-                        </div>
-                        <div class="checklist__item" style="padding: 0.75rem 1rem;">
-                            <span class="checklist__icon material-symbols-outlined" style="font-size: 24px;">fitness_center</span>
-                            <span class="checklist__text" style="font-size: 0.9rem;">Тестирование силы брюшного пресса</span>
-                        </div>
-                        <div class="checklist__item" style="padding: 0.75rem 1rem;">
-                            <span class="checklist__icon material-symbols-outlined" style="font-size: 24px;">health_and_safety</span>
-                            <span class="checklist__text" style="font-size: 0.9rem;">Оценка смежных структур</span>
+            <div class="slide__container">
+                <h2 class="slide__title">Работа тазового терапевта</h2>
+                <h3 class="slide__section-title">Что делает тазовый терапевт</h3>
+                <div class="d-flex flex-row-mobile-column gap-lg">
+                    <div class="flex-1">
+                        <div class="grid grid--2col grid--gap-sm">
+                            <div class="feature feature--compact">
+                                <div class="feature__icon">
+                                    <span class="material-symbols-outlined">description</span>
+                                </div>
+                                <p class="feature__text">Изучение истории болезни</p>
+                            </div>
+                            <div class="feature feature--compact">
+                                <div class="feature__icon">
+                                    <span class="material-symbols-outlined">back_hand</span>
+                                </div>
+                                <p class="feature__text">Мануальный осмотр мышц тазового дна</p>
+                            </div>
+                            <div class="feature feature--compact">
+                                <div class="feature__icon">
+                                    <span class="material-symbols-outlined">accessibility</span>
+                                </div>
+                                <p class="feature__text">Оценка осанки</p>
+                            </div>
+                            <div class="feature feature--compact">
+                                <div class="feature__icon">
+                                    <span class="material-symbols-outlined">exercise</span>
+                                </div>
+                                <p class="feature__text">Тестирование мышц тазового дна</p>
+                            </div>
+                            <div class="feature feature--compact">
+                                <div class="feature__icon">
+                                    <span class="material-symbols-outlined">local_hospital</span>
+                                </div>
+                                <p class="feature__text">Оценка работы кишечника и мочевого пузыря</p>
+                            </div>
+                            <div class="feature feature--compact">
+                                <div class="feature__icon">
+                                    <span class="material-symbols-outlined">body_system</span>
+                                </div>
+                                <p class="feature__text">Оценка мобильности тазобедренных суставов</p>
+                            </div>
+                            <div class="feature feature--compact">
+                                <div class="feature__icon">
+                                    <span class="material-symbols-outlined">fitness_center</span>
+                                </div>
+                                <p class="feature__text">Тестирование силы брюшного пресса</p>
+                            </div>
+                            <div class="feature feature--compact">
+                                <div class="feature__icon">
+                                    <span class="material-symbols-outlined">health_and_safety</span>
+                                </div>
+                                <p class="feature__text">Оценка смежных структур</p>
+                            </div>
                         </div>
                     </div>
-                    <div style="flex: 0 0 320px; display: flex; justify-content: center; align-items: flex-start;">
-                        <img src="images/10_слайд_врачи.jpg" alt="Тазовые терапевты"
-                             style="width: 100%; height: auto; border-radius: var(--md-sys-shape-corner-lg);
-                                    box-shadow: var(--md-sys-elevation-2); max-height: 450px; object-fit: cover;">
+                    <div class="flex-fixed-320 d-flex justify-content-center align-items-start">
+                        <div class="infographic infographic--medium">
+                            <img src="images/10_слайд_врачи.jpg"
+                                 alt="Тазовые терапевты"
+                                 class="infographic__image">
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- РАЗДЕЛ: Нарушения -->
-        <section class="slide slide--section" data-slide="6">
+        <!-- СЛАЙД 6: Два типа нарушений (section divider) -->
+        <section class="slide slide--divider" data-slide="6">
             <div class="slide__container">
-                <h2 class="section__title" style="margin-top: -100px; margin-bottom: 6rem;">Два типа нарушений</h2>
-                <div class="comparison comparison--intro">
+                <h2 class="slide__title">Два типа нарушений</h2>
+                <div class="comparison">
                     <div class="comparison__item comparison__item--danger">
                         <span class="comparison__icon material-symbols-outlined">bolt</span>
                         <p class="comparison__label">Гиперактивное</p>
@@ -240,129 +276,143 @@
             </div>
         </section>
 
-        <!-- СЛАЙД 7: Гиперактивное ТД (merged) -->
-        <section class="slide" data-slide="7">
+        <!-- СЛАЙД 7: Гиперактивное тазовое дно -->
+        <section class="slide slide--light" data-slide="7">
             <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
-            <div class="slide__container" style="padding: 2rem 3rem;">
-                <h2 class="slide__title" style="font-size: 2rem; margin-bottom: 0.5rem;">Гиперактивное тазовое дно</h2>
-                <h3 class="slide__subtitle" style="font-size: 1.3rem; color: var(--md-sys-color-secondary); margin-bottom: 1.5rem;">Признаки гиперактивного ТД</h3>
-                <div class="grid grid--2col" style="gap: 2rem;">
-                    <div class="card card--danger" style="padding: 1.5rem;">
-                        <h3 class="card__title" style="font-size: 1.4rem; margin-bottom: 1.5rem;">Боль и дискомфорт</h3>
-                        <div class="checklist" style="gap: 1rem;">
-                            <div class="checklist__item" style="padding: 0.75rem 1rem;">
-                                <img src="images/боли_при_сексе.svg" alt="" style="width: 32px; height: 32px; margin-right: 1rem;">
-                                <span class="checklist__text" style="font-size: 0.95rem;">При половых контактах</span>
+            <div class="slide__container">
+                <h2 class="slide__title">Гиперактивное тазовое дно</h2>
+                <h3 class="slide__section-title">Признаки гиперактивного ТД</h3>
+                <div class="grid grid--2col">
+                    <div class="card">
+                        <h3 class="card__title">Боль и дискомфорт</h3>
+                        <div class="grid grid--gap-sm">
+                            <div class="feature feature--compact">
+                                <div class="feature__icon">
+                                    <img src="images/боли_при_сексе.svg" alt="">
+                                </div>
+                                <p class="feature__text">При половых контактах</p>
                             </div>
-                            <div class="checklist__item" style="padding: 0.75rem 1rem;">
-                                <img src="images/боли_при_осмотре.svg" alt="" style="width: 32px; height: 32px; margin-right: 1rem;">
-                                <span class="checklist__text" style="font-size: 0.95rem;">При гинекологических/урологических осмотрах</span>
+                            <div class="feature feature--compact">
+                                <div class="feature__icon">
+                                    <img src="images/боли_при_осмотре.svg" alt="">
+                                </div>
+                                <p class="feature__text">При гинекологических/урологических осмотрах</p>
                             </div>
-                            <div class="checklist__item" style="padding: 0.75rem 1rem;">
-                                <img src="images/боль_промежность.svg" alt="" style="width: 32px; height: 32px; margin-right: 1rem;">
-                                <span class="checklist__text" style="font-size: 0.95rem;">Жжение или боль в области промежности</span>
+                            <div class="feature feature--compact">
+                                <div class="feature__icon">
+                                    <img src="images/боль_промежность.svg" alt="">
+                                </div>
+                                <p class="feature__text">Жжение или боль в области промежности</p>
                             </div>
-                            <div class="checklist__item" style="padding: 0.75rem 1rem;">
-                                <img src="images/оргазм.svg" alt="" style="width: 32px; height: 32px; margin-right: 1rem;">
-                                <span class="checklist__text" style="font-size: 0.95rem;">Снижение качества оргазма</span>
+                            <div class="feature feature--compact">
+                                <div class="feature__icon">
+                                    <img src="images/оргазм.svg" alt="">
+                                </div>
+                                <p class="feature__text">Снижение качества оргазма</p>
                             </div>
                         </div>
                     </div>
-                    <div class="card card--danger" style="padding: 1.5rem;">
-                        <h3 class="card__title" style="font-size: 1.4rem; margin-bottom: 1.5rem;">Функциональные нарушения</h3>
-                        <div class="checklist" style="gap: 1rem;">
-                            <div class="checklist__item" style="padding: 0.75rem 1rem;">
-                                <img src="images/частое_мочеиспускание.svg" alt="" style="width: 32px; height: 32px; margin-right: 1rem;">
-                                <span class="checklist__text" style="font-size: 0.95rem;">Учащённое мочеиспускание (более 8 раз/сутки)</span>
+                    <div class="card">
+                        <h3 class="card__title">Функциональные нарушения</h3>
+                        <div class="grid grid--gap-sm">
+                            <div class="feature feature--compact">
+                                <div class="feature__icon">
+                                    <img src="images/частое_мочеиспускание.svg" alt="">
+                                </div>
+                                <p class="feature__text">Учащённое мочеиспускание (более 8 раз/сутки)</p>
                             </div>
-                            <div class="checklist__item" style="padding: 0.75rem 1rem;">
-                                <img src="images/ночное_моеиспускание.svg" alt="" style="width: 32px; height: 32px; margin-right: 1rem;">
-                                <span class="checklist__text" style="font-size: 0.95rem;">Ночное мочеиспускание (более 1-2 раз)</span>
+                            <div class="feature feature--compact">
+                                <div class="feature__icon">
+                                    <img src="images/ночное_моеиспускание.svg" alt="">
+                                </div>
+                                <p class="feature__text">Ночное мочеиспускание (более 1-2 раз)</p>
                             </div>
-                            <div class="checklist__item" style="padding: 0.75rem 1rem;">
-                                <img src="images/прерывистое_мочеиспускание.svg" alt="" style="width: 32px; height: 32px; margin-right: 1rem;">
-                                <span class="checklist__text" style="font-size: 0.95rem;">Прерывистое мочеиспускание</span>
+                            <div class="feature feature--compact">
+                                <div class="feature__icon">
+                                    <img src="images/прерывистое_мочеиспускание.svg" alt="">
+                                </div>
+                                <p class="feature__text">Прерывистое мочеиспускание</p>
                             </div>
-                            <div class="checklist__item" style="padding: 0.75rem 1rem;">
-                                <img src="images/дефекация.svg" alt="" style="width: 32px; height: 32px; margin-right: 1rem;">
-                                <span class="checklist__text" style="font-size: 0.95rem;">Проблемы с дефекацией, боль после неё</span>
+                            <div class="feature feature--compact">
+                                <div class="feature__icon">
+                                    <img src="images/дефекация.svg" alt="">
+                                </div>
+                                <p class="feature__text">Проблемы с дефекацией, боль после неё</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="alert alert--danger" style="margin-top: 1.5rem; padding: 1rem 1.5rem;">
-                    <span class="alert__icon material-symbols-outlined" style="font-size: 28px;">warning</span>
-                    <p class="alert__text" style="font-size: 0.95rem;">
+                <div class="alert alert--danger mt-lg">
+                    <span class="alert__icon material-symbols-outlined">warning</span>
+                    <p class="alert__text">
                         <strong>Важно:</strong> любая боль или дискомфорт в этой области — не норма и требует внимания специалиста
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- СЛАЙД 15: Методы коррекции - физреабилитация -->
-        <section class="slide" data-slide="8">
+        <!-- СЛАЙД 8: Методы коррекции гиперактивного ТД -->
+        <section class="slide slide--light" data-slide="8">
             <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
-            <div class="slide__container" style="padding: 2rem 3rem;">
-                <h2 class="slide__title" style="font-size: 2rem; margin-bottom: 0.5rem;">Методы коррекции гиперактивного ТД</h2>
-                <h3 class="slide__subtitle" style="color: var(--md-sys-color-secondary); margin-bottom: 2rem; font-size: 1.3rem;">
-                    Основной подход: физическая реабилитация
-                </h3>
-                <div class="process" style="flex-direction: row; gap: 1rem; align-items: center;">
-                    <div class="process__step" style="flex: 1; padding: 1.5rem;">
-                        <div class="process__icon-wrapper" style="width: 70px; height: 70px;">
-                            <img src="images/15_слайд_таз.svg" alt="" style="width: 52px; height: 52px;">
+            <div class="slide__container">
+                <h2 class="slide__title">Методы коррекции гиперактивного ТД</h2>
+                <h3 class="slide__section-title">Основной подход: физическая реабилитация</h3>
+                <div class="process">
+                    <div class="process__step">
+                        <div class="process__icon-wrapper">
+                            <img src="images/15_слайд_таз.svg" alt="">
                         </div>
-                        <div class="process__number" style="width: 44px; height: 44px; font-size: 1.3rem;">1</div>
+                        <div class="process__number">1</div>
                         <div class="process__content">
-                            <h4 class="process__title" style="font-size: 1.25rem; margin-bottom: 0.5rem;">Диагностика и тестирование</h4>
-                            <p class="process__text" style="font-size: 1rem;">Оценка состояния мышц тазового дна</p>
+                            <h4 class="process__title">Диагностика и тестирование</h4>
+                            <p class="process__text">Оценка состояния мышц тазового дна</p>
                         </div>
                     </div>
-                    <div style="flex: 0 0 auto; display: flex; align-items: center; justify-content: center;">
-                        <span class="material-symbols-outlined" style="font-size: 40px; color: var(--md-sys-color-primary);">arrow_forward</span>
+                    <div class="process__arrow">
+                        <span class="material-symbols-outlined">arrow_forward</span>
                     </div>
-                    <div class="process__step" style="flex: 1; padding: 1.5rem;">
-                        <div class="process__icon-wrapper" style="width: 70px; height: 70px;">
-                            <img src="images/15_слайд_диафрагма.svg" alt="" style="width: 52px; height: 52px;">
+                    <div class="process__step">
+                        <div class="process__icon-wrapper">
+                            <img src="images/15_слайд_диафрагма.svg" alt="">
                         </div>
-                        <div class="process__number" style="width: 44px; height: 44px; font-size: 1.3rem;">2</div>
+                        <div class="process__number">2</div>
                         <div class="process__content">
-                            <h4 class="process__title" style="font-size: 1.25rem; margin-bottom: 0.5rem;">Диафрагмальное дыхание</h4>
-                            <p class="process__text" style="font-size: 1rem;">Обучение правильной синхронизации диафрагмы и тазового дна</p>
+                            <h4 class="process__title">Диафрагмальное дыхание</h4>
+                            <p class="process__text">Обучение правильной синхронизации диафрагмы и тазового дна</p>
                         </div>
                     </div>
-                    <div style="flex: 0 0 auto; display: flex; align-items: center; justify-content: center;">
-                        <span class="material-symbols-outlined" style="font-size: 40px; color: var(--md-sys-color-primary);">arrow_forward</span>
+                    <div class="process__arrow">
+                        <span class="material-symbols-outlined">arrow_forward</span>
                     </div>
-                    <div class="process__step" style="flex: 1; padding: 1.5rem;">
-                        <div class="process__icon-wrapper" style="width: 70px; height: 70px;">
-                            <img src="images/15_слайд_ягодицы.svg" alt="" style="width: 52px; height: 52px;">
+                    <div class="process__step">
+                        <div class="process__icon-wrapper">
+                            <img src="images/15_слайд_ягодицы.svg" alt="">
                         </div>
-                        <div class="process__number" style="width: 44px; height: 44px; font-size: 1.3rem;">3</div>
+                        <div class="process__number">3</div>
                         <div class="process__content">
-                            <h4 class="process__title" style="font-size: 1.25rem; margin-bottom: 0.5rem;">Работа со смежными мышцами</h4>
-                            <p class="process__text" style="font-size: 1rem;">Приводящие и ротаторы бедра — укрепляем одно, снимаем напряжение с другого</p>
+                            <h4 class="process__title">Работа со смежными мышцами</h4>
+                            <p class="process__text">Приводящие и ротаторы бедра — укрепляем одно, снимаем напряжение с другого</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- СЛАЙД 16: Дополнительные методы -->
-        <section class="slide" data-slide="9">
+        <!-- СЛАЙД 9: Дополнительные методы -->
+        <section class="slide slide--light" data-slide="9">
             <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
             <div class="slide__container">
                 <h2 class="slide__title">Дополнительные методы</h2>
-                <div class="grid grid--2col" style="margin-top: 2rem;">
+                <div class="grid grid--2col">
                     <div class="card card--secondary">
                         <div class="card__icon">
                             <span class="material-symbols-outlined">monitor_heart</span>
                         </div>
                         <h3 class="card__title">БОС-терапия</h3>
                         <p class="card__text">Биологическая обратная связь — датчик даёт визуальную информацию о работе мышц</p>
-                        <div class="alert alert--info" style="margin-top: 1rem;">
+                        <div class="alert alert--info mt-md">
                             <span class="alert__icon material-symbols-outlined">info</span>
-                            <p class="alert__text" style="font-size: 0.9rem;">
+                            <p class="alert__text">
                                 Эффективна только при наличии базовых навыков расслабления
                             </p>
                         </div>
@@ -373,124 +423,121 @@
                         </div>
                         <h3 class="card__title">Фармакотерапия</h3>
                         <p class="card__text">Препараты для расслабления мышц или антидепрессанты</p>
-                        <div class="alert alert--warning" style="margin-top: 1rem;">
+                        <div class="alert alert--info mt-md">
                             <span class="alert__icon material-symbols-outlined">info</span>
-                            <p class="alert__text" style="font-size: 0.9rem;">
+                            <p class="alert__text">
                                 Действуют только в период приёма, после отмены симптомы возвращаются
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="highlight" style="margin-top: 2rem;">
+                <div class="highlight mt-lg">
                     <p class="highlight__text">При гиперактивном тазовом дне основа лечения — физическая реабилитация</p>
                 </div>
             </div>
         </section>
 
-        <!-- НОВЫЙ СЛАЙД: Йога - не замена реабилитации -->
-        <section class="slide slide--section" data-slide="10">
+        <!-- СЛАЙД 10: Йога - не замена реабилитации -->
+        <section class="slide slide--divider" data-slide="10">
             <div class="slide__container">
-                <h2 class="section__title" style="margin-bottom: 3rem;">Йога - не замена реабилитации</h2>
-                <div style="display: flex; justify-content: center; align-items: center;">
-                    <img src="images/позы_йоги.webp" alt="Позы йоги"
-                         style="width: 100%; max-width: 690px; height: auto;
-                                border-radius: var(--md-sys-shape-corner-lg);
-                                box-shadow: var(--md-sys-elevation-3);">
+                <h2 class="slide__title">Йога - не замена реабилитации</h2>
+                <div class="infographic infographic--large infographic--center infographic--constrained">
+                    <img src="images/позы_йоги.webp" alt="Позы йоги" class="infographic__image">
                 </div>
             </div>
         </section>
 
-        <!-- СЛАЙД 11: Гипоактивное ТД (merged) -->
-        <section class="slide" data-slide="11">
+        <!-- СЛАЙД 11: Гипоактивное тазовое дно -->
+        <section class="slide slide--light" data-slide="11">
             <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
-            <div class="slide__container" style="padding: 2rem 3rem;">
-                <h2 class="slide__title" style="font-size: 2rem; margin-bottom: 0.5rem;">Гипоактивное тазовое дно</h2>
-                <h3 class="slide__subtitle" style="color: var(--md-sys-color-secondary); margin-bottom: 1.5rem; font-size: 1.3rem;">Признаки гипоактивного ТД</h3>
-                <div class="features" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 1rem;">
-                    <div class="feature feature--large" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
-                        <div class="feature__icon" style="width: 64px; height: 64px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
-                            <img src="images/29_слайд_недержание.svg" alt="" style="width: 48px; height: 48px;">
+            <div class="slide__container">
+                <h2 class="slide__title">Гипоактивное тазовое дно</h2>
+                <h3 class="slide__section-title">Признаки гипоактивного ТД</h3>
+                <div class="grid grid--3col">
+                    <div class="feature feature--compact">
+                        <div class="feature__icon">
+                            <img src="images/29_слайд_недержание.svg" alt="">
                         </div>
-                        <p class="feature__text" style="font-size: 1rem; text-align: left;">Недержание мочи или кала</p>
+                        <p class="feature__text">Недержание мочи или кала</p>
                     </div>
-                    <div class="feature feature--large" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
-                        <div class="feature__icon" style="width: 64px; height: 64px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
-                            <img src="images/29_слайд_диастаз.svg" alt="" style="width: 48px; height: 48px;">
+                    <div class="feature feature--compact">
+                        <div class="feature__icon">
+                            <img src="images/29_слайд_диастаз.svg" alt="">
                         </div>
-                        <p class="feature__text" style="font-size: 1rem; text-align: left;">Запоры, вздутие живота</p>
+                        <p class="feature__text">Запоры, вздутие живота</p>
                     </div>
-                    <div class="feature feature--large" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
-                        <div class="feature__icon" style="width: 64px; height: 64px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
-                            <img src="images/37_эрекция.svg" alt="" style="width: 48px; height: 48px;">
+                    <div class="feature feature--compact">
+                        <div class="feature__icon">
+                            <img src="images/37_эрекция.svg" alt="">
                         </div>
-                        <p class="feature__text" style="font-size: 1rem; text-align: left;">У мужчин — проблемы с эректильной функцией</p>
+                        <p class="feature__text">У мужчин — проблемы с эректильной функцией</p>
                     </div>
-                    <div class="feature feature--large" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
-                        <div class="feature__icon" style="width: 64px; height: 64px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
-                            <img src="images/37_боль.svg" alt="" style="width: 48px; height: 48px;">
+                    <div class="feature feature--compact">
+                        <div class="feature__icon">
+                            <img src="images/37_боль.svg" alt="">
                         </div>
-                        <p class="feature__text" style="font-size: 1rem; text-align: left;">Опущение органов малого таза, ощущение инородного тела</p>
+                        <p class="feature__text">Опущение органов малого таза, ощущение инородного тела</p>
                     </div>
-                    <div class="feature feature--large" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
-                        <div class="feature__icon" style="width: 64px; height: 64px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
-                            <img src="images/попадание_воздуха.svg" alt="" style="width: 48px; height: 48px;">
+                    <div class="feature feature--compact">
+                        <div class="feature__icon">
+                            <img src="images/попадание_воздуха.svg" alt="">
                         </div>
-                        <p class="feature__text" style="font-size: 1rem; text-align: left;">Попадание воды или воздуха во влагалище</p>
+                        <p class="feature__text">Попадание воды или воздуха во влагалище</p>
                     </div>
-                    <div class="feature feature--large" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
-                        <div class="feature__icon" style="width: 64px; height: 64px; flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
-                            <img src="images/оргазм.svg" alt="" style="width: 48px; height: 48px;">
+                    <div class="feature feature--compact">
+                        <div class="feature__icon">
+                            <img src="images/оргазм.svg" alt="">
                         </div>
-                        <p class="feature__text" style="font-size: 1rem; text-align: left;">Снижение сексуального влечения</p>
+                        <p class="feature__text">Снижение сексуального влечения</p>
                     </div>
                 </div>
-                <div class="highlight" style="margin-top: 2rem;">
+                <div class="highlight mt-lg">
                     <p class="highlight__text">В этом случае требуется укрепление мышц тазового дна</p>
                 </div>
             </div>
         </section>
 
-        <!-- СЛАЙД 11: Упражнения Кегеля (merged) -->
-        <section class="slide" data-slide="12">
+        <!-- СЛАЙД 12: Упражнения Кегеля -->
+        <section class="slide slide--light" data-slide="12">
             <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
-            <div class="slide__container" style="padding: 1.5rem 3rem;">
-                <h2 class="slide__title" style="font-size: 1.8rem; margin-bottom: 1rem;">Упражнения Кегеля</h2>
-                <div class="info-box" style="margin-bottom: 1rem; padding: 0.75rem 1rem;">
-                    <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Что это такое?</h3>
-                    <p style="font-size: 0.95rem;">Изолированные сокращения мышц тазового дна</p>
+            <div class="slide__container">
+                <h2 class="slide__title">Упражнения Кегеля</h2>
+                <div class="definition definition--info mb-lg">
+                    <h3 class="definition__title">Что это такое?</h3>
+                    <p class="definition__text">Изолированные сокращения мышц тазового дна</p>
                 </div>
-                <div class="grid grid--2col" style="gap: 1.25rem;">
-                    <div class="card card--tertiary" style="padding: 1.25rem;">
-                        <h3 class="card__title" style="font-size: 1.2rem; margin-bottom: 0.75rem;">Шаги выполнения</h3>
-                        <div class="exercise__steps">
+                <div class="grid grid--2col">
+                    <div class="card">
+                        <h3 class="card__title">Шаги выполнения</h3>
+                        <div class="d-flex flex-column gap-md">
                             <div class="step step--compact">
                                 <div class="step__number">1</div>
-                                <p class="step__text" style="font-size: 0.95rem;">Вдох в нижнюю часть живота</p>
+                                <p class="step__text">Вдох в нижнюю часть живота</p>
                             </div>
                             <div class="step step--compact">
                                 <div class="step__number">2</div>
-                                <p class="step__text" style="font-size: 0.95rem;">В конце выдоха сокращаем мышцы тазового дна (как будто останавливаете струю мочи)</p>
+                                <p class="step__text">В конце выдоха сокращаем мышцы тазового дна (как будто останавливаете струю мочи)</p>
                             </div>
                             <div class="step step--compact">
                                 <div class="step__number">3</div>
-                                <p class="step__text" style="font-size: 0.95rem;">Обязательно расслабляйте мышцы на вдохе</p>
+                                <p class="step__text">Обязательно расслабляйте мышцы на вдохе</p>
                             </div>
                         </div>
                     </div>
-                    <div class="card card--danger" style="padding: 1.25rem;">
-                        <h3 class="card__title" style="font-size: 1.2rem; margin-bottom: 0.75rem;">Важные правила</h3>
+                    <div class="card">
+                        <h3 class="card__title">Важные правила</h3>
                         <div class="checklist">
                             <div class="checklist__item">
                                 <span class="checklist__icon material-symbols-outlined">close</span>
-                                <span class="checklist__text" style="font-size: 0.95rem;">Нельзя делать во время мочеиспускания</span>
+                                <span class="checklist__text">Нельзя делать во время мочеиспускания</span>
                             </div>
                             <div class="checklist__item">
                                 <span class="checklist__icon material-symbols-outlined">schedule</span>
-                                <span class="checklist__text" style="font-size: 0.95rem;">Сокращение достигает максимума за 6 секунд</span>
+                                <span class="checklist__text">Сокращение достигает максимума за 6 секунд</span>
                             </div>
                             <div class="checklist__item">
                                 <span class="checklist__icon material-symbols-outlined">air</span>
-                                <span class="checklist__text" style="font-size: 0.95rem;">Поддерживайте ровное дыхание</span>
+                                <span class="checklist__text">Поддерживайте ровное дыхание</span>
                             </div>
                         </div>
                     </div>
@@ -498,48 +545,44 @@
             </div>
         </section>
 
-        <!-- СЛАЙД 20 (фактически 22): Чего избегать при Кегеле -->
-        <section class="slide" data-slide="13">
+        <!-- СЛАЙД 13: Чего избегать при выполнении -->
+        <section class="slide slide--light" data-slide="13">
             <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
-            <div class="slide__container" style="padding: 2rem 3rem;">
-                <h2 class="slide__title" style="font-size: 2rem; margin-bottom: 1.5rem;">Чего избегать при выполнении</h2>
-                <div class="grid grid--2col" style="gap: 2rem; align-items: center;">
-                    <div>
-                        <div class="alert alert--danger" style="margin-bottom: 1.25rem;">
+            <div class="slide__container">
+                <h2 class="slide__title">Чего избегать при выполнении</h2>
+                <div class="grid grid--2col grid--align-center">
+                    <div class="d-flex flex-column gap-md">
+                        <div class="alert alert--danger">
                             <span class="alert__icon material-symbols-outlined">close</span>
-                            <p class="alert__text" style="font-size: 1.1rem;">
+                            <p class="alert__text">
                                 <strong>Напряжения мышц живота выше пупка</strong>
                             </p>
                         </div>
-                        <div class="alert alert--danger" style="margin-bottom: 1.25rem;">
+                        <div class="alert alert--danger">
                             <span class="alert__icon material-symbols-outlined">close</span>
-                            <p class="alert__text" style="font-size: 1.1rem;">
+                            <p class="alert__text">
                                 <strong>Напряжения ног и ягодиц</strong>
                             </p>
                         </div>
                         <div class="alert alert--danger">
                             <span class="alert__icon material-symbols-outlined">close</span>
-                            <p class="alert__text" style="font-size: 1.1rem;">
+                            <p class="alert__text">
                                 <strong>Задержки дыхания — поддерживайте ровное дыхание</strong>
                             </p>
                         </div>
                     </div>
-                    <div style="display: flex; justify-content: center; align-items: center;">
-                        <img src="images/kegel.gif" alt="Техника упражнений Кегеля"
-                             style="width: 100%; max-width: 450px; height: auto;
-                                    border-radius: var(--md-sys-shape-corner-lg);
-                                    box-shadow: var(--md-sys-elevation-2);">
+                    <div class="infographic infographic--medium infographic--center infographic--constrained">
+                        <img src="images/kegel.gif" alt="Техника упражнений Кегеля" class="infographic__image">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- СЛАЙД 21 (фактически 23): Ограничения метода -->
-        <section class="slide" data-slide="14">
-            <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
+        <!-- СЛАЙД 14: Ограничения упражнений Кегеля -->
+        <section class="slide slide--divider" data-slide="14">
             <div class="slide__container">
                 <h2 class="slide__title">Ограничения упражнений Кегеля</h2>
-                <div class="comparison" style="margin-top: 2rem;">
+                <div class="comparison mt-xl">
                     <div class="comparison__item comparison__item--danger">
                         <h3 class="comparison__title">Поверхностный слой</h3>
                         <p class="comparison__text">Упражнения Кегеля воздействуют только на поверхностные мышцы</p>
@@ -550,11 +593,9 @@
                         <p class="comparison__text">Не включается в работу при изолированных упражнениях</p>
                     </div>
                 </div>
-                <div class="info-box" style="margin-top: 2rem;">
-                    <h3 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--md-sys-color-secondary);">
-                        Как активировать глубокие слои?
-                    </h3>
-                    <p style="font-size: 1.1rem; line-height: 1.6;">
+                <div class="definition definition--secondary mt-xl">
+                    <h3 class="definition__title">Как активировать глубокие слои?</h3>
+                    <p class="definition__text">
                         Глубокие мышцы тазового дна включаются через <strong>активацию мышц кора</strong> —
                         поперечной мышцы живота и внутренней косой. Они работают как единая система и не включаются изолированно.
                     </p>
@@ -562,175 +603,187 @@
             </div>
         </section>
 
-        <!-- СЛАЙД 14: Традиционные упражнения на пресс (merged) -->
-        <section class="slide" data-slide="15">
+        <!-- СЛАЙД 15: Традиционные упражнения на пресс -->
+        <section class="slide slide--light" data-slide="15">
             <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
-            <div class="slide__container" style="padding: 2rem 3rem 3rem 3rem;">
-                <h2 class="slide__title" style="font-size: 2rem; margin-bottom: 0.5rem;">Традиционные упражнения на пресс</h2>
-                <h3 class="slide__subtitle" style="color: var(--md-sys-color-secondary); margin-bottom: 1.5rem; font-size: 1.3rem;">Проблема классических скручиваний</h3>
-                <div class="grid grid--2col" style="gap: 2rem; align-items: center; margin-bottom: 2rem;">
-                    <div>
-                        <div class="card card--danger" style="padding: 1.5rem;">
-                            <h3 class="card__title" style="font-size: 1.3rem; margin-bottom: 1rem;">Что не так с классическими подъёмами корпуса?</h3>
-                            <div class="checklist" style="gap: 0.75rem;">
-                                <div class="checklist__item">
-                                    <span class="checklist__icon material-symbols-outlined">close</span>
-                                    <span class="checklist__text" style="font-size: 0.95rem;">Сближение прямых мышц живота → повышение внутрибрюшного давления</span>
-                                </div>
-                                <div class="checklist__item">
-                                    <span class="checklist__icon material-symbols-outlined">close</span>
-                                    <span class="checklist__text" style="font-size: 0.95rem;">Сильное давление на тазовое дно вниз</span>
-                                </div>
-                                <div class="checklist__item">
-                                    <span class="checklist__icon material-symbols-outlined">close</span>
-                                    <span class="checklist__text" style="font-size: 0.95rem;">Может приводить к опущению органов малого таза</span>
-                                </div>
-                                <div class="checklist__item">
-                                    <span class="checklist__icon material-symbols-outlined">close</span>
-                                    <span class="checklist__text" style="font-size: 0.95rem;">Потеря физиологического поясничного лордоза</span>
-                                </div>
+            <div class="slide__container">
+                <h2 class="slide__title">Традиционные упражнения на пресс</h2>
+                <h3 class="slide__section-title">Проблема классических скручиваний</h3>
+                <div class="grid grid--2col grid--align-center">
+                    <div class="card card--danger">
+                        <h3 class="card__title">Что не так с классическими подъёмами корпуса?</h3>
+                        <div class="checklist">
+                            <div class="checklist__item">
+                                <span class="checklist__icon material-symbols-outlined">close</span>
+                                <span class="checklist__text">Сближение прямых мышц живота → повышение внутрибрюшного давления</span>
+                            </div>
+                            <div class="checklist__item">
+                                <span class="checklist__icon material-symbols-outlined">close</span>
+                                <span class="checklist__text">Сильное давление на тазовое дно вниз</span>
+                            </div>
+                            <div class="checklist__item">
+                                <span class="checklist__icon material-symbols-outlined">close</span>
+                                <span class="checklist__text">Может приводить к опущению органов малого таза</span>
+                            </div>
+                            <div class="checklist__item">
+                                <span class="checklist__icon material-symbols-outlined">close</span>
+                                <span class="checklist__text">Потеря физиологического поясничного лордоза</span>
                             </div>
                         </div>
                     </div>
-                    <div style="display: flex; justify-content: center; align-items: center;">
-                        <img src="images/кранч.webp" alt="Классические скручивания"
-                             style="width: 100%; max-width: 350px; height: auto;
-                                    border-radius: var(--md-sys-shape-corner-lg);
-                                    box-shadow: var(--md-sys-elevation-2);">
+                    <div class="infographic infographic--medium infographic--center infographic--constrained-350">
+                        <img src="images/кранч.webp" alt="Классические скручивания" class="infographic__image">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- СЛАЙД 23 (фактически 26): Правильная техника -->
-        <section class="slide" data-slide="16">
+        <!-- СЛАЙД 16: Правильная техника упражнений на пресс -->
+        <section class="slide slide--light" data-slide="16">
             <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
-            <div class="slide__container" style="padding: 2rem 3rem;">
-                <h2 class="slide__title" style="font-size: 1.8rem; margin-bottom: 1rem;">Правильная техника упражнений на пресс</h2>
-                <div class="comparison" style="margin-top: 1rem; gap: 1.5rem;">
-                    <div class="comparison__item comparison__item--danger" style="padding: 1.8rem;">
-                        <h3 class="comparison__title" style="font-size: 1.35rem; margin-bottom: 1.1rem;">Неправильно</h3>
-                        <div class="checklist" style="gap: 0.9rem;">
-                            <div class="checklist__item" style="padding: 0.9rem;">
-                                <span class="checklist__icon material-symbols-outlined" style="font-size: 25px;">close</span>
-                                <span class="checklist__text" style="font-size: 1rem;">Поясница прижата к полу</span>
+            <div class="slide__container">
+                <h2 class="slide__title">Правильная техника упражнений на пресс</h2>
+                <div class="comparison mt-lg">
+                    <div class="comparison__item comparison__item--danger-light">
+                        <h3 class="comparison__title">Неправильно</h3>
+                        <div class="checklist">
+                            <div class="checklist__item">
+                                <span class="checklist__icon material-symbols-outlined">close</span>
+                                <span class="checklist__text">Поясница прижата к полу</span>
                             </div>
-                            <div class="checklist__item" style="padding: 0.9rem;">
-                                <span class="checklist__icon material-symbols-outlined" style="font-size: 25px;">close</span>
-                                <span class="checklist__text" style="font-size: 1rem;">Резкие подъёмы</span>
+                            <div class="checklist__item">
+                                <span class="checklist__icon material-symbols-outlined">close</span>
+                                <span class="checklist__text">Резкие подъёмы</span>
                             </div>
-                            <div class="checklist__item" style="padding: 0.9rem;">
-                                <span class="checklist__icon material-symbols-outlined" style="font-size: 25px;">close</span>
-                                <span class="checklist__text" style="font-size: 1rem;">Подкручивание таза в задний наклон</span>
+                            <div class="checklist__item">
+                                <span class="checklist__icon material-symbols-outlined">close</span>
+                                <span class="checklist__text">Подкручивание таза в задний наклон</span>
                             </div>
                         </div>
                     </div>
-                    <div class="comparison__vs">→</div>
-                    <div class="comparison__item comparison__item--success" style="padding: 1.8rem;">
-                        <h3 class="comparison__title" style="font-size: 1.35rem; margin-bottom: 1.1rem;">Правильно</h3>
-                        <div class="checklist" style="gap: 0.9rem;">
-                            <div class="checklist__item" style="padding: 0.9rem;">
-                                <span class="checklist__icon material-symbols-outlined" style="font-size: 25px;">check</span>
-                                <span class="checklist__text" style="font-size: 1rem;">Сохранён поясничный изгиб</span>
+                    <div class="comparison__vs comparison__vs--primary">→</div>
+                    <div class="comparison__item comparison__item--success-light">
+                        <h3 class="comparison__title">Правильно</h3>
+                        <div class="checklist">
+                            <div class="checklist__item">
+                                <span class="checklist__icon material-symbols-outlined">check</span>
+                                <span class="checklist__text">Сохранён поясничный изгиб</span>
                             </div>
-                            <div class="checklist__item" style="padding: 0.9rem;">
-                                <span class="checklist__icon material-symbols-outlined" style="font-size: 25px;">check</span>
-                                <span class="checklist__text" style="font-size: 1rem;">Вдох-выдох</span>
+                            <div class="checklist__item">
+                                <span class="checklist__icon material-symbols-outlined">check</span>
+                                <span class="checklist__text">Вдох-выдох</span>
                             </div>
-                            <div class="checklist__item" style="padding: 0.9rem;">
-                                <span class="checklist__icon material-symbols-outlined" style="font-size: 25px;">check</span>
-                                <span class="checklist__text" style="font-size: 1rem;">В конце выдоха собираем низ живота</span>
+                            <div class="checklist__item">
+                                <span class="checklist__icon material-symbols-outlined">check</span>
+                                <span class="checklist__text">В конце выдоха собираем низ живота</span>
                             </div>
-                            <div class="checklist__item" style="padding: 0.9rem;">
-                                <span class="checklist__icon material-symbols-outlined" style="font-size: 25px;">check</span>
-                                <span class="checklist__text" style="font-size: 1rem;">Плавный подъём</span>
+                            <div class="checklist__item">
+                                <span class="checklist__icon material-symbols-outlined">check</span>
+                                <span class="checklist__text">Плавный подъём</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="highlight" style="margin-top: 2rem;">
+                <div class="highlight mt-xl">
                     <p class="highlight__text">Такая техника укрепляет мышцы живота без избыточного давления на тазовое дно</p>
                 </div>
             </div>
         </section>
 
-        <!-- СЛАЙД 16: Беременность - подготовка (merged) -->
-        <section class="slide" data-slide="17">
-            <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
-            <div class="slide__container" style="padding: 2rem 3rem;">
-                <h2 class="slide__title" style="font-size: 2rem; margin-bottom: 0.5rem;">Беременность</h2>
-                <h3 class="slide__subtitle" style="color: var(--md-sys-color-secondary); margin-bottom: 1.5rem; font-size: 1.3rem;">Почему так важна подготовка</h3>
-                <div class="grid grid--2col" style="gap: 2rem; align-items: center;">
-                    <div>
-                        <div class="quote">
-                            <blockquote class="quote__text" style="color: var(--md-sys-color-error); font-size: 1.5rem;">
-                                9 месяцев на ваше тазовое дно давит растущий ребенок. Каждый день. Всё сильнее.
-                            </blockquote>
-                        </div>
-                        <div class="highlight" style="margin-top: 2rem;">
-                            <p class="highlight__text">Укрепление во время беременности — это необходимость!</p>
-                        </div>
-                    </div>
-                    <div style="display: flex; justify-content: center; align-items: center;">
-                        <img src="images/беременная.webp" alt="Беременность и подготовка"
-                             style="width: 100%; max-width: 360px; height: auto;
-                                    border-radius: var(--md-sys-shape-corner-lg);
-                                    box-shadow: var(--md-sys-elevation-2);">
+        <!-- СЛАЙД 17: Техника исполнения кранча (Видео) -->
+        <section class="slide slide--divider" data-slide="17">
+            <div class="slide__container">
+                <h2 class="slide__title">Техника исполнения кранча</h2>
+                <div class="video mt-lg">
+                    <div class="video__wrapper">
+                        <iframe
+                            class="video__iframe"
+                            src="https://rutube.ru/play/embed/7391523b94acde307f01233599a36bea/?p=ROOkZY4MSKIsySj_eANB1w"
+                            frameborder="0"
+                            allow="clipboard-write; autoplay"
+                            webkitAllowFullScreen
+                            mozallowfullscreen
+                            allowFullScreen>
+                        </iframe>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- СЛАЙД 25 (фактически 29): Что даёт укрепление -->
-        <section class="slide" data-slide="18">
+        <!-- СЛАЙД 18: Беременность -->
+        <section class="slide slide--light" data-slide="18">
+            <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
+            <div class="slide__container">
+                <h2 class="slide__title">Беременность</h2>
+                <h3 class="slide__section-title">Почему так важна подготовка</h3>
+                <div class="grid grid--2col grid--align-center">
+                    <div>
+                        <div class="quote quote--error">
+                            <blockquote class="quote__text">
+                                9 месяцев на ваше тазовое дно давит растущий ребенок. Каждый день. Всё сильнее.
+                            </blockquote>
+                        </div>
+                        <div class="highlight mt-xl">
+                            <p class="highlight__text">Укрепление во время беременности — это необходимость!</p>
+                        </div>
+                    </div>
+                    <div class="infographic infographic--medium infographic--center infographic--constrained-sm">
+                        <img src="images/беременная.webp" alt="Беременность и подготовка" class="infographic__image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЛАЙД 19: Что даёт укрепление во время беременности -->
+        <section class="slide slide--light" data-slide="19">
             <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
             <div class="slide__container">
                 <h2 class="slide__title">Что даёт укрепление во время беременности</h2>
-                <div class="cards" style="margin-top: 2rem;">
+                <div class="grid grid--4col mt-lg">
                     <div class="card card--tertiary">
                         <div class="card__icon">
-                            <img src="images/29_слайд_ребенок.svg" alt="" style="width: 48px; height: 48px;">
+                            <img src="images/29_слайд_ребенок.svg" alt="">
                         </div>
                         <p class="card__text">Помогает в момент прохождения плода по родовым путям</p>
                     </div>
                     <div class="card card--tertiary">
                         <div class="card__icon">
-                            <img src="images/15_слайд_таз.svg" alt="" style="width: 48px; height: 48px;">
+                            <img src="images/15_слайд_таз.svg" alt="">
                         </div>
                         <p class="card__text">Предотвращает симфизит</p>
                     </div>
                     <div class="card card--tertiary">
                         <div class="card__icon">
-                            <img src="images/29_слайд_недержание.svg" alt="" style="width: 48px; height: 48px;">
+                            <img src="images/29_слайд_недержание.svg" alt="">
                         </div>
                         <p class="card__text">Снижает риск недержания мочи после родов</p>
                     </div>
                     <div class="card card--tertiary">
                         <div class="card__icon">
-                            <img src="images/29_слайд_диастаз.svg" alt="" style="width: 48px; height: 48px;">
+                            <img src="images/29_слайд_диастаз.svg" alt="">
                         </div>
                         <p class="card__text">Профилактика диастаза</p>
                     </div>
                 </div>
-                <div style="margin-top: 2rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
-                    <div style="display: flex; align-items: center; gap: 0.75rem;">
-                        <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--md-sys-color-primary); flex-shrink: 0;"></div>
-                        <p style="font-size: 1rem; line-height: 1.4;">Снижение отеков и лимфатических застоев</p>
+                <div class="bullet-list mt-lg">
+                    <div class="bullet-list__item">
+                        <div class="bullet-list__marker bullet-list__marker--primary"></div>
+                        <p class="bullet-list__text">Снижение отеков и лимфатических застоев</p>
                     </div>
-                    <div style="display: flex; align-items: center; gap: 0.75rem;">
-                        <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--md-sys-color-secondary); flex-shrink: 0;"></div>
-                        <p style="font-size: 1rem; line-height: 1.4;">Улучшение подвижности ТБС</p>
+                    <div class="bullet-list__item">
+                        <div class="bullet-list__marker bullet-list__marker--secondary"></div>
+                        <p class="bullet-list__text">Улучшение подвижности ТБС</p>
                     </div>
-                    <div style="display: flex; align-items: center; gap: 0.75rem;">
-                        <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--md-sys-color-tertiary); flex-shrink: 0;"></div>
-                        <p style="font-size: 1rem; line-height: 1.4;">Коррекция осанки</p>
+                    <div class="bullet-list__item">
+                        <div class="bullet-list__marker bullet-list__marker--tertiary"></div>
+                        <p class="bullet-list__text">Коррекция осанки</p>
                     </div>
-                    <div style="display: flex; align-items: center; gap: 0.75rem;">
-                        <div style="width: 12px; height: 12px; border-radius: 50%; background: #9C27B0; flex-shrink: 0;"></div>
-                        <p style="font-size: 1rem; line-height: 1.4;">Поддержание общего психомоторного фона и физического здоровья</p>
+                    <div class="bullet-list__item">
+                        <div class="bullet-list__marker bullet-list__marker--custom"></div>
+                        <p class="bullet-list__text">Поддержание общего психомоторного фона и физического здоровья</p>
                     </div>
                 </div>
-                <div class="alert alert--warning" style="margin-top: 2rem;">
+                <div class="alert alert--danger mt-lg">
                     <span class="alert__icon material-symbols-outlined">warning</span>
                     <p class="alert__text">
                         <strong>Важно!</strong> Есть противопоказания. Сначала к врачу, потом к тренеру.
@@ -739,82 +792,82 @@
             </div>
         </section>
 
-        <!-- СЛАЙД 26 (фактически 30): Принципы нагрузки по триместрам -->
-        <section class="slide" data-slide="19">
+        <!-- СЛАЙД 20: Принципы нагрузки по триместрам -->
+        <section class="slide slide--light" data-slide="20">
             <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
-            <div class="slide__container" style="padding: 2rem 3rem;">
-                <h2 class="slide__title" style="font-size: 2rem; margin-bottom: 1.5rem;">Принципы нагрузки по триместрам</h2>
-                <div class="grid grid--2col" style="gap: 2rem;">
-                    <div class="card card--secondary" style="padding: 1.5rem;">
-                        <h3 class="card__title" style="font-size: 1.3rem; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
-                            <span class="material-symbols-outlined" style="font-size: 28px;">person</span>
+            <div class="slide__container">
+                <h2 class="slide__title mb-lg">Принципы нагрузки по триместрам</h2>
+                <div class="grid grid--2col gap-lg">
+                    <div class="card card--secondary">
+                        <h3 class="card__title d-flex align-items-center gap-sm">
+                            <span class="material-symbols-outlined">person</span>
                             Без спорта до беременности
                         </h3>
-                        <div style="display: flex; flex-direction: column; gap: 1rem;">
-                            <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: var(--md-sys-color-surface-variant); border-radius: var(--md-sys-shape-corner-md);">
-                                <div style="flex: 0 0 auto; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--md-sys-color-secondary); color: white; border-radius: 50%; font-weight: 600; font-size: 1.1rem;">1</div>
-                                <div style="flex: 1;">
-                                    <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem;">1 триместр (1-12 нед)</h4>
-                                    <p style="font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem;">
-                                        <span class="material-symbols-outlined" style="font-size: 20px; color: var(--md-sys-color-tertiary);">remove</span>
+                        <div class="d-flex flex-column gap-md mt-md">
+                            <div class="step step--compact step--secondary">
+                                <div class="step__number">1</div>
+                                <div class="step__content">
+                                    <h4 class="step__title">1 триместр (1-12 нед)</h4>
+                                    <p class="step__description">
+                                        <span class="material-symbols-outlined step__icon text-on-surface">remove</span>
                                         Начинаем с минимума
                                     </p>
                                 </div>
                             </div>
-                            <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: var(--md-sys-color-surface-variant); border-radius: var(--md-sys-shape-corner-md);">
-                                <div style="flex: 0 0 auto; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--md-sys-color-secondary); color: white; border-radius: 50%; font-weight: 600; font-size: 1.1rem;">2</div>
-                                <div style="flex: 1;">
-                                    <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem;">2 триместр (13-27 нед)</h4>
-                                    <p style="font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem;">
-                                        <span class="material-symbols-outlined" style="font-size: 20px; color: var(--md-sys-color-tertiary);">trending_up</span>
+                            <div class="step step--compact step--secondary">
+                                <div class="step__number">2</div>
+                                <div class="step__content">
+                                    <h4 class="step__title">2 триместр (13-27 нед)</h4>
+                                    <p class="step__description">
+                                        <span class="material-symbols-outlined step__icon text-on-surface">trending_up</span>
                                         Увеличение на 20-30%
                                     </p>
                                 </div>
                             </div>
-                            <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: var(--md-sys-color-surface-variant); border-radius: var(--md-sys-shape-corner-md);">
-                                <div style="flex: 0 0 auto; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--md-sys-color-secondary); color: white; border-radius: 50%; font-weight: 600; font-size: 1.1rem;">3</div>
-                                <div style="flex: 1;">
-                                    <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem;">3 триместр (28-40 нед)</h4>
-                                    <p style="font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem;">
-                                        <span class="material-symbols-outlined" style="font-size: 20px; color: var(--md-sys-color-error);">trending_down</span>
+                            <div class="step step--compact step--secondary">
+                                <div class="step__number">3</div>
+                                <div class="step__content">
+                                    <h4 class="step__title">3 триместр (28-40 нед)</h4>
+                                    <p class="step__description">
+                                        <span class="material-symbols-outlined step__icon text-on-surface">trending_down</span>
                                         Плавное снижение
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card card--tertiary" style="padding: 1.5rem;">
-                        <h3 class="card__title" style="font-size: 1.3rem; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
-                            <span class="material-symbols-outlined" style="font-size: 28px;">fitness_center</span>
+                    <div class="card card--tertiary">
+                        <h3 class="card__title d-flex align-items-center gap-sm">
+                            <span class="material-symbols-outlined">fitness_center</span>
                             Со спортом до беременности
                         </h3>
-                        <div style="display: flex; flex-direction: column; gap: 1rem;">
-                            <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: var(--md-sys-color-surface-variant); border-radius: var(--md-sys-shape-corner-md);">
-                                <div style="flex: 0 0 auto; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--md-sys-color-tertiary); color: white; border-radius: 50%; font-weight: 600; font-size: 1.1rem;">1</div>
-                                <div style="flex: 1;">
-                                    <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem;">1 триместр (1-12 нед)</h4>
-                                    <p style="font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem;">
-                                        <span class="material-symbols-outlined" style="font-size: 20px; color: var(--md-sys-color-error);">trending_down</span>
+                        <div class="d-flex flex-column gap-md mt-md">
+                            <div class="step step--compact step--tertiary">
+                                <div class="step__number">1</div>
+                                <div class="step__content">
+                                    <h4 class="step__title">1 триместр (1-12 нед)</h4>
+                                    <p class="step__description">
+                                        <span class="material-symbols-outlined step__icon text-on-surface">trending_down</span>
                                         Снижение на 20-30%
                                     </p>
                                 </div>
                             </div>
-                            <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: var(--md-sys-color-surface-variant); border-radius: var(--md-sys-shape-corner-md);">
-                                <div style="flex: 0 0 auto; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--md-sys-color-tertiary); color: white; border-radius: 50%; font-weight: 600; font-size: 1.1rem;">2</div>
-                                <div style="flex: 1;">
-                                    <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem;">2 триместр (13-27 нед)</h4>
-                                    <p style="font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem;">
-                                        <span class="material-symbols-outlined" style="font-size: 20px; color: var(--md-sys-color-tertiary);">trending_up</span>
+                            <div class="step step--compact step--tertiary">
+                                <div class="step__number">2</div>
+                                <div class="step__content">
+                                    <h4 class="step__title">2 триместр (13-27 нед)</h4>
+                                    <p class="step__description">
+                                        <span class="material-symbols-outlined step__icon text-on-surface">trending_up</span>
                                         Постепенное увеличение
                                     </p>
                                 </div>
                             </div>
-                            <div style="display: flex; align-items: center; gap: 1rem; padding: 0.75rem; background: var(--md-sys-color-surface-variant); border-radius: var(--md-sys-shape-corner-md);">
-                                <div style="flex: 0 0 auto; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--md-sys-color-tertiary); color: white; border-radius: 50%; font-weight: 600; font-size: 1.1rem;">3</div>
-                                <div style="flex: 1;">
-                                    <h4 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem;">3 триместр (28-40 нед)</h4>
-                                    <p style="font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem;">
-                                        <span class="material-symbols-outlined" style="font-size: 20px; color: var(--md-sys-color-error);">trending_down</span>
+                            <div class="step step--compact step--tertiary">
+                                <div class="step__number">3</div>
+                                <div class="step__content">
+                                    <h4 class="step__title">3 триместр (28-40 нед)</h4>
+                                    <p class="step__description">
+                                        <span class="material-symbols-outlined step__icon text-on-surface">trending_down</span>
                                         Плавное снижение
                                     </p>
                                 </div>
@@ -825,203 +878,194 @@
             </div>
         </section>
 
-        <!-- СЛАЙД 27 (фактически 31): Что исключить -->
-        <section class="slide" data-slide="20">
+        <!-- СЛАЙД 21: Что исключается во время беременности -->
+        <section class="slide slide--light" data-slide="21">
             <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
-            <div class="slide__container" style="padding: 2rem 3rem;">
-                <h2 class="slide__title" style="font-size: 2rem; margin-bottom: 1.5rem;">Что исключается во время беременности</h2>
-                <div class="grid grid--2col" style="gap: 2rem; align-items: center;">
-                    <div>
-                        <div class="alert alert--danger" style="margin-bottom: 1.5rem;">
+            <div class="slide__container">
+                <h2 class="slide__title">Что исключается во время беременности</h2>
+                <div class="grid grid--2col grid--align-center mt-lg gap-lg">
+                    <div class="d-flex flex-column gap-md">
+                        <div class="alert alert--danger">
                             <span class="alert__icon material-symbols-outlined">close</span>
-                            <p class="alert__text" style="font-size: 1.2rem;">
+                            <p class="alert__text text-lg">
                                 <strong>Контактные виды спорта</strong> (бокс, единоборства)
                             </p>
                         </div>
-                        <div class="alert alert--danger" style="margin-bottom: 1.5rem;">
+                        <div class="alert alert--danger">
                             <span class="alert__icon material-symbols-outlined">close</span>
-                            <p class="alert__text" style="font-size: 1.2rem;">
+                            <p class="alert__text text-lg">
                                 <strong>Виды с риском падения</strong> (лыжи, конный спорт, велосипед)
                             </p>
                         </div>
                         <div class="alert alert--danger">
                             <span class="alert__icon material-symbols-outlined">close</span>
-                            <p class="alert__text" style="font-size: 1.2rem;">
+                            <p class="alert__text text-lg">
                                 <strong>Ударные нагрузки</strong> (бег, прыжки)
                             </p>
                         </div>
                     </div>
-                    <div style="display: flex; justify-content: center; align-items: center;">
-                        <img src="images/бег_беременная.png" alt="Исключение ударных нагрузок при беременности"
-                             style="width: 100%; max-width: 460px; height: auto;
-                                    border-radius: var(--md-sys-shape-corner-lg);
-                                    box-shadow: var(--md-sys-elevation-2);">
+                    <div class="infographic infographic--medium infographic--constrained-460">
+                        <img src="images/бег_беременная.png" alt="Исключение ударных нагрузок при беременности" class="infographic__image">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- СЛАЙД 28 (фактически 32): Основная работа во время беременности -->
-        <section class="slide" data-slide="21">
+        <!-- СЛАЙД 22: Основная работа во время беременности -->
+        <section class="slide slide--light" data-slide="22">
             <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
-            <div class="slide__container" style="padding: 2rem 3rem;">
-                <h2 class="slide__title" style="font-size: 2rem; margin-bottom: 1.5rem;">Основная работа во время беременности</h2>
-                <div class="cards" style="margin-top: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
-                    <div class="card card--tertiary" style="padding: 1rem;">
+            <div class="slide__container">
+                <h2 class="slide__title">Основная работа во время беременности</h2>
+                <div class="grid grid--4col mt-lg">
+                    <div class="card card--tertiary">
                         <div class="card__icon">
-                            <span class="material-symbols-outlined" style="font-size: 36px;">sync_alt</span>
+                            <span class="material-symbols-outlined">sync_alt</span>
                         </div>
-                        <h3 class="card__title" style="font-size: 1rem; margin-top: 0.5rem;">1. Сокращение/расслабление</h3>
-                        <p class="card__text" style="font-size: 0.85rem;">Обучение контролю над мышцами тазового дна</p>
+                        <h3 class="card__title">1. Сокращение/расслабление</h3>
+                        <p class="card__text text-sm">Обучение контролю над мышцами тазового дна</p>
                     </div>
-                    <div class="card card--tertiary" style="padding: 1rem;">
+                    <div class="card card--tertiary">
                         <div class="card__icon">
-                            <span class="material-symbols-outlined" style="font-size: 36px;">child_care</span>
+                            <span class="material-symbols-outlined">child_care</span>
                         </div>
-                        <h3 class="card__title" style="font-size: 1rem; margin-top: 0.5rem;">2. "Обними ребёнка"</h3>
-                        <p class="card__text" style="font-size: 0.85rem;">Включение поперечных мышц живота вместе с тазовым дном</p>
+                        <h3 class="card__title">2. "Обними ребёнка"</h3>
+                        <p class="card__text text-sm">Включение поперечных мышц живота вместе с тазовым дном</p>
                     </div>
-                    <div class="card card--tertiary" style="padding: 1rem;">
+                    <div class="card card--tertiary">
                         <div class="card__icon">
-                            <span class="material-symbols-outlined" style="font-size: 36px;">fitness_center</span>
+                            <span class="material-symbols-outlined">fitness_center</span>
                         </div>
-                        <h3 class="card__title" style="font-size: 1rem; margin-top: 0.5rem;">3. Укрепление ягодиц</h3>
-                        <p class="card__text" style="font-size: 0.85rem;">Мостики, приседания с правильной техникой</p>
+                        <h3 class="card__title">3. Укрепление ягодиц</h3>
+                        <p class="card__text text-sm">Мостики, приседания с правильной техникой</p>
                     </div>
-                    <div class="card card--tertiary" style="padding: 1rem;">
+                    <div class="card card--tertiary">
                         <div class="card__icon">
-                            <span class="material-symbols-outlined" style="font-size: 36px;">accessibility_new</span>
+                            <span class="material-symbols-outlined">accessibility_new</span>
                         </div>
-                        <h3 class="card__title" style="font-size: 1rem; margin-top: 0.5rem;">4. Укрепление верхних конечностей</h3>
-                        <p class="card__text" style="font-size: 0.85rem;">Подготовка к ношению ребенка, профилактика болей в спине и шее</p>
+                        <h3 class="card__title">4. Укрепление верхних конечностей</h3>
+                        <p class="card__text text-sm">Подготовка к ношению ребенка, профилактика болей в спине и шее</p>
                     </div>
                 </div>
-                <div style="margin-top: 2rem; display: flex; justify-content: center; align-items: center;">
-                    <img src="images/упражнение.gif" alt="Упражнения во время беременности"
-                         style="width: 100%; max-width: 633px; height: auto;
-                                border-radius: var(--md-sys-shape-corner-lg);
-                                box-shadow: var(--md-sys-elevation-2);">
+                <div class="infographic infographic--medium infographic--constrained-633 mt-lg">
+                    <img src="images/упражнение.gif" alt="Упражнения во время беременности" class="infographic__image">
                 </div>
             </div>
         </section>
 
-        <!-- НОВЫЙ СЛАЙД: Можно и нельзя -->
-        <section class="slide" data-slide="22">
+        <!-- СЛАЙД 23: Упражнения - можно и нельзя -->
+        <section class="slide slide--light" data-slide="23">
             <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
-            <div class="slide__container" style="padding: 1.5rem 3rem;">
-                <h2 class="slide__title" style="font-size: 2rem; margin-bottom: 1.5rem;">Упражнения: можно и нельзя</h2>
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.65rem;">
+            <div class="slide__container">
+                <h2 class="slide__title">Упражнения: можно и нельзя</h2>
+                <div class="grid grid--2col gap-sm mt-lg">
                     <!-- Можно 1 -->
-                    <div style="position: relative; display: flex; flex-direction: column; align-items: center; padding: 0.49rem; background: linear-gradient(135deg, #E8F5E9 0%, #F1F8E9 100%); border-radius: var(--md-sys-shape-corner-lg); box-shadow: 0 2px 6px rgba(0,0,0,0.1); border: 2px solid #A5D6A7;">
-                        <div style="position: absolute; top: 0.32rem; right: 0.32rem; width: 21px; height: 21px; background: #4CAF50; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
-                            <span class="material-symbols-outlined" style="font-size: 13px; color: white;">check</span>
+                    <div class="exercise-card exercise-card--success">
+                        <div class="exercise-card__badge">
+                            <span class="material-symbols-outlined exercise-card__badge-icon">check</span>
                         </div>
-                        <img src="images/можно1.svg" alt="Можно 1" style="width: 100%; max-width: 130px; height: auto;">
+                        <img src="images/можно1.svg" alt="Правильное упражнение 1" class="exercise-card__image">
                     </div>
                     <!-- Нельзя 1 -->
-                    <div style="position: relative; display: flex; flex-direction: column; align-items: center; padding: 0.49rem; background: linear-gradient(135deg, #FFEBEE 0%, #FCE4EC 100%); border-radius: var(--md-sys-shape-corner-lg); box-shadow: 0 2px 6px rgba(0,0,0,0.1); border: 2px solid #EF9A9A;">
-                        <div style="position: absolute; top: 0.32rem; right: 0.32rem; width: 21px; height: 21px; background: #F44336; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
-                            <span class="material-symbols-outlined" style="font-size: 13px; color: white;">close</span>
+                    <div class="exercise-card exercise-card--danger">
+                        <div class="exercise-card__badge">
+                            <span class="material-symbols-outlined exercise-card__badge-icon">close</span>
                         </div>
-                        <img src="images/нельзя_1.svg" alt="Нельзя 1" style="width: 100%; max-width: 130px; height: auto;">
+                        <img src="images/нельзя_1.svg" alt="Неправильное упражнение 1" class="exercise-card__image">
                     </div>
                     <!-- Можно 2 -->
-                    <div style="position: relative; display: flex; flex-direction: column; align-items: center; padding: 0.49rem; background: linear-gradient(135deg, #E8F5E9 0%, #F1F8E9 100%); border-radius: var(--md-sys-shape-corner-lg); box-shadow: 0 2px 6px rgba(0,0,0,0.1); border: 2px solid #A5D6A7;">
-                        <div style="position: absolute; top: 0.32rem; right: 0.32rem; width: 21px; height: 21px; background: #4CAF50; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
-                            <span class="material-symbols-outlined" style="font-size: 13px; color: white;">check</span>
+                    <div class="exercise-card exercise-card--success">
+                        <div class="exercise-card__badge">
+                            <span class="material-symbols-outlined exercise-card__badge-icon">check</span>
                         </div>
-                        <img src="images/можно_2.svg" alt="Можно 2" style="width: 100%; max-width: 130px; height: auto;">
+                        <img src="images/можно_2.svg" alt="Правильное упражнение 2" class="exercise-card__image">
                     </div>
                     <!-- Нельзя 2 -->
-                    <div style="position: relative; display: flex; flex-direction: column; align-items: center; padding: 0.49rem; background: linear-gradient(135deg, #FFEBEE 0%, #FCE4EC 100%); border-radius: var(--md-sys-shape-corner-lg); box-shadow: 0 2px 6px rgba(0,0,0,0.1); border: 2px solid #EF9A9A;">
-                        <div style="position: absolute; top: 0.32rem; right: 0.32rem; width: 21px; height: 21px; background: #F44336; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
-                            <span class="material-symbols-outlined" style="font-size: 13px; color: white;">close</span>
+                    <div class="exercise-card exercise-card--danger">
+                        <div class="exercise-card__badge">
+                            <span class="material-symbols-outlined exercise-card__badge-icon">close</span>
                         </div>
-                        <img src="images/нельзя_2.svg" alt="Нельзя 2" style="width: 100%; max-width: 130px; height: auto;">
+                        <img src="images/нельзя_2.svg" alt="Неправильное упражнение 2" class="exercise-card__image">
                     </div>
                     <!-- Можно 3 -->
-                    <div style="position: relative; display: flex; flex-direction: column; align-items: center; padding: 0.49rem; background: linear-gradient(135deg, #E8F5E9 0%, #F1F8E9 100%); border-radius: var(--md-sys-shape-corner-lg); box-shadow: 0 2px 6px rgba(0,0,0,0.1); border: 2px solid #A5D6A7;">
-                        <div style="position: absolute; top: 0.32rem; right: 0.32rem; width: 21px; height: 21px; background: #4CAF50; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
-                            <span class="material-symbols-outlined" style="font-size: 13px; color: white;">check</span>
+                    <div class="exercise-card exercise-card--success">
+                        <div class="exercise-card__badge">
+                            <span class="material-symbols-outlined exercise-card__badge-icon">check</span>
                         </div>
-                        <img src="images/можно_3.svg" alt="Можно 3" style="width: 100%; max-width: 130px; height: auto;">
+                        <img src="images/можно_3.svg" alt="Правильное упражнение 3" class="exercise-card__image">
                     </div>
                     <!-- Нельзя 3 -->
-                    <div style="position: relative; display: flex; flex-direction: column; align-items: center; padding: 0.49rem; background: linear-gradient(135deg, #FFEBEE 0%, #FCE4EC 100%); border-radius: var(--md-sys-shape-corner-lg); box-shadow: 0 2px 6px rgba(0,0,0,0.1); border: 2px solid #EF9A9A;">
-                        <div style="position: absolute; top: 0.32rem; right: 0.32rem; width: 21px; height: 21px; background: #F44336; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
-                            <span class="material-symbols-outlined" style="font-size: 13px; color: white;">close</span>
+                    <div class="exercise-card exercise-card--danger">
+                        <div class="exercise-card__badge">
+                            <span class="material-symbols-outlined exercise-card__badge-icon">close</span>
                         </div>
-                        <img src="images/нельзя_3.svg" alt="Нельзя 3" style="width: 100%; max-width: 130px; height: auto;">
+                        <img src="images/нельзя_3.svg" alt="Неправильное упражнение 3" class="exercise-card__image">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- СЛАЙД 29 (фактически 33): Подготовка к родам -->
-        <section class="slide" data-slide="23">
+        <!-- СЛАЙД 24: Подготовка к родам -->
+        <section class="slide slide--light" data-slide="24">
             <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
             <div class="slide__container">
                 <h2 class="slide__title">Подготовка к родам с 34-й недели</h2>
-                <div class="info-box" style="margin-top: 2rem;">
-                    <h3 style="font-size: 1.4rem; margin-bottom: 1.5rem; color: var(--md-sys-color-secondary);">
-                        Переключаемся на эластичность
-                    </h3>
-                    <div class="features">
-                        <div class="feature">
-                            <div class="feature__icon">
-                                <img src="images/33_салйд_массаж.svg" alt="" style="width: 48px; height: 48px;">
-                            </div>
-                            <p class="feature__text"><strong>Массаж промежности</strong> — повышение эластичности тканей</p>
+                <h3 class="slide__section-title">Переключаемся на эластичность</h3>
+                <div class="grid grid--2col mt-lg gap-lg">
+                    <div class="feature feature--large">
+                        <div class="feature__icon">
+                            <img src="images/33_салйд_массаж.svg" alt="">
                         </div>
-                        <div class="feature">
-                            <div class="feature__icon">
-                                <img src="images/33_катетор.svg" alt="" style="width: 48px; height: 48px;">
-                            </div>
-                            <p class="feature__text"><strong>Специальные тренажеры</strong> — подготовка к растяжению</p>
+                        <p class="feature__text"><strong>Массаж промежности</strong> — повышение эластичности тканей</p>
+                    </div>
+                    <div class="feature feature--large">
+                        <div class="feature__icon">
+                            <img src="images/33_катетор.svg" alt="">
                         </div>
+                        <p class="feature__text"><strong>Специальные тренажеры</strong> — подготовка к растяжению</p>
                     </div>
-                    <div class="highlight" style="margin-top: 2rem;">
-                        <p class="highlight__text" style="color: white; font-size: 24px;">Мы буквально репетируем роды!</p>
-                    </div>
+                </div>
+                <div class="highlight mt-xl">
+                    <p class="highlight__text text-lg">Мы буквально репетируем роды!</p>
                 </div>
             </div>
         </section>
 
-        <!-- СЛАЙД 30 (фактически 35): Реабилитация -->
-        <section class="slide" data-slide="24">
+        <!-- СЛАЙД 25: Послеродовая реабилитация -->
+        <section class="slide slide--light" data-slide="25">
             <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
             <div class="slide__container">
                 <h2 class="slide__title">Послеродовая реабилитация</h2>
-                <div class="info-box" style="margin-bottom: 2rem;">
-                    <h3 style="font-size: 1.3rem; margin-bottom: 1rem;">6-8 недель после родов</h3>
-                    <p style="font-size: 1.1rem;">
-                        Обычно наблюдается гипотонус мышц брюшной стенки и тазового дна,
-                        что может вызывать боли в поясничном и тазовом отделах
-                    </p>
+                <div class="alert alert--info mt-lg mb-lg">
+                    <span class="alert__icon material-symbols-outlined">schedule</span>
+                    <div>
+                        <h3 class="alert__title">6-8 недель после родов</h3>
+                        <p class="alert__text">
+                            Обычно наблюдается гипотонус мышц брюшной стенки и тазового дна,
+                            что может вызывать боли в поясничном и тазовом отделах
+                        </p>
+                    </div>
                 </div>
-                <h3 style="margin-bottom: 1.5rem; color: var(--md-sys-color-secondary);">
-                    Реабилитация начинается в роддоме
-                </h3>
-                <div class="grid grid--2col" style="gap: 2rem;">
-                    <div class="card card--tertiary" style="padding: 2rem; background: linear-gradient(135deg, var(--md-sys-color-tertiary-container) 0%, var(--md-sys-color-surface-variant) 100%); border-left: 4px solid var(--md-sys-color-tertiary);">
-                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
-                            <div style="width: 48px; height: 48px; background: var(--md-sys-color-tertiary); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                                <span class="material-symbols-outlined" style="font-size: 28px; color: white;">child_care</span>
+                <h3 class="slide__section-title">Реабилитация начинается в роддоме</h3>
+                <div class="grid grid--2col gap-lg">
+                    <div class="card card--accent-border-tertiary">
+                        <div class="d-flex align-items-center gap-md mb-md">
+                            <div class="card__icon card__icon--circle card__icon--tertiary">
+                                <span class="material-symbols-outlined text-white">child_care</span>
                             </div>
-                            <h3 class="card__title" style="margin: 0; font-size: 1.4rem;">Естественные роды</h3>
+                            <h3 class="card__title mb-0">Естественные роды</h3>
                         </div>
-                        <p style="font-size: 1.1rem; line-height: 1.6; color: var(--md-sys-color-on-surface);">
+                        <p class="card__text text-md">
                             Реабилитация примерно через 4-6 часов, первые дни — бандаж или подвязывание.
                         </p>
                     </div>
-                    <div class="card card--secondary" style="padding: 2rem; background: linear-gradient(135deg, var(--md-sys-color-secondary-container) 0%, var(--md-sys-color-surface-variant) 100%); border-left: 4px solid var(--md-sys-color-secondary);">
-                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
-                            <div style="width: 48px; height: 48px; background: var(--md-sys-color-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                                <span class="material-symbols-outlined" style="font-size: 28px; color: white;">medical_services</span>
+                    <div class="card card--accent-border-secondary">
+                        <div class="d-flex align-items-center gap-md mb-md">
+                            <div class="card__icon card__icon--circle card__icon--secondary">
+                                <span class="material-symbols-outlined text-white">medical_services</span>
                             </div>
-                            <h3 class="card__title" style="margin: 0; font-size: 1.4rem;">Кесарево сечение</h3>
+                            <h3 class="card__title mb-0">Кесарево сечение</h3>
                         </div>
-                        <p style="font-size: 1.1rem; line-height: 1.6; color: var(--md-sys-color-on-surface);">
+                        <p class="card__text text-md">
                             Начало реабилитации через 6-12 часов. Ранняя вертикализация. Первые дни, подвязывание или бандаж.
                         </p>
                     </div>
@@ -1029,41 +1073,41 @@
             </div>
         </section>
 
-        <!-- СЛАЙД 31 (фактически 37): Дисфункции у мужчин -->
-        <section class="slide" data-slide="25">
+        <!-- СЛАЙД 26: Мужское здоровье -->
+        <section class="slide slide--light" data-slide="26">
             <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
             <div class="slide__container">
-                <h2 class="slide__title" style="margin-bottom: 0.5rem;">Мужское здоровье</h2>
-                <h3 class="slide__subtitle" style="color: var(--md-sys-color-secondary); margin-bottom: 1.5rem; font-size: 1.3rem;">Дисфункции тазового дна у мужчин</h3>
-                <div class="quote">
+                <h2 class="slide__title">Мужское здоровье</h2>
+                <h3 class="slide__section-title">Дисфункции тазового дна у мужчин</h3>
+                <div class="quote quote--error mb-lg">
                     <blockquote class="quote__text">
                         Ваше тазовое дно работает точно так же. И ломается точно так же. Просто об этом не принято говорить.
                     </blockquote>
                 </div>
-                <div class="card card--secondary" style="margin-top: 1rem;">
-                    <h3 class="card__title">Наиболее частые жалобы</h3>
-                    <div class="features" style="margin-top: 1rem;">
+                <div class="card card--secondary">
+                    <h3 class="card__title mb-md">Наиболее частые жалобы</h3>
+                    <div class="grid grid--2col gap-md">
                         <div class="feature">
                             <div class="feature__icon">
-                                <img src="images/37_слайд_простата.svg" alt="" style="width: 48px; height: 48px;">
+                                <img src="images/37_слайд_простата.svg" alt="">
                             </div>
                             <p class="feature__text">Хронический простатит, не поддающийся стандартному лечению</p>
                         </div>
                         <div class="feature">
                             <div class="feature__icon">
-                                <img src="images/частое_мочеиспускание.svg" alt="" style="width: 48px; height: 48px;">
+                                <img src="images/частое_мочеиспускание.svg" alt="">
                             </div>
                             <p class="feature__text">Учащённое мочеиспускание</p>
                         </div>
                         <div class="feature">
                             <div class="feature__icon">
-                                <img src="images/37_эрекция.svg" alt="" style="width: 48px; height: 48px;">
+                                <img src="images/37_эрекция.svg" alt="">
                             </div>
                             <p class="feature__text">Эректильная дисфункция</p>
                         </div>
                         <div class="feature">
                             <div class="feature__icon">
-                                <img src="images/37_боль.svg" alt="" style="width: 48px; height: 48px;">
+                                <img src="images/37_боль.svg" alt="">
                             </div>
                             <p class="feature__text">Боль в области промежности</p>
                         </div>
@@ -1072,132 +1116,158 @@
             </div>
         </section>
 
-        <!-- СЛАЙД 32 (фактически 38): Принцип работы у мужчин -->
-        <section class="slide" data-slide="26">
-            <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
+        <!-- СЛАЙД 27: Принцип работы у мужчин -->
+        <section class="slide slide--divider" data-slide="27">
             <div class="slide__container">
                 <h2 class="slide__title">Принцип работы аналогичен</h2>
-                <div class="comparison" style="margin-top: 2rem;">
+                <div class="comparison mt-xl">
                     <div class="comparison__item comparison__item--danger">
-                        <span class="comparison__icon material-symbols-outlined">bolt</span>
                         <h3 class="comparison__title">При наличии боли, жжения</h3>
-                        <p class="comparison__text" style="margin-top: 1rem; font-weight: 600;">
-                            Работа на расслабление
-                        </p>
+                        <p class="comparison__text">Работа на расслабление</p>
                     </div>
-                    <div class="comparison__vs">vs</div>
+                    <div class="comparison__vs comparison__vs--text">vs</div>
                     <div class="comparison__item comparison__item--info">
-                        <span class="comparison__icon material-symbols-outlined">fitness_center</span>
                         <h3 class="comparison__title">При слабости, эректильной дисфункции</h3>
-                        <p class="comparison__text" style="margin-top: 1rem; font-weight: 600;">
-                            Укрепление мышц таза и кора
-                        </p>
+                        <p class="comparison__text">Укрепление мышц таза и кора</p>
                     </div>
+                </div>
+                <div class="definition definition--secondary mt-xl">
+                    <h3 class="definition__title">Комплексный подход</h3>
+                    <p class="definition__text">
+                        Как и у женщин, восстановление тазового дна у мужчин требует работы с <strong>глубокими мышцами через активацию кора</strong> —
+                        поперечной мышцы живота и внутренней косой. Изолированные упражнения дают ограниченный результат.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- СЛАЙД 33 (фактически 40): Основные тезисы -->
-        <section class="slide" data-slide="27">
+        <!-- СЛАЙД 28: Заключение - Основные тезисы -->
+        <section class="slide slide--light" data-slide="28">
             <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
-            <div class="slide__container" style="padding: 2rem 3rem;">
-                <h2 class="slide__title" style="margin-bottom: 0.5rem;">Заключение</h2>
-                <h3 class="slide__subtitle" style="color: var(--md-sys-color-secondary); margin-bottom: 1.5rem; font-size: 1.3rem;">Основные тезисы</h3>
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 1rem;">
-                    <div class="card card--tertiary" style="padding: 1.25rem; display: flex; align-items: flex-start; gap: 1rem; background: linear-gradient(135deg, var(--md-sys-color-primary), var(--md-sys-color-secondary)); border-left: 4px solid white;">
-                        <span class="material-symbols-outlined" style="color: white; font-size: 32px; flex-shrink: 0;">check_circle</span>
-                        <p style="font-size: 1rem; line-height: 1.5; margin: 0; color: white;">Упражнения Кегеля эффективны, но воздействуют только на поверхностный слой</p>
+            <div class="slide__container">
+                <h2 class="slide__title">Заключение</h2>
+                <h3 class="slide__section-title">Основные тезисы</h3>
+                <div class="grid grid--2col gap-md mt-lg">
+                    <div class="card card--gradient d-flex align-items-start gap-md">
+                        <span class="material-symbols-outlined text-xl flex-shrink-0">check_circle</span>
+                        <p class="text-md mb-0">Упражнения Кегеля эффективны, но воздействуют только на поверхностный слой</p>
                     </div>
-                    <div class="card card--tertiary" style="padding: 1.25rem; display: flex; align-items: flex-start; gap: 1rem; background: linear-gradient(135deg, var(--md-sys-color-primary), var(--md-sys-color-secondary)); border-left: 4px solid white;">
-                        <span class="material-symbols-outlined" style="color: white; font-size: 32px; flex-shrink: 0;">check_circle</span>
-                        <p style="font-size: 1rem; line-height: 1.5; margin: 0; color: white;">Глубокие мышцы включаются через работу с кором</p>
+                    <div class="card card--gradient d-flex align-items-start gap-md">
+                        <span class="material-symbols-outlined text-xl flex-shrink-0">check_circle</span>
+                        <p class="text-md mb-0">Глубокие мышцы включаются через работу с кором</p>
                     </div>
-                    <div class="card card--tertiary" style="padding: 1.25rem; display: flex; align-items: flex-start; gap: 1rem; background: linear-gradient(135deg, var(--md-sys-color-primary), var(--md-sys-color-secondary)); border-left: 4px solid white;">
-                        <span class="material-symbols-outlined" style="color: white; font-size: 32px; flex-shrink: 0;">check_circle</span>
-                        <p style="font-size: 1rem; line-height: 1.5; margin: 0; color: white;">Традиционные упражнения на пресс требуют корректировки техники</p>
+                    <div class="card card--gradient d-flex align-items-start gap-md">
+                        <span class="material-symbols-outlined text-xl flex-shrink-0">check_circle</span>
+                        <p class="text-md mb-0">Традиционные упражнения на пресс требуют корректировки техники</p>
                     </div>
-                    <div class="card card--tertiary" style="padding: 1.25rem; display: flex; align-items: flex-start; gap: 1rem; background: linear-gradient(135deg, var(--md-sys-color-primary), var(--md-sys-color-secondary)); border-left: 4px solid white;">
-                        <span class="material-symbols-outlined" style="color: white; font-size: 32px; flex-shrink: 0;">check_circle</span>
-                        <p style="font-size: 1rem; line-height: 1.5; margin: 0; color: white;">Беременность — оптимальное время для профилактики</p>
+                    <div class="card card--gradient d-flex align-items-start gap-md">
+                        <span class="material-symbols-outlined text-xl flex-shrink-0">check_circle</span>
+                        <p class="text-md mb-0">Беременность — оптимальное время для профилактики</p>
                     </div>
-                    <div class="card card--tertiary" style="padding: 1.25rem; display: flex; align-items: flex-start; gap: 1rem; background: linear-gradient(135deg, var(--md-sys-color-primary), var(--md-sys-color-secondary)); border-left: 4px solid white; grid-column: span 2;">
-                        <span class="material-symbols-outlined" style="color: white; font-size: 32px; flex-shrink: 0;">check_circle</span>
-                        <p style="font-size: 1rem; line-height: 1.5; margin: 0; color: white;">Дисфункции тазового дна встречаются и у мужчин</p>
+                    <div class="card card--gradient d-flex align-items-start gap-md grid-col-span-2">
+                        <span class="material-symbols-outlined text-xl flex-shrink-0">check_circle</span>
+                        <p class="text-md mb-0">Дисфункции тазового дна встречаются и у мужчин</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- СЛАЙД 34 (фактически 41): Когда к специалисту -->
-        <section class="slide" data-slide="28">
+        <!-- СЛАЙД 29: Когда обратиться к специалисту -->
+        <section class="slide slide--light" data-slide="29">
             <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
-            <div class="slide__container" style="padding: 2rem 3rem;">
-                <h2 class="slide__title" style="margin-bottom: 1.5rem;">Когда стоит обратиться к специалисту</h2>
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 1rem;">
-                    <div class="card card--secondary" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
-                        <div style="width: 56px; height: 56px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: var(--md-sys-color-secondary-container); border-radius: 50%;">
-                            <img src="images/37_боль.svg" alt="" style="width: 32px; height: 32px;">
+            <div class="slide__container">
+                <h2 class="slide__title mb-lg">Когда стоит обратиться к специалисту</h2>
+                <div class="grid grid--2col gap-md mt-lg">
+                    <div class="card card--secondary d-flex align-items-center gap-md">
+                        <div class="card__icon card__icon--circle">
+                            <img src="images/37_боль.svg" alt="">
                         </div>
-                        <p style="font-size: 1rem; line-height: 1.4; margin: 0;">Любая боль или дискомфорт в области таза</p>
+                        <p class="card__text mb-0">Любая боль или дискомфорт в области таза</p>
                     </div>
-                    <div class="card card--secondary" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
-                        <div style="width: 56px; height: 56px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: var(--md-sys-color-secondary-container); border-radius: 50%;">
-                            <img src="images/дефекация.svg" alt="" style="width: 32px; height: 32px;">
+                    <div class="card card--secondary d-flex align-items-center gap-md">
+                        <div class="card__icon card__icon--circle">
+                            <img src="images/дефекация.svg" alt="">
                         </div>
-                        <p style="font-size: 1rem; line-height: 1.4; margin: 0;">Нарушения мочеиспускания или дефекации</p>
+                        <p class="card__text mb-0">Нарушения мочеиспускания или дефекации</p>
                     </div>
-                    <div class="card card--secondary" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
-                        <div style="width: 56px; height: 56px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: var(--md-sys-color-secondary-container); border-radius: 50%;">
-                            <img src="images/боли_при_сексе.svg" alt="" style="width: 32px; height: 32px;">
+                    <div class="card card--secondary d-flex align-items-center gap-md">
+                        <div class="card__icon card__icon--circle">
+                            <img src="images/боли_при_сексе.svg" alt="">
                         </div>
-                        <p style="font-size: 1rem; line-height: 1.4; margin: 0;">Снижение качества сексуальной жизни</p>
+                        <p class="card__text mb-0">Снижение качества сексуальной жизни</p>
                     </div>
-                    <div class="card card--secondary" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem;">
-                        <div style="width: 56px; height: 56px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: var(--md-sys-color-secondary-container); border-radius: 50%;">
-                            <img src="images/29_слайд_ребенок.svg" alt="" style="width: 32px; height: 32px;">
+                    <div class="card card--secondary d-flex align-items-center gap-md">
+                        <div class="card__icon card__icon--circle">
+                            <img src="images/29_слайд_ребенок.svg" alt="">
                         </div>
-                        <p style="font-size: 1rem; line-height: 1.4; margin: 0;">Планирование беременности</p>
+                        <p class="card__text mb-0">Планирование беременности</p>
                     </div>
-                    <div class="card card--secondary" style="padding: 1.5rem; display: flex; align-items: center; gap: 1rem; grid-column: span 2;">
-                        <div style="width: 56px; height: 56px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: var(--md-sys-color-secondary-container); border-radius: 50%;">
-                            <img src="images/32_слайд_1.svg" alt="" style="width: 32px; height: 32px;">
+                    <div class="card card--secondary d-flex align-items-center gap-md grid-col-span-2">
+                        <div class="card__icon card__icon--circle">
+                            <img src="images/32_слайд_1.svg" alt="">
                         </div>
-                        <p style="font-size: 1rem; line-height: 1.4; margin: 0;">Послеродовый период</p>
+                        <p class="card__text mb-0">Послеродовый период</p>
                     </div>
                 </div>
-                <div class="highlight" style="margin-top: 1.5rem;">
-                    <p class="highlight__text" style="font-size: 22px;">Большинство нарушений поддаётся коррекции при правильном подходе</p>
+                <div class="highlight mt-lg">
+                    <p class="highlight__text text-lg">Большинство нарушений поддаётся коррекции при правильном подходе</p>
                 </div>
             </div>
         </section>
 
-        <!-- СЛАЙД 35 (фактически 42): Контакты и Q&A -->
-        <section class="slide slide--hero" data-slide="29">
-            <div class="slide__container" style="padding: 2rem 3rem;">
+        <!-- СЛАЙД 30: Финальный - Контакты -->
+        <section class="slide slide--hero" data-slide="30">
+            <div class="slide__container">
                 <div class="hero">
-                    <h2 class="hero__title" style="font-size: 2.5rem; margin-bottom: 1rem;">Благодарю за внимание!</h2>
-                    <div style="margin-top: 1rem;">
-                        <p class="hero__name" style="font-size: 1.5rem; margin-bottom: 0.5rem;">BloomCare</p>
-                        <p class="hero__role" style="font-size: 1.1rem;">Первая клиника в России по восстановлению тазового дна</p>
+                    <h2 class="hero__title hero__title--contact mb-md">Благодарю за внимание!</h2>
+                    <div class="hero__intro mt-md">
+                        <p class="hero__name hero__name--contact mb-sm">BloomCare</p>
+                        <p class="hero__role hero__role--contact">Первая клиника в России по восстановлению тазового дна</p>
                     </div>
-                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem; max-width: 900px; margin-left: auto; margin-right: auto;">
-                        <div style="text-align: center;">
-                            <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">Продокторов</h3>
-                            <img src="images/продокторов.GIF" alt="Продокторов QR" style="width: 100%; max-width: 180px; height: auto; border-radius: var(--md-sys-shape-corner-lg); box-shadow: var(--md-sys-elevation-2);">
+                    <!-- QR коды для desktop -->
+                    <div class="hero__qr-section mt-xl">
+                        <div class="hero__qr-item text-center">
+                            <h3 class="hero__qr-title mb-md">Продокторов</h3>
+                            <div class="hero__qr-image">
+                                <img src="images/продокторов.GIF" alt="Продокторов QR" class="infographic__image">
+                            </div>
                         </div>
-                        <div style="text-align: center;">
-                            <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">Инстаграм</h3>
-                            <img src="images/инста.jpg" alt="Instagram QR" style="width: 100%; max-width: 180px; height: auto; border-radius: var(--md-sys-shape-corner-lg); box-shadow: var(--md-sys-elevation-2);">
+                        <div class="hero__qr-item text-center">
+                            <h3 class="hero__qr-title mb-md">Инстаграм</h3>
+                            <div class="hero__qr-image">
+                                <img src="images/инста.jpg" alt="Instagram QR" class="infographic__image">
+                            </div>
                         </div>
-                        <div style="text-align: center;">
-                            <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">Телеграм</h3>
-                            <img src="images/Telegram_qrcode.gif" alt="Telegram QR" style="width: 100%; max-width: 180px; height: auto; border-radius: var(--md-sys-shape-corner-lg); box-shadow: var(--md-sys-elevation-2);">
+                        <div class="hero__qr-item text-center">
+                            <h3 class="hero__qr-title mb-md">Телеграм</h3>
+                            <div class="hero__qr-image">
+                                <img src="images/Telegram_qrcode.gif" alt="Telegram QR" class="infographic__image">
+                            </div>
                         </div>
                     </div>
-                    <div style="margin-top: 2rem; text-align: center;">
-                        <p style="font-size: 1.3rem; color: white;">
+
+                    <!-- Ссылки для mobile -->
+                    <div class="hero__links-section mt-lg">
+                        <div class="d-flex flex-column gap-md">
+                            <a href="https://prodoctorov.ru/moskva/vrach/798865-zamorochko/" target="_blank" class="hero__link">
+                                <span class="material-symbols-outlined">person_search</span>
+                                Продокторов
+                            </a>
+                            <a href="https://www.instagram.com/zamorochko_kristina_?igsh=MWduNDM5ZThueXFtOA%3D%3D&utm_source=qr" target="_blank" class="hero__link">
+                                <span class="material-symbols-outlined">photo_camera</span>
+                                Инстаграм
+                            </a>
+                            <a href="https://t.me/+ooYG7ujcuQMwODRi" target="_blank" class="hero__link">
+                                <span class="material-symbols-outlined">send</span>
+                                Телеграм
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="hero__contact-info mt-lg text-center">
+                        <p class="hero__contact-text">
                             Так же вы можете связаться со мной по телефону:<br>
-                            <a href="tel:+79916168277" style="color: white; text-decoration: none; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">+7 (991) 616-82-77</a>
+                            <a href="tel:+79916168277" class="hero__phone">+7 (991) 616-82-77</a>
                         </p>
                     </div>
                 </div>
@@ -1206,6 +1276,8 @@
 
     </main>
 
-    <script src="script.js"></script>
+    <!-- JavaScript -->
+    <script src="js/navigation.js"></script>
+
 </body>
 </html>
