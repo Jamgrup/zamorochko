@@ -113,7 +113,7 @@
 
 @media (max-width: 768px) {
   .grid {
-    gap: var(--md-sys-spacing-md);
+    gap: var(--md-sys-spacing-sm);
   }
 
   /* All grids become single column on mobile */
@@ -128,6 +128,11 @@
   .grid--auto-sm,
   .grid--auto-lg {
     grid-template-columns: 1fr;
+  }
+
+  /* Smaller gaps for compact grids */
+  .grid--gap-sm {
+    gap: var(--md-sys-spacing-xs);
   }
 }
 
