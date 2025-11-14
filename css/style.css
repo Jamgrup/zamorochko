@@ -114,6 +114,23 @@
 
 @media (max-width: 768px) {
   .hide-tablet { display: none; }
+
+  /* Mobile: collapse flex layouts to column */
+  .d-flex {
+    flex-direction: column !important;
+  }
+
+  /* Fixed-width flex items become full-width */
+  .flex-fixed-320,
+  .flex-fixed-450 {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  /* Adjust gap spacing for mobile */
+  .gap-lg {
+    gap: var(--md-sys-spacing-md);
+  }
 }
 
 /* ========================================
