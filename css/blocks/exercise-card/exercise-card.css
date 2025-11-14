@@ -1,0 +1,146 @@
+/**
+ * Block: exercise-card
+ * Exercise demonstration card with success/danger indicator
+ */
+
+.exercise-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--md-sys-spacing-sm);
+  border-radius: var(--md-sys-shape-corner-lg);
+  box-shadow: var(--md-sys-elevation-2);
+  border: 2px solid;
+  transition: all var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+}
+
+.exercise-card:hover {
+  box-shadow: var(--md-sys-elevation-3);
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   EXERCISE CARD ELEMENTS
+   ======================================== */
+
+/* Badge indicator (check/cross) */
+.exercise-card__badge {
+  position: absolute;
+  top: var(--md-sys-spacing-xs);
+  right: var(--md-sys-spacing-xs);
+  width: 21px;
+  height: 21px;
+  border-radius: var(--md-sys-shape-corner-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--md-sys-elevation-2);
+}
+
+/* Badge icon */
+.exercise-card__badge-icon {
+  font-size: 13px;
+  color: #FFFFFF;
+}
+
+/* Image */
+.exercise-card__image {
+  width: 100%;
+  max-width: 130px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ========================================
+   EXERCISE CARD MODIFIERS
+   ======================================== */
+
+/* Success variant (green - "можно") */
+.exercise-card--success {
+  background: linear-gradient(135deg, #E8F5E9 0%, #F1F8E9 100%);
+  border-color: #A5D6A7;
+}
+
+.exercise-card--success .exercise-card__badge {
+  background-color: #4CAF50;
+}
+
+/* Danger variant (red - "нельзя") */
+.exercise-card--danger {
+  background: linear-gradient(135deg, #FFEBEE 0%, #FCE4EC 100%);
+  border-color: #EF9A9A;
+}
+
+.exercise-card--danger .exercise-card__badge {
+  background-color: #F44336;
+}
+
+/* ========================================
+   DESKTOP: VIEWPORT HEIGHT ADAPTATION
+   ======================================== */
+
+@media (min-width: 1024px) {
+  .exercise-card {
+    padding: clamp(0.4rem, 1vh, 0.65rem);
+  }
+
+  .exercise-card__badge {
+    width: clamp(18px, 2.5vh, 21px);
+    height: clamp(18px, 2.5vh, 21px);
+    top: clamp(0.25rem, 0.75vh, 0.5rem);
+    right: clamp(0.25rem, 0.75vh, 0.5rem);
+  }
+
+  .exercise-card__badge-icon {
+    font-size: clamp(11px, 1.75vh, 13px);
+  }
+
+  .exercise-card__image {
+    max-width: clamp(110px, 15vh, 130px);
+  }
+}
+
+/* ========================================
+   RESPONSIVE: TABLET
+   ======================================== */
+
+@media (max-width: 768px) {
+  .exercise-card {
+    padding: var(--md-sys-spacing-xs);
+  }
+
+  .exercise-card__badge {
+    width: 18px;
+    height: 18px;
+    top: 0.25rem;
+    right: 0.25rem;
+  }
+
+  .exercise-card__badge-icon {
+    font-size: 11px;
+  }
+
+  .exercise-card__image {
+    max-width: 100px;
+  }
+}
+
+/* ========================================
+   RESPONSIVE: MOBILE
+   ======================================== */
+
+@media (max-width: 480px) {
+  .exercise-card__badge {
+    width: 16px;
+    height: 16px;
+  }
+
+  .exercise-card__badge-icon {
+    font-size: 10px;
+  }
+
+  .exercise-card__image {
+    max-width: 80px;
+  }
+}

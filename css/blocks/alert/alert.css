@@ -1,0 +1,183 @@
+/**
+ * Block: alert
+ * Alert/notification component with variants
+ */
+
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--md-sys-spacing-md);
+  padding: var(--md-sys-spacing-md) var(--md-sys-spacing-lg);
+  border-radius: var(--md-sys-shape-corner-md);
+  background-color: var(--md-sys-color-surface-container);
+  border-left: 4px solid var(--md-sys-color-primary);
+}
+
+/* ========================================
+   ALERT ELEMENTS
+   ======================================== */
+
+/* Icon */
+.alert__icon {
+  flex-shrink: 0;
+  font-size: 24px;
+  color: var(--md-sys-color-primary);
+  margin-top: 2px;
+}
+
+/* Text */
+.alert__text {
+  flex: 1;
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: 1.6;
+  color: var(--md-sys-color-on-surface);
+  margin: 0;
+}
+
+/* Title */
+.alert__title {
+  font-size: var(--md-sys-typescale-title-small-size);
+  font-weight: 600;
+  color: var(--md-sys-color-on-surface);
+  margin-bottom: var(--md-sys-spacing-xs);
+}
+
+/* ========================================
+   ALERT MODIFIERS (Severity variants)
+   ======================================== */
+
+/* Info variant (default) */
+.alert--info {
+  background-color: var(--md-sys-color-secondary-container);
+  border-left-color: var(--md-sys-color-secondary);
+}
+
+.alert--info .alert__icon {
+  color: var(--md-sys-color-secondary);
+}
+
+.alert--info .alert__text,
+.alert--info .alert__title {
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+/* Warning variant */
+.alert--warning {
+  background-color: var(--md-sys-color-tertiary-container);
+  border-left-color: var(--md-sys-color-tertiary);
+}
+
+.alert--warning .alert__icon {
+  color: var(--md-sys-color-tertiary);
+}
+
+.alert--warning .alert__text,
+.alert--warning .alert__title {
+  color: var(--md-sys-color-on-tertiary-container);
+}
+
+/* Danger/Error variant */
+.alert--danger,
+.alert--error {
+  background-color: var(--md-sys-color-error-container);
+  border-left-color: var(--md-sys-color-error);
+}
+
+.alert--danger .alert__icon,
+.alert--error .alert__icon {
+  color: var(--md-sys-color-error);
+}
+
+.alert--danger .alert__text,
+.alert--danger .alert__title,
+.alert--error .alert__text,
+.alert--error .alert__title {
+  color: var(--md-sys-color-on-error-container);
+}
+
+/* Success variant */
+.alert--success {
+  background-color: var(--md-sys-color-success-container);
+  border-left-color: var(--md-sys-color-success);
+}
+
+.alert--success .alert__icon {
+  color: var(--md-sys-color-success);
+}
+
+.alert--success .alert__text,
+.alert--success .alert__title {
+  color: var(--md-sys-color-on-success-container);
+}
+
+/* ========================================
+   DESKTOP: VIEWPORT HEIGHT ADAPTATION
+   ======================================== */
+
+@media (min-width: 1024px) {
+  .alert {
+    padding: clamp(0.75rem, 1.5vh, 1.5rem) clamp(1rem, 2vh, 2rem);
+    gap: clamp(0.75rem, 1.5vh, 1.5rem);
+  }
+
+  .alert__icon {
+    font-size: clamp(20px, 3vh, 24px);
+  }
+
+  .alert__text {
+    font-size: clamp(0.875rem, 1.5vh, 1.125rem);
+    line-height: 1.5;
+  }
+
+  .alert__title {
+    font-size: clamp(1rem, 1.75vh, 1.125rem);
+    margin-bottom: clamp(0.25rem, 0.5vh, 0.5rem);
+  }
+}
+
+/* ========================================
+   RESPONSIVE: TABLET
+   ======================================== */
+
+@media (max-width: 768px) {
+  .alert {
+    padding: var(--md-sys-spacing-sm) var(--md-sys-spacing-md);
+    gap: var(--md-sys-spacing-sm);
+  }
+
+  .alert__icon {
+    font-size: 20px;
+  }
+
+  .alert__text {
+    font-size: var(--md-sys-typescale-body-small-size);
+  }
+
+  .alert__title {
+    font-size: var(--md-sys-typescale-label-large-size);
+  }
+}
+
+/* ========================================
+   RESPONSIVE: MOBILE
+   ======================================== */
+
+@media (max-width: 480px) {
+  .alert {
+    padding: var(--md-sys-spacing-xs) var(--md-sys-spacing-sm);
+    gap: var(--md-sys-spacing-xs);
+    border-left-width: 3px;
+  }
+
+  .alert__icon {
+    font-size: 18px;
+  }
+
+  .alert__text {
+    font-size: var(--md-sys-typescale-label-large-size);
+  }
+
+  .alert__title {
+    font-size: var(--md-sys-typescale-label-medium-size);
+  }
+}

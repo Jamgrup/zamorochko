@@ -1,0 +1,257 @@
+/**
+ * BloomCare Presentation
+ * Main stylesheet with BEM architecture
+ * Mobile-first responsive design
+ */
+
+/* ========================================
+   BASE STYLES
+   ======================================== */
+
+@import url('base/reset.css');
+@import url('base/md3-tokens.css');
+@import url('base/typography.css');
+
+/* ========================================
+   BLOCKS (BEM Components)
+   ======================================== */
+
+/* Core blocks */
+@import url('blocks/page/page.css');
+@import url('blocks/navigation/navigation.css');
+@import url('blocks/slide/slide.css');
+
+/* Content blocks */
+@import url('blocks/hero/hero.css');
+@import url('blocks/card/card.css');
+@import url('blocks/alert/alert.css');
+@import url('blocks/grid/grid.css');
+@import url('blocks/feature/feature.css');
+@import url('blocks/definition/definition.css');
+@import url('blocks/infographic/infographic.css');
+@import url('blocks/checklist/checklist.css');
+@import url('blocks/comparison/comparison.css');
+@import url('blocks/process/process.css');
+@import url('blocks/highlight/highlight.css');
+@import url('blocks/step/step.css');
+@import url('blocks/quote/quote.css');
+@import url('blocks/video/video.css');
+@import url('blocks/bullet-list/bullet-list.css');
+@import url('blocks/exercise-card/exercise-card.css');
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+/* Spacing utilities */
+.mt-0 { margin-top: 0; }
+.mt-sm { margin-top: var(--md-sys-spacing-sm); }
+.mt-md { margin-top: var(--md-sys-spacing-md); }
+.mt-lg { margin-top: var(--md-sys-spacing-lg); }
+.mt-xl { margin-top: var(--md-sys-spacing-xl); }
+
+.mb-0 { margin-bottom: 0; }
+.mb-sm { margin-bottom: var(--md-sys-spacing-sm); }
+.mb-md { margin-bottom: var(--md-sys-spacing-md); }
+.mb-lg { margin-bottom: var(--md-sys-spacing-lg); }
+.mb-xl { margin-bottom: var(--md-sys-spacing-xl); }
+
+.pt-0 { padding-top: 0; }
+.pt-sm { padding-top: var(--md-sys-spacing-sm); }
+.pt-md { padding-top: var(--md-sys-spacing-md); }
+.pt-lg { padding-top: var(--md-sys-spacing-lg); }
+.pt-xl { padding-top: var(--md-sys-spacing-xl); }
+
+.pb-0 { padding-bottom: 0; }
+.pb-sm { padding-bottom: var(--md-sys-spacing-sm); }
+.pb-md { padding-bottom: var(--md-sys-spacing-md); }
+.pb-lg { padding-bottom: var(--md-sys-spacing-lg); }
+.pb-xl { padding-bottom: var(--md-sys-spacing-xl); }
+
+/* Display utilities */
+.d-none { display: none; }
+.d-block { display: block; }
+.d-flex { display: flex; }
+.d-grid { display: grid; }
+
+/* Text color utilities */
+.text-primary { color: var(--md-sys-color-primary); }
+.text-secondary { color: var(--md-sys-color-secondary); }
+.text-on-surface { color: var(--md-sys-color-on-surface); }
+.text-white { color: #FFFFFF; }
+
+/* Text alignment utilities */
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+/* Flexbox utilities */
+.flex-column { flex-direction: column; }
+.flex-row { flex-direction: row; }
+.flex-row-mobile-column { flex-direction: row; } /* Becomes column on mobile */
+.align-items-center { align-items: center; }
+.align-items-start { align-items: flex-start; }
+.align-items-end { align-items: flex-end; }
+.justify-content-center { justify-content: center; }
+.justify-content-between { justify-content: space-between; }
+.justify-content-around { justify-content: space-around; }
+.gap-sm { gap: var(--md-sys-spacing-sm); }
+.gap-md { gap: var(--md-sys-spacing-md); }
+.gap-lg { gap: var(--md-sys-spacing-lg); }
+
+/* Flex sizing */
+.flex-1 { flex: 1; }
+.flex-auto { flex: auto; }
+.flex-none { flex: none; }
+.flex-shrink-0 { flex-shrink: 0; }
+
+/* Fixed width flex items */
+.flex-fixed-320 { flex: 0 0 320px; }
+.flex-fixed-450 { flex: 0 0 450px; }
+
+/* Text sizing utilities */
+.text-xl { font-size: 2rem; }
+.text-lg { font-size: 1.2rem; }
+.text-md { font-size: 1rem; }
+.text-sm { font-size: 0.875rem; }
+
+/* Font weight utilities */
+.font-semibold { font-weight: 600; }
+.font-medium { font-weight: 500; }
+.font-normal { font-weight: 400; }
+
+/* Grid utilities */
+.grid-col-span-2 { grid-column: span 2; }
+
+/* Responsive utilities */
+@media (max-width: 1023px) {
+  .hide-mobile { display: none; }
+}
+
+@media (min-width: 1024px) {
+  .hide-desktop { display: none; }
+}
+
+/* Reset grid-col-span on mobile when grid is single column */
+@media (max-width: 768px) {
+  .grid-col-span-2 {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .hide-tablet { display: none; }
+
+  /* Responsive flex: row becomes column on mobile */
+  .flex-row-mobile-column {
+    flex-direction: column;
+  }
+
+  /* Fixed-width flex items become full-width */
+  .flex-fixed-320,
+  .flex-fixed-450 {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  /* Adjust gap spacing for mobile */
+  .gap-lg {
+    gap: var(--md-sys-spacing-md);
+  }
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Animation utilities */
+.animate-fade-in {
+  animation: fadeIn var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-standard);
+}
+
+.animate-slide-up {
+  animation: slideUp var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-emphasized);
+}
+
+.animate-scale-in {
+  animation: scaleIn var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-emphasized);
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+  .navigation,
+  .slide__logo {
+    display: none;
+  }
+
+  .slide {
+    page-break-after: always;
+    min-height: auto;
+    padding: 2cm;
+  }
+
+  /* Override gradient backgrounds for print */
+  .slide.slide--hero,
+  section.slide--hero {
+    background: white;
+    background-image: none;
+    color: black;
+  }
+
+  .slide.slide--divider,
+  section.slide--divider {
+    background: white;
+    background-image: none;
+    color: black;
+  }
+}
+
+/* ========================================
+   VIEWPORT HEIGHT ADAPTATION
+   ======================================== */
+
+/* Адаптация контента по высоте viewport для desktop */
+@media (min-width: 1024px) {
+  .vh-adaptive {
+    max-height: calc(100vh - 64px - 4rem); /* viewport - navigation - margins */
+  }
+  
+  /* Автоматическое масштабирование изображений */
+  .vh-adaptive img {
+    max-height: calc(100vh - 200px); /* оставляем место для текста */
+  }
+}

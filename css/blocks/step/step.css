@@ -1,0 +1,280 @@
+/**
+ * Block: step
+ * Numbered step component for sequential instructions
+ */
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--md-sys-spacing-lg);
+  padding: var(--md-sys-spacing-lg);
+  background-color: var(--md-sys-color-surface-variant);
+  border-radius: var(--md-sys-shape-corner-md);
+  transition: all var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+}
+
+.step:hover {
+  background-color: var(--md-sys-color-secondary-container);
+  transform: translateX(4px);
+}
+
+/* ========================================
+   STEP ELEMENTS
+   ======================================== */
+
+/* Step number badge */
+.step__number {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: var(--md-sys-shape-corner-full);
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 22px;
+  flex-shrink: 0;
+  box-shadow: var(--md-sys-elevation-2);
+}
+
+/* Step content wrapper */
+.step__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--md-sys-spacing-xs);
+}
+
+/* Step title */
+.step__title {
+  margin: 0;
+  font-size: var(--md-sys-typescale-title-small-size);
+  font-weight: 600;
+  color: var(--md-sys-color-on-surface);
+  line-height: 1.3;
+}
+
+/* Step text */
+.step__text {
+  margin: 0;
+  padding-top: 4px;
+  font-size: var(--md-sys-typescale-body-large-size);
+  line-height: 1.7;
+  color: var(--md-sys-color-on-surface);
+}
+
+/* Step description (for title+text variants) */
+.step__description {
+  margin: 0;
+  font-size: var(--md-sys-typescale-body-medium-size);
+  color: var(--md-sys-color-on-surface-variant);
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  gap: var(--md-sys-spacing-sm);
+}
+
+/* Icon in description */
+.step__icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+/* ========================================
+   STEP MODIFIERS
+   ======================================== */
+
+/* Compact variant (less padding, smaller number) */
+.step--compact {
+  padding: var(--md-sys-spacing-md);
+  gap: var(--md-sys-spacing-md);
+}
+
+.step--compact .step__number {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  font-size: 18px;
+}
+
+.step--compact .step__text {
+  font-size: var(--md-sys-typescale-body-medium-size);
+  padding-top: 2px;
+}
+
+/* Large variant (more prominent) */
+.step--large {
+  padding: var(--md-sys-spacing-xl);
+  gap: var(--md-sys-spacing-xl);
+}
+
+.step--large .step__number {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  font-size: 26px;
+}
+
+.step--large .step__text {
+  font-size: var(--md-sys-typescale-title-medium-size);
+  padding-top: 6px;
+}
+
+/* Number color variants */
+.step--secondary .step__number {
+  background-color: var(--md-sys-color-secondary);
+  color: var(--md-sys-color-on-secondary);
+}
+
+.step--tertiary .step__number {
+  background-color: var(--md-sys-color-tertiary);
+  color: var(--md-sys-color-on-tertiary);
+}
+
+/* ========================================
+   DESKTOP: VIEWPORT HEIGHT ADAPTATION
+   ======================================== */
+
+@media (min-width: 1024px) {
+  .step {
+    padding: clamp(0.75rem, 2vh, 1.5rem);
+    gap: clamp(0.75rem, 2vh, 1.5rem);
+  }
+
+  .step__number {
+    width: clamp(44px, 6vh, 48px);
+    height: clamp(44px, 6vh, 48px);
+    min-width: clamp(44px, 6vh, 48px);
+    font-size: clamp(18px, 3vh, 22px);
+  }
+
+  .step__text {
+    font-size: clamp(0.95rem, 1.75vh, 1.125rem);
+    line-height: 1.6;
+  }
+
+  .step__title {
+    font-size: clamp(0.875rem, 1.5vh, 1.125rem);
+  }
+
+  .step__description {
+    font-size: clamp(0.8rem, 1.4vh, 1rem);
+  }
+
+  .step__icon {
+    font-size: clamp(18px, 2.5vh, 20px);
+  }
+
+  .step--compact {
+    padding: clamp(0.5rem, 1.5vh, 1rem);
+    gap: clamp(0.5rem, 1.5vh, 1rem);
+  }
+
+  .step--compact .step__number {
+    width: clamp(36px, 5vh, 40px);
+    height: clamp(36px, 5vh, 40px);
+    min-width: clamp(36px, 5vh, 40px);
+    font-size: clamp(16px, 2.5vh, 18px);
+  }
+
+  .step--compact .step__text {
+    font-size: clamp(0.875rem, 1.5vh, 1rem);
+  }
+}
+
+/* ========================================
+   RESPONSIVE: TABLET
+   ======================================== */
+
+@media (max-width: 768px) {
+  .step {
+    padding: var(--md-sys-spacing-md);
+    gap: var(--md-sys-spacing-md);
+  }
+
+  .step__number {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    font-size: 18px;
+  }
+
+  .step__text {
+    font-size: var(--md-sys-typescale-body-medium-size);
+  }
+
+  .step__title {
+    font-size: var(--md-sys-typescale-label-large-size);
+  }
+
+  .step__description {
+    font-size: var(--md-sys-typescale-body-small-size);
+  }
+
+  .step__icon {
+    font-size: 18px;
+  }
+
+  .step--compact {
+    padding: var(--md-sys-spacing-sm);
+    gap: var(--md-sys-spacing-sm);
+  }
+
+  .step--compact .step__number {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    font-size: 16px;
+  }
+}
+
+/* ========================================
+   RESPONSIVE: MOBILE
+   ======================================== */
+
+@media (max-width: 480px) {
+  .step {
+    padding: var(--md-sys-spacing-sm);
+    gap: var(--md-sys-spacing-sm);
+  }
+
+  .step__number {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    font-size: 16px;
+  }
+
+  .step__text {
+    font-size: var(--md-sys-typescale-body-small-size);
+  }
+
+  .step__title {
+    font-size: var(--md-sys-typescale-label-medium-size);
+  }
+
+  .step__description {
+    font-size: var(--md-sys-typescale-label-large-size);
+  }
+
+  .step__icon {
+    font-size: 16px;
+  }
+
+  .step--compact {
+    padding: var(--md-sys-spacing-xs);
+  }
+
+  .step--compact .step__number {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    font-size: 14px;
+  }
+
+  .step--compact .step__text {
+    font-size: var(--md-sys-typescale-label-large-size);
+  }
+}

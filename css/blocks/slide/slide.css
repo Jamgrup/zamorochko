@@ -1,0 +1,312 @@
+/**
+ * Block: slide
+ * Individual presentation slide with scroll snap
+ */
+
+.slide {
+  min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height for mobile */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--md-sys-spacing-xxl) var(--md-sys-spacing-lg);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  position: relative;
+  opacity: 0;
+  animation: slideIn var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-emphasized) forwards;
+}
+
+/* Subtle shadow separator between slides with uniform backgrounds */
+.slide::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.08) 20%,
+    rgba(0, 0, 0, 0.08) 80%,
+    transparent 100%
+  );
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  pointer-events: none;
+}
+
+/* Desktop: maximize screen usage */
+@media (min-width: 1440px) {
+  .slide {
+    padding: var(--md-sys-spacing-xxl) var(--md-sys-spacing-xl);
+  }
+}
+
+@media (min-width: 1920px) {
+  .slide {
+    padding: var(--md-sys-spacing-xxl) calc(var(--md-sys-spacing-xl) * 1.5);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Container */
+.slide__container {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Logo in corner (for non-hero slides) */
+.slide__logo {
+  position: absolute;
+  top: calc(64px + var(--md-sys-spacing-lg)); /* 64px navigation height + spacing */
+  right: var(--md-sys-spacing-lg);
+  width: 138px;
+  height: auto;
+  z-index: var(--z-index-dropdown);
+  opacity: 0.9;
+  transition: opacity var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+  object-fit: contain;
+}
+
+.slide__logo:hover {
+  opacity: 1;
+}
+
+/* ========================================
+   SLIDE MODIFIERS
+   ======================================== */
+
+/* Hero slide (title slide) */
+.slide--hero {
+  background: linear-gradient(
+    135deg,
+    var(--md-sys-color-primary) 0%,
+    var(--md-sys-color-secondary) 100%
+  );
+  color: var(--md-sys-color-on-primary);
+}
+
+.slide--hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at 30% 50%,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+}
+
+/* Section divider slide */
+.slide--divider {
+  background: linear-gradient(
+    135deg,
+    var(--md-sys-color-tertiary) 0%,
+    var(--md-sys-color-secondary) 100%
+  );
+  color: var(--md-sys-color-on-tertiary);
+  text-align: center;
+}
+
+/* Light background slides */
+.slide--light {
+  background-color: var(--md-sys-color-surface-container-low);
+}
+
+/* Interactive slide with special styling */
+.slide--interactive {
+  background: linear-gradient(
+    to bottom,
+    var(--md-sys-color-surface) 0%,
+    var(--md-sys-color-surface-container-low) 100%
+  );
+}
+
+/* ========================================
+   SLIDE ELEMENTS
+   ======================================== */
+
+/* Slide title */
+.slide__title {
+  font-size: var(--md-sys-typescale-headline-large-size);
+  font-weight: 700;
+  color: var(--md-sys-color-on-surface);
+  margin-bottom: var(--md-sys-spacing-lg);
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.slide--hero .slide__title,
+.slide--divider .slide__title {
+  color: currentColor;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Raised title modifier for divider slides */
+.slide__title--raised {
+  margin-top: -100px;
+  margin-bottom: 6rem;
+}
+
+/* Slide subtitle */
+.slide__subtitle {
+  font-size: var(--md-sys-typescale-title-large-size);
+  font-weight: 500;
+  color: var(--md-sys-color-secondary);
+  margin-bottom: var(--md-sys-spacing-md);
+  line-height: 1.3;
+}
+
+.slide--hero .slide__subtitle,
+.slide--divider .slide__subtitle {
+  color: currentColor;
+  opacity: 0.9;
+}
+
+/* Slide section title (for content sections within slides) */
+.slide__section-title {
+  font-size: var(--md-sys-typescale-title-medium-size);
+  font-weight: 600;
+  color: var(--md-sys-color-primary);
+  margin-top: var(--md-sys-spacing-sm);
+  margin-bottom: var(--md-sys-spacing-md);
+  line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+  .slide__section-title {
+    font-size: var(--md-sys-typescale-title-small-size);
+    margin-bottom: var(--md-sys-spacing-sm);
+  }
+}
+
+/* ========================================
+   RESPONSIVE: TABLET
+   ======================================== */
+
+@media (max-width: 768px) {
+  .slide {
+    padding: var(--md-sys-spacing-xl) var(--md-sys-spacing-md);
+  }
+
+  .slide__logo {
+    width: 80px;
+    top: calc(64px + var(--md-sys-spacing-md)); /* 64px navigation + spacing */
+    right: var(--md-sys-spacing-md);
+  }
+}
+
+  .slide__title {
+    font-size: var(--md-sys-typescale-headline-medium-size);
+    margin-bottom: var(--md-sys-spacing-md);
+  }
+
+  .slide__subtitle {
+    font-size: var(--md-sys-typescale-title-medium-size);
+  }
+}
+
+/* ========================================
+   RESPONSIVE: MOBILE
+   ======================================== */
+
+@media (max-width: 1023px) {
+  .slide {
+    /* Account for bottom navigation */
+    min-height: calc(100vh - 60px);
+    min-height: calc(100dvh - 60px);
+  }
+}
+
+@media (max-width: 480px) {
+  .slide {
+    padding: var(--md-sys-spacing-lg) var(--md-sys-spacing-sm);
+  }
+
+  .slide__logo {
+    width: 60px;
+    top: calc(64px + var(--md-sys-spacing-sm)); /* 64px navigation + spacing */
+    right: var(--md-sys-spacing-sm);
+  }
+
+  .slide__title {
+    font-size: var(--md-sys-typescale-headline-small-size);
+    margin-bottom: var(--md-sys-spacing-sm);
+  }
+
+  .slide__subtitle {
+    font-size: var(--md-sys-typescale-title-small-size);
+  }
+}
+
+/* ========================================
+   RESPONSIVE: LANDSCAPE MOBILE
+   ======================================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .slide {
+    padding: var(--md-sys-spacing-md) var(--md-sys-spacing-sm);
+    min-height: 100vh;
+  }
+
+  .slide__title {
+    font-size: var(--md-sys-typescale-headline-small-size);
+    margin-bottom: var(--md-sys-spacing-sm);
+  }
+
+  .slide__logo {
+    width: 50px;
+    top: calc(64px + var(--md-sys-spacing-xs)); /* 64px navigation + spacing */
+    right: var(--md-sys-spacing-xs);
+  }
+}
+
+/* ========================================
+   DESKTOP: VIEWPORT HEIGHT ADAPTATION
+   ======================================== */
+
+/* Адаптация для desktop от 14" (минимум 768px высоты) */
+@media (min-width: 1024px) {
+  .slide {
+    /* Адаптивные отступы на основе высоты viewport */
+    padding: clamp(1rem, 5vh, 4rem) clamp(2rem, 3vw, 4rem);
+  }
+
+  .slide__container {
+    /* Ограничиваем высоту контейнера, учитывая навигацию */
+    max-height: calc(100vh - 64px - clamp(2rem, 10vh, 8rem));
+    width: 100%;
+  }
+
+  .slide__title {
+    font-size: clamp(1.75rem, 3.5vh, 2.5rem);
+    margin-bottom: clamp(0.75rem, 2vh, 2rem);
+  }
+
+  .slide__subtitle {
+    font-size: clamp(1.25rem, 2.5vh, 1.75rem);
+    margin-bottom: clamp(0.5rem, 1.5vh, 1rem);
+  }
+
+  .slide__section-title {
+    font-size: clamp(1.125rem, 2vh, 1.5rem);
+    margin-bottom: clamp(0.5rem, 1vh, 1rem);
+  }
+}

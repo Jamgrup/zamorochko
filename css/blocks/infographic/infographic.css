@@ -1,0 +1,214 @@
+/**
+ * Block: infographic
+ * Image or visual content container with optional caption
+ */
+
+.infographic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--md-sys-spacing-md);
+}
+
+/* ========================================
+   INFOGRAPHIC ELEMENTS
+   ======================================== */
+
+/* Image container */
+.infographic__image-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Image */
+.infographic__image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--md-sys-shape-corner-lg);
+  box-shadow: var(--md-sys-elevation-2);
+  object-fit: contain;
+  transition: all var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+}
+
+.infographic__image:hover {
+  box-shadow: var(--md-sys-elevation-3);
+  transform: scale(1.01);
+}
+
+/* Caption */
+.infographic__caption {
+  font-size: var(--md-sys-typescale-body-medium-size);
+  color: var(--md-sys-color-on-surface-variant);
+  text-align: center;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0;
+}
+
+/* ========================================
+   INFOGRAPHIC MODIFIERS
+   ======================================== */
+
+/* Centered layout (default) */
+.infographic--center {
+  align-items: center;
+  text-align: center;
+}
+
+/* Left-aligned layout */
+.infographic--left {
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* Right-aligned layout */
+.infographic--right {
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* Large image variant */
+.infographic--large .infographic__image {
+  max-height: 600px;
+}
+
+/* Medium image variant */
+.infographic--medium .infographic__image {
+  max-height: 450px;
+}
+
+/* Small image variant */
+.infographic--small .infographic__image {
+  max-height: 300px;
+}
+
+/* Desktop: адаптация по высоте viewport от 14" ноутбуков */
+@media (min-width: 1024px) {
+  .infographic--large .infographic__image {
+    max-height: clamp(400px, 60vh, 600px);
+  }
+
+  .infographic--medium .infographic__image {
+    max-height: clamp(300px, 50vh, 450px);
+  }
+
+  .infographic--small .infographic__image {
+    max-height: clamp(200px, 40vh, 300px);
+  }
+}
+
+/* Compact variant (less spacing) */
+.infographic--compact {
+  gap: var(--md-sys-spacing-sm);
+}
+
+/* Full-width variant (no max constraints) */
+.infographic--full .infographic__image {
+  max-height: none;
+}
+
+/* Width-constrained variant (690px like old version) */
+.infographic--constrained {
+  max-width: 690px;
+  margin: 0 auto;
+}
+
+/* Width-constrained variant small (360px) */
+.infographic--constrained-sm {
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+/* Width-constrained variant 350px */
+.infographic--constrained-350 {
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+/* Width-constrained variant 460px */
+.infographic--constrained-460 {
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+/* Width-constrained variant 633px */
+.infographic--constrained-633 {
+  max-width: 633px;
+  margin: 0 auto;
+}
+
+/* Cover variant - fills area with cropping */
+.infographic--cover .infographic__image {
+  object-fit: cover;
+}
+
+/* Custom height variant - 550px */
+.infographic--h-550 .infographic__image {
+  max-height: 550px;
+}
+
+/* ========================================
+   RESPONSIVE: TABLET
+   ======================================== */
+
+@media (max-width: 768px) {
+  .infographic__image,
+  .infographic--large .infographic__image,
+  .infographic--medium .infographic__image,
+  .infographic--small .infographic__image {
+    max-height: 400px;
+  }
+
+  .infographic--large .infographic__image {
+    max-height: 450px;
+  }
+
+  .infographic__caption {
+    font-size: var(--md-sys-typescale-body-small-size);
+  }
+}
+
+/* ========================================
+   RESPONSIVE: MOBILE
+   ======================================== */
+
+@media (max-width: 480px) {
+  .infographic {
+    gap: var(--md-sys-spacing-sm);
+  }
+
+  .infographic__image,
+  .infographic--large .infographic__image,
+  .infographic--medium .infographic__image,
+  .infographic--small .infographic__image {
+    max-height: 300px;
+    border-radius: var(--md-sys-shape-corner-md);
+  }
+
+  .infographic--large .infographic__image {
+    max-height: 350px;
+  }
+
+  .infographic__caption {
+    font-size: var(--md-sys-typescale-label-large-size);
+  }
+}
+
+/* ========================================
+   RESPONSIVE: LANDSCAPE MOBILE
+   ======================================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .infographic__image,
+  .infographic--large .infographic__image,
+  .infographic--medium .infographic__image,
+  .infographic--small .infographic__image {
+    max-height: 250px;
+  }
+
+  .infographic--large .infographic__image {
+    max-height: 300px;
+  }
+}

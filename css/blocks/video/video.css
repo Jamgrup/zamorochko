@@ -1,0 +1,134 @@
+/**
+ * Block: video
+ * Embedded video player component (YouTube, Rutube, etc.)
+ */
+
+.video {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   VIDEO ELEMENTS
+   ======================================== */
+
+/* Video wrapper - maintains aspect ratio */
+.video__wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: var(--md-sys-shape-corner-lg);
+  box-shadow: var(--md-sys-elevation-3);
+  background-color: #000;
+}
+
+.video__iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: var(--md-sys-shape-corner-lg);
+}
+
+/* Video caption */
+.video__caption {
+  margin-top: var(--md-sys-spacing-md);
+  text-align: center;
+  font-size: var(--md-sys-typescale-body-medium-size);
+  color: var(--md-sys-color-on-surface-variant);
+  line-height: 1.5;
+}
+
+/* ========================================
+   VIDEO MODIFIERS
+   ======================================== */
+
+/* Compact variant (smaller max-width) */
+.video--compact {
+  max-width: 700px;
+}
+
+/* Large variant (full-width) */
+.video--large {
+  max-width: 1200px;
+}
+
+/* 4:3 aspect ratio */
+.video--4-3 .video__wrapper {
+  padding-bottom: 75%; /* 4:3 aspect ratio */
+}
+
+/* 1:1 aspect ratio (square) */
+.video--square .video__wrapper {
+  padding-bottom: 100%; /* 1:1 aspect ratio */
+}
+
+/* ========================================
+   DESKTOP: VIEWPORT HEIGHT ADAPTATION
+   ======================================== */
+
+@media (min-width: 1024px) {
+  .video__wrapper {
+    box-shadow: var(--md-sys-elevation-4);
+  }
+
+  .video__caption {
+    font-size: clamp(0.875rem, 1.5vh, 1.125rem);
+    margin-top: clamp(0.75rem, 1.5vh, 1.5rem);
+  }
+}
+
+/* ========================================
+   RESPONSIVE: TABLET
+   ======================================== */
+
+@media (max-width: 768px) {
+  .video {
+    max-width: 100%;
+  }
+
+  .video__wrapper {
+    box-shadow: var(--md-sys-elevation-2);
+  }
+
+  .video__caption {
+    font-size: var(--md-sys-typescale-body-small-size);
+    margin-top: var(--md-sys-spacing-sm);
+  }
+}
+
+/* ========================================
+   RESPONSIVE: MOBILE
+   ======================================== */
+
+@media (max-width: 480px) {
+  .video__wrapper {
+    border-radius: var(--md-sys-shape-corner-md);
+    box-shadow: var(--md-sys-elevation-1);
+  }
+
+  .video__iframe {
+    border-radius: var(--md-sys-shape-corner-md);
+  }
+
+  .video__caption {
+    font-size: var(--md-sys-typescale-label-large-size);
+  }
+}
+
+/* ========================================
+   RESPONSIVE: LANDSCAPE MOBILE
+   ======================================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .video__wrapper {
+    max-height: 300px;
+    padding-bottom: 0;
+    height: 300px;
+  }
+}

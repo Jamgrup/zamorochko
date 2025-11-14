@@ -1,0 +1,169 @@
+/**
+ * Block: grid
+ * Responsive grid layout system
+ */
+
+.grid {
+  display: grid;
+  gap: var(--md-sys-spacing-lg);
+  width: 100%;
+}
+
+/* ========================================
+   GRID MODIFIERS (Column layouts)
+   ======================================== */
+
+/* 2 columns */
+.grid--2col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* 3 columns */
+.grid--3col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* 4 columns */
+.grid--4col {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Auto-fit (responsive) */
+.grid--auto {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.grid--auto-sm {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.grid--auto-lg {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* ========================================
+   GAP MODIFIERS
+   ======================================== */
+
+.grid--gap-sm {
+  gap: var(--md-sys-spacing-sm);
+}
+
+.grid--gap-md {
+  gap: var(--md-sys-spacing-md);
+}
+
+.grid--gap-lg {
+  gap: var(--md-sys-spacing-lg);
+}
+
+.grid--gap-xl {
+  gap: var(--md-sys-spacing-xl);
+}
+
+/* ========================================
+   ALIGNMENT MODIFIERS
+   ======================================== */
+
+.grid--align-start {
+  align-items: start;
+}
+
+.grid--align-center {
+  align-items: center;
+}
+
+.grid--align-end {
+  align-items: end;
+}
+
+.grid--align-stretch {
+  align-items: stretch;
+}
+
+/* ========================================
+   DESKTOP: VIEWPORT HEIGHT ADAPTATION
+   ======================================== */
+
+@media (min-width: 1024px) {
+  .grid {
+    gap: clamp(1rem, 2vh, 2rem);
+  }
+
+  .grid--gap-sm {
+    gap: clamp(0.5rem, 1vh, 1rem);
+  }
+
+  .grid--gap-md {
+    gap: clamp(0.75rem, 1.5vh, 1.5rem);
+  }
+
+  .grid--gap-lg {
+    gap: clamp(1rem, 2vh, 2rem);
+  }
+
+  .grid--gap-xl {
+    gap: clamp(1.5rem, 3vh, 3rem);
+  }
+}
+
+/* ========================================
+   RESPONSIVE: TABLET
+   ======================================== */
+
+@media (max-width: 768px) {
+  .grid {
+    gap: var(--md-sys-spacing-sm);
+  }
+
+  /* All grids become single column on mobile */
+  .grid--2col,
+  .grid--3col,
+  .grid--4col {
+    grid-template-columns: 1fr;
+  }
+
+  /* Auto grids become single column */
+  .grid--auto,
+  .grid--auto-sm,
+  .grid--auto-lg {
+    grid-template-columns: 1fr;
+  }
+
+  /* Smaller gaps for compact grids */
+  .grid--gap-sm {
+    gap: var(--md-sys-spacing-xs);
+  }
+}
+
+/* ========================================
+   RESPONSIVE: MOBILE
+   ======================================== */
+
+@media (max-width: 480px) {
+  .grid {
+    gap: var(--md-sys-spacing-sm);
+  }
+
+  /* Gap modifiers adjust for mobile */
+  .grid--gap-lg,
+  .grid--gap-xl {
+    gap: var(--md-sys-spacing-md);
+  }
+}
+
+/* ========================================
+   RESPONSIVE: LANDSCAPE MOBILE
+   ======================================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .grid {
+    gap: var(--md-sys-spacing-xs);
+  }
+
+  /* Keep 2 columns in landscape for better use of space */
+  .grid--3col,
+  .grid--4col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

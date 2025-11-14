@@ -1,0 +1,465 @@
+/**
+ * Block: hero
+ * Title slide hero section with speaker info
+ */
+
+.hero {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   HERO ELEMENTS
+   ======================================== */
+
+/* Title */
+.hero__title {
+  font-size: var(--md-sys-typescale-display-medium-size);
+  font-weight: 700;
+  color: var(--md-sys-color-on-primary);
+  margin-bottom: var(--md-sys-spacing-md);
+  line-height: 1.1;
+  letter-spacing: -1px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Subtitle */
+.hero__subtitle {
+  font-size: var(--md-sys-typescale-headline-small-size);
+  font-weight: 400;
+  color: var(--md-sys-color-on-primary);
+  margin-bottom: var(--md-sys-spacing-xxl);
+  opacity: 0.95;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Speaker section */
+.hero__speaker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--md-sys-spacing-lg);
+  margin-top: var(--md-sys-spacing-xxl);
+  padding: var(--md-sys-spacing-xl);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--md-sys-shape-corner-xl);
+  box-shadow: var(--md-sys-elevation-2);
+}
+
+/* Avatar */
+.hero__avatar {
+  flex-shrink: 0;
+}
+
+.hero__avatar-img {
+  width: 120px;
+  height: 120px;
+  border-radius: var(--md-sys-shape-corner-full);
+  object-fit: cover;
+  box-shadow: var(--md-sys-elevation-3);
+  border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Speaker info */
+.hero__info {
+  text-align: left;
+  flex: 1;
+  max-width: 500px;
+}
+
+.hero__name {
+  font-size: var(--md-sys-typescale-title-large-size);
+  font-weight: 600;
+  color: var(--md-sys-color-on-primary);
+  margin-bottom: var(--md-sys-spacing-xs);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero__role {
+  font-size: var(--md-sys-typescale-body-medium-size);
+  font-weight: 400;
+  color: var(--md-sys-color-on-primary);
+  margin-bottom: var(--md-sys-spacing-sm);
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.hero__clinic {
+  font-size: var(--md-sys-typescale-body-small-size);
+  font-weight: 500;
+  color: var(--md-sys-color-on-primary);
+  opacity: 0.85;
+  line-height: 1.4;
+}
+
+/* ========================================
+   DESKTOP: VIEWPORT HEIGHT ADAPTATION
+   ======================================== */
+
+@media (min-width: 1024px) {
+  .hero__title {
+    font-size: clamp(2.25rem, 5vh, 3.5rem);
+    margin-bottom: clamp(0.75rem, 1.5vh, 1.5rem);
+  }
+
+  .hero__subtitle {
+    font-size: clamp(1.5rem, 3vh, 2rem);
+    margin-bottom: clamp(2rem, 4vh, 4rem);
+  }
+
+  .hero__speaker {
+    gap: clamp(1rem, 2vh, 2rem);
+    margin-top: clamp(2rem, 4vh, 4rem);
+    padding: clamp(1.5rem, 3vh, 3rem);
+  }
+
+  .hero__avatar-img {
+    width: clamp(100px, 15vh, 120px);
+    height: clamp(100px, 15vh, 120px);
+  }
+
+  .hero__name {
+    font-size: clamp(1.25rem, 2.5vh, 1.75rem);
+    margin-bottom: clamp(0.25rem, 0.5vh, 0.5rem);
+  }
+
+  .hero__role {
+    font-size: clamp(1rem, 1.5vh, 1.125rem);
+    margin-bottom: clamp(0.5rem, 1vh, 1rem);
+  }
+
+  .hero__clinic {
+    font-size: clamp(0.875rem, 1.25vh, 1rem);
+  }
+}
+
+/* ========================================
+   RESPONSIVE: TABLET
+   ======================================== */
+
+@media (max-width: 768px) {
+  .hero__title {
+    font-size: var(--md-sys-typescale-display-small-size);
+    margin-bottom: var(--md-sys-spacing-sm);
+  }
+
+  .hero__subtitle {
+    font-size: var(--md-sys-typescale-title-large-size);
+    margin-bottom: var(--md-sys-spacing-xl);
+  }
+
+  .hero__speaker {
+    flex-direction: column;
+    gap: var(--md-sys-spacing-md);
+    padding: var(--md-sys-spacing-lg);
+  }
+
+  .hero__avatar-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .hero__info {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .hero__name {
+    font-size: var(--md-sys-typescale-title-medium-size);
+  }
+
+  .hero__role {
+    font-size: var(--md-sys-typescale-body-small-size);
+  }
+
+  .hero__clinic {
+    font-size: var(--md-sys-typescale-label-large-size);
+  }
+}
+
+/* ========================================
+   RESPONSIVE: MOBILE
+   ======================================== */
+
+@media (max-width: 480px) {
+  .hero__title {
+    font-size: var(--md-sys-typescale-headline-large-size);
+    letter-spacing: -0.5px;
+  }
+
+  .hero__subtitle {
+    font-size: var(--md-sys-typescale-title-medium-size);
+    margin-bottom: var(--md-sys-spacing-lg);
+  }
+
+  .hero__speaker {
+    padding: var(--md-sys-spacing-md);
+    margin-top: var(--md-sys-spacing-xl);
+  }
+
+  .hero__avatar-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .hero__name {
+    font-size: var(--md-sys-typescale-title-small-size);
+  }
+
+  .hero__role {
+    font-size: var(--md-sys-typescale-label-large-size);
+  }
+
+  .hero__clinic {
+    font-size: var(--md-sys-typescale-label-medium-size);
+  }
+}
+
+/* ========================================
+   RESPONSIVE: VERY SMALL MOBILE
+   ======================================== */
+
+@media (max-width: 360px) {
+  .hero__title {
+    font-size: var(--md-sys-typescale-headline-medium-size);
+  }
+
+  .hero__subtitle {
+    font-size: var(--md-sys-typescale-title-small-size);
+  }
+
+  .hero__avatar-img {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+/* ========================================
+   RESPONSIVE: LANDSCAPE MOBILE
+   ======================================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero__title {
+    font-size: var(--md-sys-typescale-headline-medium-size);
+    margin-bottom: var(--md-sys-spacing-xs);
+  }
+
+  .hero__subtitle {
+    font-size: var(--md-sys-typescale-title-small-size);
+    margin-bottom: var(--md-sys-spacing-md);
+  }
+
+  .hero__speaker {
+    flex-direction: row;
+    padding: var(--md-sys-spacing-sm);
+    margin-top: var(--md-sys-spacing-md);
+  }
+
+  .hero__avatar-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .hero__info {
+    text-align: left;
+  }
+}
+
+/* ========================================
+   HERO MODIFIERS FOR CONTACT SLIDE
+   ======================================== */
+
+/* Contact slide title modifier */
+.hero__title--contact {
+  font-size: 2.5rem;
+}
+
+/* Contact slide name modifier */
+.hero__name--contact {
+  font-size: 1.5rem;
+}
+
+/* Contact slide role modifier */
+.hero__role--contact {
+  font-size: 1.1rem;
+}
+
+/* Intro section for contact slide */
+.hero__intro {
+  /* Container for name and role */
+}
+
+/* ========================================
+   CONTACT SLIDE SECTIONS
+   ======================================== */
+
+/* QR codes section - visible on desktop */
+.hero__qr-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--md-sys-spacing-lg);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* QR item */
+.hero__qr-item {
+  /* Inherits text-center from utility class */
+}
+
+/* QR title */
+.hero__qr-title {
+  font-size: 1.2rem;
+  color: #FFFFFF;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin: 0;
+  text-align: center;
+}
+
+/* QR image wrapper */
+.hero__qr-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__qr-image img {
+  max-width: 180px;
+}
+
+/* Links section - hidden on desktop, visible on mobile */
+.hero__links-section {
+  display: none;
+}
+
+/* Contact info section */
+.hero__contact-info {
+  /* Container for contact text */
+}
+
+/* Contact text */
+.hero__contact-text {
+  font-size: 1.3rem;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+/* Contact link */
+.hero__link {
+  display: flex;
+  align-items: center;
+  gap: var(--md-sys-spacing-md);
+  padding: var(--md-sys-spacing-md) var(--md-sys-spacing-lg);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--md-sys-shape-corner-lg);
+  color: #FFFFFF;
+  font-size: var(--md-sys-typescale-title-medium-size);
+  font-weight: 500;
+  text-decoration: none;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero__link:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: var(--md-sys-elevation-3);
+}
+
+.hero__link .material-symbols-outlined {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+/* Phone link */
+.hero__phone {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 2px;
+}
+
+.hero__phone:hover {
+  border-bottom-color: rgba(255, 255, 255, 0.8);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Tablet and Mobile: hide QR codes, show links */
+@media (max-width: 768px) {
+  .hero__qr-section {
+    display: none;
+    grid-template-columns: 1fr;
+  }
+
+  .hero__links-section {
+    display: block;
+  }
+
+  .hero__title--contact {
+    font-size: 2rem;
+  }
+
+  .hero__name--contact {
+    font-size: 1.25rem;
+  }
+
+  .hero__role--contact {
+    font-size: 1rem;
+  }
+
+  .hero__qr-title {
+    font-size: 1rem;
+  }
+
+  .hero__contact-text {
+    font-size: 1.1rem;
+  }
+
+  .hero__link {
+    font-size: var(--md-sys-typescale-title-small-size);
+    padding: var(--md-sys-spacing-sm) var(--md-sys-spacing-md);
+  }
+
+  .hero__link .material-symbols-outlined {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__title--contact {
+    font-size: 1.5rem;
+  }
+
+  .hero__name--contact {
+    font-size: 1.125rem;
+  }
+
+  .hero__role--contact {
+    font-size: 0.875rem;
+  }
+
+  .hero__contact-text {
+    font-size: 1rem;
+  }
+
+  .hero__link {
+    font-size: var(--md-sys-typescale-body-large-size);
+    padding: var(--md-sys-spacing-sm);
+    gap: var(--md-sys-spacing-sm);
+  }
+
+  .hero__link .material-symbols-outlined {
+    font-size: 24px;
+  }
+}

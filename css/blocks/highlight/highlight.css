@@ -1,0 +1,117 @@
+/**
+ * Block: highlight
+ * Highlighted text block for emphasis with strong visual accent
+ */
+
+.highlight {
+  padding: var(--md-sys-spacing-xl);
+  background: linear-gradient(135deg, var(--md-sys-color-primary), var(--md-sys-color-secondary));
+  color: white;
+  border-radius: var(--md-sys-shape-corner-lg);
+  text-align: center;
+  position: relative;
+}
+
+.highlight::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: var(--md-sys-shape-corner-lg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ========================================
+   HIGHLIGHT ELEMENTS
+   ======================================== */
+
+.highlight__text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+  line-height: 1.4;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================
+   HIGHLIGHT MODIFIERS
+   ======================================== */
+
+/* Success variant (green gradient) */
+.highlight--success {
+  background: linear-gradient(135deg, #34A853, #0F9D58);
+}
+
+/* Warning variant (orange gradient) */
+.highlight--warning {
+  background: linear-gradient(135deg, #FBBC04, #F9AB00);
+}
+
+/* Danger variant (red gradient) */
+.highlight--danger {
+  background: linear-gradient(135deg, #EA4335, #D33B2C);
+}
+
+/* ========================================
+   DESKTOP: VIEWPORT HEIGHT ADAPTATION
+   ======================================== */
+
+@media (min-width: 1024px) {
+  .highlight {
+    padding: clamp(1rem, 2.5vh, 2rem);
+  }
+
+  .highlight__text {
+    font-size: clamp(1.25rem, 2.5vh, 1.5rem);
+    line-height: 1.4;
+  }
+}
+
+/* ========================================
+   RESPONSIVE: TABLET
+   ======================================== */
+
+@media (max-width: 768px) {
+  .highlight {
+    padding: var(--md-sys-spacing-lg);
+  }
+
+  .highlight__text {
+    font-size: 1.25rem;
+  }
+}
+
+/* ========================================
+   RESPONSIVE: MOBILE
+   ======================================== */
+
+@media (max-width: 480px) {
+  .highlight {
+    padding: var(--md-sys-spacing-md);
+  }
+
+  .highlight__text {
+    font-size: 1.125rem;
+  }
+}
+
+/* ========================================
+   RESPONSIVE: LANDSCAPE MOBILE
+   ======================================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .highlight {
+    padding: var(--md-sys-spacing-sm);
+  }
+
+  .highlight__text {
+    font-size: 1rem;
+  }
+}
