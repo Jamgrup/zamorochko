@@ -78,20 +78,30 @@ class PresentationController {
         // Intersection Observer для определения текущего слайда
         const observerOptions = {
             root: presentation,
-            threshold: 0.5
+            threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+            rootMargin: '-20% 0px -20% 0px' // Trigger when slide is in middle 60% of viewport
         };
 
         const observer = new IntersectionObserver((entries) => {
+            // Find the most visible slide
+            let mostVisible = null;
+            let maxRatio = 0;
+
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const slideNumber = parseInt(entry.target.dataset.slide);
-                    if (slideNumber !== this.currentSlide) {
-                        this.currentSlide = slideNumber;
-                        this.updateProgress();
-                        this.updateCounter();
-                    }
+                if (entry.intersectionRatio > maxRatio) {
+                    maxRatio = entry.intersectionRatio;
+                    mostVisible = entry.target;
                 }
             });
+
+            if (mostVisible && maxRatio > 0.3) {
+                const slideNumber = parseInt(mostVisible.dataset.slide);
+                if (slideNumber !== this.currentSlide) {
+                    this.currentSlide = slideNumber;
+                    this.updateProgress();
+                    this.updateCounter();
+                }
+            }
         }, observerOptions);
 
         this.slides.forEach(slide => observer.observe(slide));
@@ -142,6 +152,11 @@ class PresentationController {
     setupShareButton() {
         const shareBtn = document.getElementById('shareBtn');
 
+        if (!shareBtn) {
+            console.warn('Share button not found');
+            return;
+        }
+
         shareBtn.addEventListener('click', async () => {
             const shareData = {
                 title: 'Здоровье тазового дна | BloomCare',
@@ -151,11 +166,13 @@ class PresentationController {
 
             try {
                 // Check if Web Share API is supported
-                if (navigator.share) {
+                if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
                     await navigator.share(shareData);
+                    console.log('Shared successfully');
                 } else {
                     // Fallback: copy link to clipboard
                     await navigator.clipboard.writeText(window.location.href);
+                    console.log('Link copied to clipboard');
 
                     // Show temporary feedback
                     const originalIcon = shareBtn.querySelector('.navigation__icon');
@@ -168,7 +185,22 @@ class PresentationController {
                 }
             } catch (error) {
                 // User cancelled or error occurred
-                console.log('Share cancelled or failed:', error);
+                console.error('Share failed:', error);
+
+                // Try clipboard as final fallback
+                try {
+                    await navigator.clipboard.writeText(window.location.href);
+                    const originalIcon = shareBtn.querySelector('.navigation__icon');
+                    const originalText = originalIcon.textContent;
+                    originalIcon.textContent = 'check';
+
+                    setTimeout(() => {
+                        originalIcon.textContent = originalText;
+                    }, 2000);
+                } catch (clipboardError) {
+                    console.error('Clipboard fallback also failed:', clipboardError);
+                    alert('Ссылка: ' + window.location.href);
+                }
             }
         });
     }
