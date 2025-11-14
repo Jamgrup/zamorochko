@@ -10,8 +10,6 @@
   align-items: center;
   justify-content: center;
   padding: var(--md-sys-spacing-xxl) var(--md-sys-spacing-lg);
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
   position: relative;
   opacity: 0;
   animation: slideIn var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-emphasized) forwards;
