@@ -1,16 +1,28 @@
 /**
  * Block: highlight
- * Highlighted text block for emphasis
+ * Highlighted text block for emphasis with strong visual accent
  */
 
 .highlight {
-  padding: var(--md-sys-spacing-lg) var(--md-sys-spacing-xl);
-  background: linear-gradient(135deg,
-    rgba(26, 115, 232, 0.08) 0%,
-    rgba(26, 115, 232, 0.04) 100%);
-  border-left: 4px solid var(--md-sys-color-primary);
-  border-radius: var(--md-sys-shape-corner-md);
+  padding: var(--md-sys-spacing-xl);
+  background: linear-gradient(135deg, var(--md-sys-color-primary), var(--md-sys-color-secondary));
+  color: white;
+  border-radius: var(--md-sys-shape-corner-lg);
   text-align: center;
+  position: relative;
+}
+
+.highlight::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: var(--md-sys-shape-corner-lg);
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* ========================================
@@ -18,39 +30,33 @@
    ======================================== */
 
 .highlight__text {
-  font-size: var(--md-sys-typescale-title-medium-size);
+  font-size: 1.5rem;
   font-weight: 600;
-  color: var(--md-sys-color-on-surface);
+  color: white;
   margin: 0;
   line-height: 1.4;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* ========================================
    HIGHLIGHT MODIFIERS
    ======================================== */
 
-/* Secondary variant */
-.highlight--secondary {
-  background: linear-gradient(135deg,
-    rgba(102, 157, 246, 0.08) 0%,
-    rgba(102, 157, 246, 0.04) 100%);
-  border-left-color: var(--md-sys-color-secondary);
-}
-
-/* Success variant */
+/* Success variant (green gradient) */
 .highlight--success {
-  background: linear-gradient(135deg,
-    rgba(52, 168, 83, 0.08) 0%,
-    rgba(52, 168, 83, 0.04) 100%);
-  border-left-color: #34A853;
+  background: linear-gradient(135deg, #34A853, #0F9D58);
 }
 
-/* Warning variant */
+/* Warning variant (orange gradient) */
 .highlight--warning {
-  background: linear-gradient(135deg,
-    rgba(251, 188, 4, 0.08) 0%,
-    rgba(251, 188, 4, 0.04) 100%);
-  border-left-color: #FBBC04;
+  background: linear-gradient(135deg, #FBBC04, #F9AB00);
+}
+
+/* Danger variant (red gradient) */
+.highlight--danger {
+  background: linear-gradient(135deg, #EA4335, #D33B2C);
 }
 
 /* ========================================
@@ -59,11 +65,11 @@
 
 @media (min-width: 1024px) {
   .highlight {
-    padding: clamp(0.75rem, 2vh, 1.5rem) clamp(1rem, 2.5vh, 2rem);
+    padding: clamp(1rem, 2.5vh, 2rem);
   }
 
   .highlight__text {
-    font-size: clamp(1.125rem, 2vh, 1.4rem);
+    font-size: clamp(1.25rem, 2.5vh, 1.5rem);
     line-height: 1.4;
   }
 }
@@ -74,11 +80,11 @@
 
 @media (max-width: 768px) {
   .highlight {
-    padding: var(--md-sys-spacing-md) var(--md-sys-spacing-lg);
+    padding: var(--md-sys-spacing-lg);
   }
 
   .highlight__text {
-    font-size: var(--md-sys-typescale-title-small-size);
+    font-size: 1.25rem;
   }
 }
 
@@ -88,11 +94,11 @@
 
 @media (max-width: 480px) {
   .highlight {
-    padding: var(--md-sys-spacing-sm) var(--md-sys-spacing-md);
+    padding: var(--md-sys-spacing-md);
   }
 
   .highlight__text {
-    font-size: var(--md-sys-typescale-body-large-size);
+    font-size: 1.125rem;
   }
 }
 
@@ -106,6 +112,6 @@
   }
 
   .highlight__text {
-    font-size: var(--md-sys-typescale-body-medium-size);
+    font-size: 1rem;
   }
 }
