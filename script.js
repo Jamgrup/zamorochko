@@ -14,9 +14,38 @@ class PresentationController {
     init() {
         this.setupNavigation();
         this.setupKeyboardControls();
+        this.detectCurrentSlideOnLoad();
         this.setupScrollDetection();
         this.updateProgress();
         this.updateCounter();
+    }
+
+    detectCurrentSlideOnLoad() {
+        // Определяем текущий видимый слайд при загрузке страницы
+        const presentation = document.getElementById('presentation');
+        const viewportHeight = window.innerHeight;
+        const scrollTop = presentation.scrollTop;
+
+        // Находим слайд, который больше всего виден в viewport
+        let mostVisibleSlide = 1;
+        let maxVisibleArea = 0;
+
+        this.slides.forEach(slide => {
+            const slideTop = slide.offsetTop;
+            const slideBottom = slideTop + slide.offsetHeight;
+
+            // Вычисляем видимую область слайда
+            const visibleTop = Math.max(slideTop, scrollTop);
+            const visibleBottom = Math.min(slideBottom, scrollTop + viewportHeight);
+            const visibleArea = Math.max(0, visibleBottom - visibleTop);
+
+            if (visibleArea > maxVisibleArea) {
+                maxVisibleArea = visibleArea;
+                mostVisibleSlide = parseInt(slide.dataset.slide);
+            }
+        });
+
+        this.currentSlide = mostVisibleSlide;
     }
 
     setupNavigation() {
