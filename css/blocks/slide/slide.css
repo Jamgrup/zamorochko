@@ -140,6 +140,12 @@
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Raised title modifier for divider slides */
+.slide__title--raised {
+  margin-top: -100px;
+  margin-bottom: 6rem;
+}
+
 /* Slide subtitle */
 .slide__subtitle {
   font-size: var(--md-sys-typescale-title-large-size);
