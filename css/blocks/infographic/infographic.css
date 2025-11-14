@@ -84,6 +84,21 @@
   max-height: 300px;
 }
 
+/* Desktop: адаптация по высоте viewport от 14" ноутбуков */
+@media (min-width: 1024px) {
+  .infographic--large .infographic__image {
+    max-height: clamp(400px, 60vh, 600px);
+  }
+
+  .infographic--medium .infographic__image {
+    max-height: clamp(300px, 50vh, 450px);
+  }
+
+  .infographic--small .infographic__image {
+    max-height: clamp(200px, 40vh, 300px);
+  }
+}
+
 /* Compact variant (less spacing) */
 .infographic--compact {
   gap: var(--md-sys-spacing-sm);

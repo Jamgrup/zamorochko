@@ -207,3 +207,23 @@
   --z-index-tooltip: 700;
   --z-index-notification: 800;
 }
+
+/* ========================================
+   VIEWPORT HEIGHT ADAPTATION (Desktop 14"+)
+   ======================================== */
+
+/* Базовое правило: для desktop от 14" (1366x768) адаптируем по высоте */
+@media (min-width: 1024px) {
+  :root {
+    /* Масштабируемые отступы based on viewport height */
+    --vh-scale: clamp(0.7, 1vh, 1);
+    
+    /* Адаптивные spacing для desktop */
+    --md-sys-spacing-xs-adaptive: calc(var(--md-sys-spacing-xs) * var(--vh-scale));
+    --md-sys-spacing-sm-adaptive: calc(var(--md-sys-spacing-sm) * var(--vh-scale));
+    --md-sys-spacing-md-adaptive: calc(var(--md-sys-spacing-md) * var(--vh-scale));
+    --md-sys-spacing-lg-adaptive: calc(var(--md-sys-spacing-lg) * var(--vh-scale));
+    --md-sys-spacing-xl-adaptive: calc(var(--md-sys-spacing-xl) * var(--vh-scale));
+    --md-sys-spacing-xxl-adaptive: calc(var(--md-sys-spacing-xxl) * var(--vh-scale));
+  }
+}

@@ -96,6 +96,47 @@
 }
 
 /* ========================================
+   DESKTOP: VIEWPORT HEIGHT ADAPTATION
+   ======================================== */
+
+@media (min-width: 1024px) {
+  .hero__title {
+    font-size: clamp(2.25rem, 5vh, 3.5rem);
+    margin-bottom: clamp(0.75rem, 1.5vh, 1.5rem);
+  }
+
+  .hero__subtitle {
+    font-size: clamp(1.5rem, 3vh, 2rem);
+    margin-bottom: clamp(2rem, 4vh, 4rem);
+  }
+
+  .hero__speaker {
+    gap: clamp(1rem, 2vh, 2rem);
+    margin-top: clamp(2rem, 4vh, 4rem);
+    padding: clamp(1.5rem, 3vh, 3rem);
+  }
+
+  .hero__avatar-img {
+    width: clamp(100px, 15vh, 120px);
+    height: clamp(100px, 15vh, 120px);
+  }
+
+  .hero__name {
+    font-size: clamp(1.25rem, 2.5vh, 1.75rem);
+    margin-bottom: clamp(0.25rem, 0.5vh, 0.5rem);
+  }
+
+  .hero__role {
+    font-size: clamp(1rem, 1.5vh, 1.125rem);
+    margin-bottom: clamp(0.5rem, 1vh, 1rem);
+  }
+
+  .hero__clinic {
+    font-size: clamp(0.875rem, 1.25vh, 1rem);
+  }
+}
+
+/* ========================================
    RESPONSIVE: TABLET
    ======================================== */
 

@@ -82,6 +82,32 @@
 }
 
 /* ========================================
+   DESKTOP: VIEWPORT HEIGHT ADAPTATION
+   ======================================== */
+
+@media (min-width: 1024px) {
+  .grid {
+    gap: clamp(1rem, 2vh, 2rem);
+  }
+
+  .grid--gap-sm {
+    gap: clamp(0.5rem, 1vh, 1rem);
+  }
+
+  .grid--gap-md {
+    gap: clamp(0.75rem, 1.5vh, 1.5rem);
+  }
+
+  .grid--gap-lg {
+    gap: clamp(1rem, 2vh, 2rem);
+  }
+
+  .grid--gap-xl {
+    gap: clamp(1.5rem, 3vh, 3rem);
+  }
+}
+
+/* ========================================
    RESPONSIVE: TABLET
    ======================================== */
 

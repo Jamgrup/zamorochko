@@ -252,3 +252,36 @@
     right: var(--md-sys-spacing-xs);
   }
 }
+
+/* ========================================
+   DESKTOP: VIEWPORT HEIGHT ADAPTATION
+   ======================================== */
+
+/* Адаптация для desktop от 14" (минимум 768px высоты) */
+@media (min-width: 1024px) {
+  .slide {
+    /* Адаптивные отступы на основе высоты viewport */
+    padding: clamp(1rem, 5vh, 4rem) clamp(2rem, 3vw, 4rem);
+  }
+
+  .slide__container {
+    /* Ограничиваем высоту контейнера, учитывая навигацию */
+    max-height: calc(100vh - 64px - clamp(2rem, 10vh, 8rem));
+    width: 100%;
+  }
+
+  .slide__title {
+    font-size: clamp(1.75rem, 3.5vh, 2.5rem);
+    margin-bottom: clamp(0.75rem, 2vh, 2rem);
+  }
+
+  .slide__subtitle {
+    font-size: clamp(1.25rem, 2.5vh, 1.75rem);
+    margin-bottom: clamp(0.5rem, 1.5vh, 1rem);
+  }
+
+  .slide__section-title {
+    font-size: clamp(1.125rem, 2vh, 1.5rem);
+    margin-bottom: clamp(0.5rem, 1vh, 1rem);
+  }
+}

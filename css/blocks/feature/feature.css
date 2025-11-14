@@ -130,6 +130,52 @@
 }
 
 /* ========================================
+   DESKTOP: VIEWPORT HEIGHT ADAPTATION
+   ======================================== */
+
+@media (min-width: 1024px) {
+  .feature {
+    padding: clamp(0.75rem, 1.5vh, 1.5rem);
+    gap: clamp(0.75rem, 1.5vh, 1.5rem);
+  }
+
+  .feature--large {
+    padding: clamp(1rem, 2vh, 2rem);
+  }
+
+  .feature--compact {
+    padding: clamp(0.5rem, 1vh, 1rem);
+    gap: clamp(0.5rem, 1vh, 1rem);
+  }
+
+  .feature__icon {
+    width: clamp(44px, 6vh, 48px);
+    height: clamp(44px, 6vh, 48px);
+    min-width: clamp(44px, 6vh, 48px);
+    font-size: clamp(24px, 3.5vh, 28px);
+  }
+
+  .feature__icon img {
+    width: clamp(28px, 4vh, 32px);
+    height: clamp(28px, 4vh, 32px);
+  }
+
+  .feature__text {
+    font-size: clamp(0.875rem, 1.5vh, 1.125rem);
+    line-height: 1.5;
+  }
+
+  .feature__title {
+    font-size: clamp(1rem, 1.75vh, 1.125rem);
+    margin-bottom: clamp(0.25rem, 0.5vh, 0.5rem);
+  }
+
+  .feature__description {
+    font-size: clamp(0.75rem, 1.25vh, 1rem);
+  }
+}
+
+/* ========================================
    RESPONSIVE: TABLET
    ======================================== */
 

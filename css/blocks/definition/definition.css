@@ -100,6 +100,31 @@
 }
 
 /* ========================================
+   DESKTOP: VIEWPORT HEIGHT ADAPTATION
+   ======================================== */
+
+@media (min-width: 1024px) {
+  .definition {
+    padding: clamp(0.75rem, 2vh, 1.5rem) clamp(1rem, 2.5vh, 2rem);
+  }
+
+  .definition__title {
+    font-size: clamp(1.125rem, 2vh, 1.5rem);
+    margin-bottom: clamp(0.5rem, 1vh, 1rem);
+  }
+
+  .definition__text {
+    font-size: clamp(0.9rem, 1.5vh, 1.125rem);
+    line-height: 1.5;
+  }
+
+  .definition__highlight {
+    font-size: clamp(1rem, 2vh, 1.2rem);
+    margin: clamp(0.5rem, 1.5vh, 1.5rem) 0 0 0;
+  }
+}
+
+/* ========================================
    RESPONSIVE: TABLET
    ======================================== */
 

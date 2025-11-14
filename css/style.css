@@ -185,3 +185,19 @@
     color: black !important;
   }
 }
+
+/* ========================================
+   VIEWPORT HEIGHT ADAPTATION
+   ======================================== */
+
+/* Адаптация контента по высоте viewport для desktop */
+@media (min-width: 1024px) {
+  .vh-adaptive {
+    max-height: calc(100vh - 64px - 4rem); /* viewport - navigation - margins */
+  }
+  
+  /* Автоматическое масштабирование изображений */
+  .vh-adaptive img {
+    max-height: calc(100vh - 200px); /* оставляем место для текста */
+  }
+}
