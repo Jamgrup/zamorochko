@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Здоровье тазового дна - презентация Кристины Заморочко, BloomCare">
+    <title>Здоровье тазового дна | BloomCare</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Flex:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@200..700" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page">
+
+    <!-- Navigation -->
+    <nav class="navigation" id="navigation">
+        <div class="navigation__container">
+            <!-- Brand -->
+            <div class="navigation__brand">
+                <span class="navigation__logo">BloomCare</span>
+            </div>
+
+            <!-- Progress -->
+            <div class="navigation__progress-wrapper">
+                <div class="navigation__progress-container">
+                    <div class="navigation__progress-bar" id="progressBar"></div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="navigation__controls">
+                <button class="navigation__button" id="prevBtn" aria-label="Предыдущий слайд" disabled>
+                    <span class="navigation__icon material-symbols-outlined">arrow_back</span>
+                </button>
+                <span class="navigation__counter" id="counter">1 / 29</span>
+                <button class="navigation__button" id="nextBtn" aria-label="Следующий слайд">
+                    <span class="navigation__icon material-symbols-outlined">arrow_forward</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main presentation -->
+    <main class="page__presentation" id="presentation">
+
+        <!-- СЛАЙД 1: Титульный -->
+        <section class="slide slide--hero" data-slide="1">
+            <div class="slide__container">
+                <div class="hero">
+                    <h1 class="hero__title">Важность укрепления мышц тазового дна для всех!</h1>
+                    <p class="hero__subtitle">Проблемы, о которых мы не догадываемся</p>
+
+                    <div class="hero__speaker">
+                        <div class="hero__avatar">
+                            <img src="images/doctor-optimized.jpg" alt="Кристина Заморочко" class="hero__avatar-img">
+                        </div>
+                        <div class="hero__info">
+                            <p class="hero__name">Кристина Заморочко</p>
+                            <p class="hero__role">Врач гинеколог, урогинеколог, тазовый терапевт и медицинский директор BloomCare клиники</p>
+                            <p class="hero__clinic">Первая клиника в России по восстановлению мышц тазового дна</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Слайды 2-29 будут добавлены позже -->
+
+    </main>
+
+    <!-- JavaScript -->
+    <script src="js/navigation.js"></script>
+
+</body>
+</html>

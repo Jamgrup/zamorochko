@@ -1,0 +1,228 @@
+/**
+ * Block: hero
+ * Title slide hero section with speaker info
+ */
+
+.hero {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   HERO ELEMENTS
+   ======================================== */
+
+/* Title */
+.hero__title {
+  font-size: var(--md-sys-typescale-display-medium-size);
+  font-weight: 700;
+  color: var(--md-sys-color-on-primary);
+  margin-bottom: var(--md-sys-spacing-md);
+  line-height: 1.1;
+  letter-spacing: -1px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Subtitle */
+.hero__subtitle {
+  font-size: var(--md-sys-typescale-headline-small-size);
+  font-weight: 400;
+  color: var(--md-sys-color-on-primary);
+  margin-bottom: var(--md-sys-spacing-xxl);
+  opacity: 0.95;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Speaker section */
+.hero__speaker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--md-sys-spacing-lg);
+  margin-top: var(--md-sys-spacing-xxl);
+  padding: var(--md-sys-spacing-xl);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--md-sys-shape-corner-xl);
+  box-shadow: var(--md-sys-elevation-2);
+}
+
+/* Avatar */
+.hero__avatar {
+  flex-shrink: 0;
+}
+
+.hero__avatar-img {
+  width: 120px;
+  height: 120px;
+  border-radius: var(--md-sys-shape-corner-full);
+  object-fit: cover;
+  box-shadow: var(--md-sys-elevation-3);
+  border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Speaker info */
+.hero__info {
+  text-align: left;
+  flex: 1;
+  max-width: 500px;
+}
+
+.hero__name {
+  font-size: var(--md-sys-typescale-title-large-size);
+  font-weight: 600;
+  color: var(--md-sys-color-on-primary);
+  margin-bottom: var(--md-sys-spacing-xs);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero__role {
+  font-size: var(--md-sys-typescale-body-medium-size);
+  font-weight: 400;
+  color: var(--md-sys-color-on-primary);
+  margin-bottom: var(--md-sys-spacing-sm);
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.hero__clinic {
+  font-size: var(--md-sys-typescale-body-small-size);
+  font-weight: 500;
+  color: var(--md-sys-color-on-primary);
+  opacity: 0.85;
+  line-height: 1.4;
+}
+
+/* ========================================
+   RESPONSIVE: TABLET
+   ======================================== */
+
+@media (max-width: 768px) {
+  .hero__title {
+    font-size: var(--md-sys-typescale-display-small-size);
+    margin-bottom: var(--md-sys-spacing-sm);
+  }
+
+  .hero__subtitle {
+    font-size: var(--md-sys-typescale-title-large-size);
+    margin-bottom: var(--md-sys-spacing-xl);
+  }
+
+  .hero__speaker {
+    flex-direction: column;
+    gap: var(--md-sys-spacing-md);
+    padding: var(--md-sys-spacing-lg);
+  }
+
+  .hero__avatar-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .hero__info {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .hero__name {
+    font-size: var(--md-sys-typescale-title-medium-size);
+  }
+
+  .hero__role {
+    font-size: var(--md-sys-typescale-body-small-size);
+  }
+
+  .hero__clinic {
+    font-size: var(--md-sys-typescale-label-large-size);
+  }
+}
+
+/* ========================================
+   RESPONSIVE: MOBILE
+   ======================================== */
+
+@media (max-width: 480px) {
+  .hero__title {
+    font-size: var(--md-sys-typescale-headline-large-size);
+    letter-spacing: -0.5px;
+  }
+
+  .hero__subtitle {
+    font-size: var(--md-sys-typescale-title-medium-size);
+    margin-bottom: var(--md-sys-spacing-lg);
+  }
+
+  .hero__speaker {
+    padding: var(--md-sys-spacing-md);
+    margin-top: var(--md-sys-spacing-xl);
+  }
+
+  .hero__avatar-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .hero__name {
+    font-size: var(--md-sys-typescale-title-small-size);
+  }
+
+  .hero__role {
+    font-size: var(--md-sys-typescale-label-large-size);
+  }
+
+  .hero__clinic {
+    font-size: var(--md-sys-typescale-label-medium-size);
+  }
+}
+
+/* ========================================
+   RESPONSIVE: VERY SMALL MOBILE
+   ======================================== */
+
+@media (max-width: 360px) {
+  .hero__title {
+    font-size: var(--md-sys-typescale-headline-medium-size);
+  }
+
+  .hero__subtitle {
+    font-size: var(--md-sys-typescale-title-small-size);
+  }
+
+  .hero__avatar-img {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+/* ========================================
+   RESPONSIVE: LANDSCAPE MOBILE
+   ======================================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero__title {
+    font-size: var(--md-sys-typescale-headline-medium-size);
+    margin-bottom: var(--md-sys-spacing-xs);
+  }
+
+  .hero__subtitle {
+    font-size: var(--md-sys-typescale-title-small-size);
+    margin-bottom: var(--md-sys-spacing-md);
+  }
+
+  .hero__speaker {
+    flex-direction: row;
+    padding: var(--md-sys-spacing-sm);
+    margin-top: var(--md-sys-spacing-md);
+  }
+
+  .hero__avatar-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .hero__info {
+    text-align: left;
+  }
+}

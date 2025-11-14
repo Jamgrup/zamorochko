@@ -1,0 +1,46 @@
+/**
+ * Block: page
+ * Main page wrapper
+ */
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--md-sys-color-surface);
+  overflow-x: hidden;
+}
+
+.page__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Presentation container */
+.page__presentation {
+  flex: 1;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar but keep functionality */
+.page__presentation::-webkit-scrollbar {
+  display: none;
+}
+
+.page__presentation {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Mobile specific */
+@media (max-width: 1023px) {
+  .page {
+    padding-bottom: 60px; /* Space for bottom navigation */
+  }
+}
