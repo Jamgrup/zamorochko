@@ -116,32 +116,7 @@
     gap: var(--md-sys-spacing-md);
   }
 
-  /* 3 and 4 columns become 2 columns */
-  .grid--3col,
-  .grid--4col {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* Auto grids adjust minmax */
-  .grid--auto {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-
-  .grid--auto-lg {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
-}
-
-/* ========================================
-   RESPONSIVE: MOBILE
-   ======================================== */
-
-@media (max-width: 480px) {
-  .grid {
-    gap: var(--md-sys-spacing-sm);
-  }
-
-  /* All multi-column grids become single column */
+  /* All grids become single column on mobile */
   .grid--2col,
   .grid--3col,
   .grid--4col {
@@ -153,6 +128,16 @@
   .grid--auto-sm,
   .grid--auto-lg {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================
+   RESPONSIVE: MOBILE
+   ======================================== */
+
+@media (max-width: 480px) {
+  .grid {
+    gap: var(--md-sys-spacing-sm);
   }
 
   /* Gap modifiers adjust for mobile */
