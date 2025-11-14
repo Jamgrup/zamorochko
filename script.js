@@ -162,7 +162,15 @@ class PresentationController {
             event.preventDefault();
             event.stopPropagation();
 
-            const shareData = {
+            // Detect iOS devices
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+            // iOS-specific share data format
+            // iOS Safari has issues with 'url' property, works better with text
+            const shareData = isIOS ? {
+                title: 'Здоровье тазового дна | BloomCare',
+                text: `Важность укрепления мышц тазового дна для всех!\n\n${window.location.href}`
+            } : {
                 title: 'Здоровье тазового дна | BloomCare',
                 text: 'Важность укрепления мышц тазового дна для всех!',
                 url: window.location.href
@@ -183,8 +191,13 @@ class PresentationController {
                 // Check Web Share API first (works best on mobile)
                 if (navigator.share) {
                     try {
+                        // iOS Safari sometimes needs a small delay
+                        if (isIOS) {
+                            await new Promise(resolve => setTimeout(resolve, 100));
+                        }
                         await navigator.share(shareData);
                         console.log('Shared successfully via Web Share API');
+                        showFeedback(true);
                         return;
                     } catch (shareError) {
                         // User cancelled sharing or error occurred
