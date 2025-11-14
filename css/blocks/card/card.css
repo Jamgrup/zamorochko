@@ -87,45 +87,21 @@
   color: var(--md-sys-color-on-primary-container);
 }
 
-/* Secondary variant */
-.card--secondary {
-  background-color: var(--md-sys-color-secondary-container);
-  color: var(--md-sys-color-on-secondary-container);
+/* Primary variant - only affects icon color */
+.card--primary .card__icon {
+  background-color: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
 }
 
-.card--secondary .card__title {
-  color: var(--md-sys-color-on-secondary-container);
-}
-
-.card--secondary .card__text,
-.card--secondary .card__description {
-  color: var(--md-sys-color-on-secondary-container);
-  opacity: 0.9;
-}
-
+/* Secondary variant - only affects icon color */
 .card--secondary .card__icon {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: var(--md-sys-color-on-secondary-container);
+  background-color: var(--md-sys-color-error-container);
+  color: var(--md-sys-color-on-error-container);
 }
 
-/* Tertiary variant */
-.card--tertiary {
-  background-color: var(--md-sys-color-tertiary-container);
-  color: var(--md-sys-color-on-tertiary-container);
-}
-
-.card--tertiary .card__title {
-  color: var(--md-sys-color-on-tertiary-container);
-}
-
-.card--tertiary .card__text,
-.card--tertiary .card__description {
-  color: var(--md-sys-color-on-tertiary-container);
-  opacity: 0.9;
-}
-
+/* Tertiary variant - only affects icon color */
 .card--tertiary .card__icon {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--md-sys-color-tertiary-container);
   color: var(--md-sys-color-on-tertiary-container);
 }
 
