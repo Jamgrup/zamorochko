@@ -9,12 +9,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--md-sys-spacing-xxl) var(--md-sys-spacing-xl);
+  padding: var(--md-sys-spacing-xxl) var(--md-sys-spacing-lg);
   scroll-snap-align: start;
   scroll-snap-stop: always;
   position: relative;
   opacity: 0;
   animation: slideIn var(--md-sys-motion-duration-medium) var(--md-sys-motion-easing-emphasized) forwards;
+}
+
+/* Desktop: maximize screen usage */
+@media (min-width: 1440px) {
+  .slide {
+    padding: var(--md-sys-spacing-xxl) var(--md-sys-spacing-xl);
+  }
+}
+
+@media (min-width: 1920px) {
+  .slide {
+    padding: var(--md-sys-spacing-xxl) calc(var(--md-sys-spacing-xl) * 1.5);
+  }
 }
 
 @keyframes slideIn {
@@ -31,7 +44,6 @@
 /* Container */
 .slide__container {
   width: 100%;
-  max-width: 1400px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
