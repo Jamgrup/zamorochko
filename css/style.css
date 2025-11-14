@@ -27,6 +27,9 @@
 @import url('blocks/alert/alert.css');
 @import url('blocks/grid/grid.css');
 @import url('blocks/feature/feature.css');
+@import url('blocks/definition/definition.css');
+@import url('blocks/infographic/infographic.css');
+@import url('blocks/checklist/checklist.css');
 
 /* ========================================
    UTILITY CLASSES

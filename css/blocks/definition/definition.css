@@ -1,0 +1,139 @@
+/**
+ * Block: definition
+ * Highlighted definition or term explanation box
+ */
+
+.definition {
+  background-color: var(--md-sys-color-surface-container-high);
+  border-left: 4px solid var(--md-sys-color-primary);
+  border-radius: var(--md-sys-shape-corner-md);
+  padding: var(--md-sys-spacing-lg);
+  box-shadow: var(--md-sys-elevation-1);
+  transition: all var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+}
+
+.definition:hover {
+  box-shadow: var(--md-sys-elevation-2);
+}
+
+/* ========================================
+   DEFINITION ELEMENTS
+   ======================================== */
+
+/* Title */
+.definition__title {
+  font-size: var(--md-sys-typescale-title-medium-size);
+  font-weight: 600;
+  color: var(--md-sys-color-on-surface);
+  margin-bottom: var(--md-sys-spacing-sm);
+  line-height: 1.3;
+}
+
+/* Text content */
+.definition__text {
+  font-size: var(--md-sys-typescale-body-large-size);
+  line-height: 1.6;
+  color: var(--md-sys-color-on-surface);
+  margin: 0;
+}
+
+.definition__text strong {
+  font-weight: 600;
+  color: var(--md-sys-color-primary);
+}
+
+/* ========================================
+   DEFINITION MODIFIERS
+   ======================================== */
+
+/* Info variant (blue) */
+.definition--info {
+  background: linear-gradient(
+    135deg,
+    rgba(var(--md-sys-color-primary-rgb, 0, 104, 116), 0.08) 0%,
+    rgba(var(--md-sys-color-primary-rgb, 0, 104, 116), 0.03) 100%
+  );
+  border-left-color: var(--md-sys-color-primary);
+}
+
+/* Warning variant (orange) */
+.definition--warning {
+  background: linear-gradient(
+    135deg,
+    rgba(var(--md-sys-color-warning-rgb, 255, 140, 0), 0.08) 0%,
+    rgba(var(--md-sys-color-warning-rgb, 255, 140, 0), 0.03) 100%
+  );
+  border-left-color: var(--md-sys-color-warning);
+}
+
+.definition--warning .definition__text strong {
+  color: var(--md-sys-color-warning);
+}
+
+/* Success variant (green) */
+.definition--success {
+  background: linear-gradient(
+    135deg,
+    rgba(var(--md-sys-color-success-rgb, 46, 125, 50), 0.08) 0%,
+    rgba(var(--md-sys-color-success-rgb, 46, 125, 50), 0.03) 100%
+  );
+  border-left-color: var(--md-sys-color-success);
+}
+
+.definition--success .definition__text strong {
+  color: var(--md-sys-color-success);
+}
+
+/* Neutral variant (gray) */
+.definition--neutral {
+  background-color: var(--md-sys-color-surface-container);
+  border-left-color: var(--md-sys-color-outline);
+}
+
+/* ========================================
+   RESPONSIVE: TABLET
+   ======================================== */
+
+@media (max-width: 768px) {
+  .definition {
+    padding: var(--md-sys-spacing-md);
+  }
+
+  .definition__title {
+    font-size: var(--md-sys-typescale-title-small-size);
+  }
+
+  .definition__text {
+    font-size: var(--md-sys-typescale-body-medium-size);
+  }
+}
+
+/* ========================================
+   RESPONSIVE: MOBILE
+   ======================================== */
+
+@media (max-width: 480px) {
+  .definition {
+    padding: var(--md-sys-spacing-sm) var(--md-sys-spacing-md);
+    border-left-width: 3px;
+  }
+
+  .definition__text {
+    font-size: var(--md-sys-typescale-body-small-size);
+    line-height: 1.5;
+  }
+}
+
+/* ========================================
+   RESPONSIVE: LANDSCAPE MOBILE
+   ======================================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .definition {
+    padding: var(--md-sys-spacing-sm);
+  }
+
+  .definition__text {
+    font-size: var(--md-sys-typescale-body-small-size);
+  }
+}

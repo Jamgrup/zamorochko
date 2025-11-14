@@ -155,6 +155,23 @@
   opacity: 0.9;
 }
 
+/* Slide section title (for content sections within slides) */
+.slide__section-title {
+  font-size: var(--md-sys-typescale-title-medium-size);
+  font-weight: 600;
+  color: var(--md-sys-color-primary);
+  margin-top: var(--md-sys-spacing-sm);
+  margin-bottom: var(--md-sys-spacing-md);
+  line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+  .slide__section-title {
+    font-size: var(--md-sys-typescale-title-small-size);
+    margin-bottom: var(--md-sys-spacing-sm);
+  }
+}
+
 /* ========================================
    RESPONSIVE: TABLET
    ======================================== */

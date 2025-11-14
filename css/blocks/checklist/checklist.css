@@ -1,0 +1,177 @@
+/**
+ * Block: checklist
+ * Grid of items with icons (similar to feature but in grid layout)
+ */
+
+.checklist {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--md-sys-spacing-sm) var(--md-sys-spacing-md);
+}
+
+/* ========================================
+   CHECKLIST ELEMENTS
+   ======================================== */
+
+/* Checklist item */
+.checklist__item {
+  display: flex;
+  align-items: center;
+  gap: var(--md-sys-spacing-sm);
+  padding: var(--md-sys-spacing-sm) var(--md-sys-spacing-md);
+  background-color: var(--md-sys-color-surface-container);
+  border-radius: var(--md-sys-shape-corner-md);
+  transition: all var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+  border: 1px solid transparent;
+}
+
+.checklist__item:hover {
+  background-color: var(--md-sys-color-surface-container-high);
+  border-color: var(--md-sys-color-outline-variant);
+  box-shadow: var(--md-sys-elevation-1);
+  transform: translateY(-2px);
+}
+
+/* Icon */
+.checklist__icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--md-sys-color-primary);
+  font-size: 24px;
+}
+
+/* Text */
+.checklist__text {
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: 1.4;
+  color: var(--md-sys-color-on-surface);
+  font-weight: 400;
+}
+
+/* ========================================
+   CHECKLIST MODIFIERS
+   ======================================== */
+
+/* Compact variant (3 columns) */
+.checklist--3col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Compact variant (4 columns) */
+.checklist--4col {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Large spacing */
+.checklist--large {
+  gap: var(--md-sys-spacing-md) var(--md-sys-spacing-lg);
+}
+
+/* Small spacing */
+.checklist--compact {
+  gap: var(--md-sys-spacing-xs) var(--md-sys-spacing-sm);
+}
+
+.checklist--compact .checklist__item {
+  padding: var(--md-sys-spacing-xs) var(--md-sys-spacing-sm);
+}
+
+/* Outlined variant */
+.checklist--outlined .checklist__item {
+  background-color: transparent;
+  border-color: var(--md-sys-color-outline-variant);
+}
+
+.checklist--outlined .checklist__item:hover {
+  background-color: var(--md-sys-color-surface-container-low);
+  border-color: var(--md-sys-color-primary);
+}
+
+/* Success color variant */
+.checklist--success .checklist__icon {
+  color: var(--md-sys-color-success);
+}
+
+/* Primary color variant */
+.checklist--primary .checklist__icon {
+  color: var(--md-sys-color-primary);
+}
+
+/* Secondary color variant */
+.checklist--secondary .checklist__icon {
+  color: var(--md-sys-color-secondary);
+}
+
+/* ========================================
+   RESPONSIVE: TABLET
+   ======================================== */
+
+@media (max-width: 768px) {
+  .checklist {
+    grid-template-columns: 1fr;
+    gap: var(--md-sys-spacing-xs);
+  }
+
+  .checklist--3col,
+  .checklist--4col {
+    grid-template-columns: 1fr;
+  }
+
+  .checklist__item {
+    padding: var(--md-sys-spacing-xs) var(--md-sys-spacing-sm);
+  }
+
+  .checklist__icon {
+    width: 28px;
+    height: 28px;
+    font-size: 20px;
+  }
+
+  .checklist__text {
+    font-size: var(--md-sys-typescale-body-small-size);
+  }
+}
+
+/* ========================================
+   RESPONSIVE: MOBILE
+   ======================================== */
+
+@media (max-width: 480px) {
+  .checklist {
+    gap: var(--md-sys-spacing-xs);
+  }
+
+  .checklist__item {
+    padding: var(--md-sys-spacing-xs);
+    gap: var(--md-sys-spacing-xs);
+  }
+
+  .checklist__icon {
+    width: 24px;
+    height: 24px;
+    font-size: 18px;
+  }
+
+  .checklist__text {
+    font-size: var(--md-sys-typescale-label-large-size);
+  }
+}
+
+/* ========================================
+   RESPONSIVE: LANDSCAPE MOBILE
+   ======================================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .checklist {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--md-sys-spacing-xs) var(--md-sys-spacing-sm);
+  }
+
+  .checklist__item {
+    padding: var(--md-sys-spacing-xs) var(--md-sys-spacing-sm);
+  }
+}
