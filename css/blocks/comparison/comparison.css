@@ -54,6 +54,42 @@
   transition: color var(--md-sys-motion-duration-short);
 }
 
+/* Title (alternative to label, used with text) */
+.comparison__title {
+  font-size: var(--md-sys-typescale-headline-small-size);
+  font-weight: 600;
+  color: var(--md-sys-color-on-surface);
+  text-align: center;
+  margin: 0 0 var(--md-sys-spacing-sm) 0;
+  transition: color var(--md-sys-motion-duration-short);
+}
+
+/* Text description */
+.comparison__text {
+  font-size: var(--md-sys-typescale-body-medium-size);
+  color: var(--md-sys-color-on-surface-variant);
+  text-align: center;
+  margin: 0;
+  line-height: 1.6;
+  transition: color var(--md-sys-motion-duration-short);
+}
+
+/* VS separator */
+.comparison__vs {
+  flex: 0 0 auto;
+  font-size: 48px;
+  font-weight: 700;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Primary color variant for VS separator */
+.comparison__vs--primary {
+  color: var(--md-sys-color-primary);
+}
+
 /* ========================================
    COMPARISON MODIFIERS
    ======================================== */
@@ -75,8 +111,13 @@
   color: #FF6B6B;
 }
 
-.comparison__item--danger .comparison__label {
+.comparison__item--danger .comparison__label,
+.comparison__item--danger .comparison__title {
   color: #FFFFFF;
+}
+
+.comparison__item--danger .comparison__text {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /* Info variant (hypoactive) */
@@ -96,8 +137,126 @@
   color: #4DABF7;
 }
 
-.comparison__item--info .comparison__label {
+.comparison__item--info .comparison__label,
+.comparison__item--info .comparison__title {
   color: #FFFFFF;
+}
+
+.comparison__item--info .comparison__text {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Success variant (correct/positive) */
+.comparison__item--success {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.comparison__item--success:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.comparison__item--success .comparison__icon {
+  color: #34A853;
+}
+
+.comparison__item--success .comparison__label,
+.comparison__item--success .comparison__title {
+  color: #FFFFFF;
+}
+
+.comparison__item--success .comparison__text {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ========================================
+   LIGHT BACKGROUND VARIANTS
+   For use on white/light backgrounds (slide--light)
+   ======================================== */
+
+/* Danger variant for light backgrounds */
+.comparison__item--danger-light {
+  background: linear-gradient(135deg, #FFEBEE 0%, #FCE4EC 100%);
+  border-color: #EF9A9A;
+}
+
+.comparison__item--danger-light:hover {
+  background: linear-gradient(135deg, #FFCDD2 0%, #F8BBD0 100%);
+  border-color: #E57373;
+}
+
+.comparison__item--danger-light .comparison__icon {
+  color: #D32F2F;
+}
+
+.comparison__item--danger-light .comparison__label,
+.comparison__item--danger-light .comparison__title {
+  color: var(--md-sys-color-on-surface);
+}
+
+.comparison__item--danger-light .comparison__text {
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.comparison__item--danger-light .checklist__item {
+  background-color: rgba(244, 67, 54, 0.08);
+  box-shadow: var(--md-sys-elevation-1);
+}
+
+.comparison__item--danger-light .checklist__item:hover {
+  box-shadow: var(--md-sys-elevation-2);
+}
+
+.comparison__item--danger-light .checklist__text {
+  color: var(--md-sys-color-on-surface);
+}
+
+.comparison__item--danger-light .checklist__icon {
+  color: #D32F2F;
+}
+
+/* Success variant for light backgrounds */
+.comparison__item--success-light {
+  background: linear-gradient(135deg, #E8F5E9 0%, #F1F8E9 100%);
+  border-color: #81C784;
+}
+
+.comparison__item--success-light:hover {
+  background: linear-gradient(135deg, #C8E6C9 0%, #DCEDC8 100%);
+  border-color: #66BB6A;
+}
+
+.comparison__item--success-light .comparison__icon {
+  color: #2E7D32;
+}
+
+.comparison__item--success-light .comparison__label,
+.comparison__item--success-light .comparison__title {
+  color: var(--md-sys-color-on-surface);
+}
+
+.comparison__item--success-light .comparison__text {
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.comparison__item--success-light .checklist__item {
+  background-color: rgba(76, 175, 80, 0.08);
+  box-shadow: var(--md-sys-elevation-1);
+}
+
+.comparison__item--success-light .checklist__item:hover {
+  box-shadow: var(--md-sys-elevation-2);
+}
+
+.comparison__item--success-light .checklist__text {
+  color: var(--md-sys-color-on-surface);
+}
+
+.comparison__item--success-light .checklist__icon {
+  color: #2E7D32;
 }
 
 /* ========================================
@@ -145,6 +304,16 @@
 
   .comparison__label {
     font-size: var(--md-sys-typescale-headline-small-size);
+  }
+
+  /* Rotate arrow to point down in vertical layout */
+  .comparison__vs {
+    transform: rotate(90deg);
+  }
+
+  /* Text variant doesn't rotate */
+  .comparison__vs--text {
+    transform: none;
   }
 }
 

@@ -36,6 +36,42 @@
   flex-shrink: 0;
 }
 
+/* Icon with SVG image */
+.card__icon img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+/* Circular icon variant (for inline with title) */
+.card__icon--circle {
+  border-radius: var(--md-sys-shape-corner-full);
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  margin-bottom: 0;
+}
+
+.card__icon--circle img {
+  width: 28px;
+  height: 28px;
+}
+
+/* Icon color modifiers */
+.card__icon--tertiary {
+  background-color: var(--md-sys-color-tertiary);
+  color: var(--md-sys-color-on-tertiary);
+}
+
+.card__icon--secondary {
+  background-color: var(--md-sys-color-secondary);
+  color: var(--md-sys-color-on-secondary);
+}
+
+.card__icon--white-text {
+  color: #FFFFFF;
+}
+
 /* Title */
 .card__title {
   font-size: var(--md-sys-typescale-title-large-size);
@@ -93,36 +129,88 @@
   color: var(--md-sys-color-on-primary-container);
 }
 
-/* Secondary variant - only affects icon color */
+/* Secondary variant - full card with background */
+.card--secondary {
+  background: linear-gradient(135deg, var(--md-sys-color-secondary-container) 0%, rgba(255, 240, 230, 0.6) 100%);
+  border-left: 4px solid var(--md-sys-color-secondary);
+  box-shadow: var(--md-sys-elevation-2);
+}
+
+.card--secondary:hover {
+  box-shadow: var(--md-sys-elevation-3);
+}
+
+.card--secondary .card__title {
+  color: var(--md-sys-color-on-secondary-container);
+  font-weight: 700;
+}
+
 .card--secondary .card__icon {
-  background-color: var(--md-sys-color-error-container);
-  color: var(--md-sys-color-on-error-container);
+  background-color: var(--md-sys-color-secondary);
+  color: var(--md-sys-color-on-secondary);
+  box-shadow: var(--md-sys-elevation-2);
 }
 
-/* Tertiary variant - only affects icon color */
-.card--tertiary .card__icon {
-  background-color: var(--md-sys-color-tertiary-container);
+/* Nested step elements in secondary card */
+.card--secondary .step {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.card--secondary .step:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+/* Tertiary variant - full card with background */
+.card--tertiary {
+  background: linear-gradient(135deg, var(--md-sys-color-tertiary-container) 0%, rgba(230, 245, 240, 0.6) 100%);
+  border-left: 4px solid var(--md-sys-color-tertiary);
+  box-shadow: var(--md-sys-elevation-2);
+}
+
+.card--tertiary:hover {
+  box-shadow: var(--md-sys-elevation-3);
+}
+
+.card--tertiary .card__title {
   color: var(--md-sys-color-on-tertiary-container);
+  font-weight: 700;
 }
 
-/* Danger/Error variant */
-.card--danger {
+.card--tertiary .card__icon {
+  background-color: var(--md-sys-color-tertiary);
+  color: var(--md-sys-color-on-tertiary);
+  box-shadow: var(--md-sys-elevation-2);
+}
+
+/* Nested step elements in tertiary card */
+.card--tertiary .step {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.card--tertiary .step:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+/* Danger/Error variant - only affects nested checklist items */
+.card--danger .checklist__item {
   background-color: var(--md-sys-color-error-container);
+  border-color: transparent;
+}
+
+.card--danger .checklist__item:hover {
+  background-color: var(--md-sys-color-error-container);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.card--danger .checklist__text {
   color: var(--md-sys-color-on-error-container);
 }
 
-.card--danger .card__title {
-  color: var(--md-sys-color-on-error-container);
-}
-
-.card--danger .card__text,
-.card--danger .card__description {
-  color: var(--md-sys-color-on-error-container);
-  opacity: 0.9;
-}
-
-.card--danger .card__icon {
-  background-color: rgba(255, 255, 255, 0.2);
+.card--danger .checklist__icon {
   color: var(--md-sys-color-on-error-container);
 }
 
@@ -165,6 +253,30 @@
 .card--outlined:hover {
   border-color: var(--md-sys-color-outline);
   box-shadow: var(--md-sys-elevation-1);
+}
+
+/* Gradient variant with white text (for conclusion slide) */
+.card--gradient {
+  background: linear-gradient(135deg, var(--md-sys-color-primary), var(--md-sys-color-secondary));
+  border-left: 4px solid #FFFFFF;
+  color: #FFFFFF;
+}
+
+.card--gradient .card__title,
+.card--gradient .card__text,
+.card--gradient .card__description {
+  color: #FFFFFF;
+}
+
+/* Accent border variant (for callout cards) */
+.card--accent-border-tertiary {
+  background: linear-gradient(135deg, var(--md-sys-color-tertiary-container) 0%, var(--md-sys-color-surface-variant) 100%);
+  border-left: 4px solid var(--md-sys-color-tertiary);
+}
+
+.card--accent-border-secondary {
+  background: linear-gradient(135deg, var(--md-sys-color-secondary-container) 0%, var(--md-sys-color-surface-variant) 100%);
+  border-left: 4px solid var(--md-sys-color-secondary);
 }
 
 /* ========================================

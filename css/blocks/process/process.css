@@ -170,6 +170,8 @@
   }
 
   .process__step {
+    width: 100%;
+    flex: none;
     padding: var(--md-sys-spacing-lg);
     gap: var(--md-sys-spacing-sm);
   }

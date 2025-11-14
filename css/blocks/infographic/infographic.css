@@ -28,7 +28,7 @@
   height: auto;
   border-radius: var(--md-sys-shape-corner-lg);
   box-shadow: var(--md-sys-elevation-2);
-  object-fit: cover;
+  object-fit: contain;
   transition: all var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
 }
 
@@ -109,17 +109,60 @@
   max-height: none;
 }
 
+/* Width-constrained variant (690px like old version) */
+.infographic--constrained {
+  max-width: 690px;
+  margin: 0 auto;
+}
+
+/* Width-constrained variant small (360px) */
+.infographic--constrained-sm {
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+/* Width-constrained variant 350px */
+.infographic--constrained-350 {
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+/* Width-constrained variant 460px */
+.infographic--constrained-460 {
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+/* Width-constrained variant 633px */
+.infographic--constrained-633 {
+  max-width: 633px;
+  margin: 0 auto;
+}
+
+/* Cover variant - fills area with cropping */
+.infographic--cover .infographic__image {
+  object-fit: cover;
+}
+
+/* Custom height variant - 550px */
+.infographic--h-550 .infographic__image {
+  max-height: 550px;
+}
+
 /* ========================================
    RESPONSIVE: TABLET
    ======================================== */
 
 @media (max-width: 768px) {
-  .infographic__image {
-    max-height: 400px !important;
+  .infographic__image,
+  .infographic--large .infographic__image,
+  .infographic--medium .infographic__image,
+  .infographic--small .infographic__image {
+    max-height: 400px;
   }
 
   .infographic--large .infographic__image {
-    max-height: 450px !important;
+    max-height: 450px;
   }
 
   .infographic__caption {
@@ -136,13 +179,16 @@
     gap: var(--md-sys-spacing-sm);
   }
 
-  .infographic__image {
-    max-height: 300px !important;
+  .infographic__image,
+  .infographic--large .infographic__image,
+  .infographic--medium .infographic__image,
+  .infographic--small .infographic__image {
+    max-height: 300px;
     border-radius: var(--md-sys-shape-corner-md);
   }
 
   .infographic--large .infographic__image {
-    max-height: 350px !important;
+    max-height: 350px;
   }
 
   .infographic__caption {
@@ -155,11 +201,14 @@
    ======================================== */
 
 @media (max-height: 500px) and (orientation: landscape) {
-  .infographic__image {
-    max-height: 250px !important;
+  .infographic__image,
+  .infographic--large .infographic__image,
+  .infographic--medium .infographic__image,
+  .infographic--small .infographic__image {
+    max-height: 250px;
   }
 
   .infographic--large .infographic__image {
-    max-height: 300px !important;
+    max-height: 300px;
   }
 }

@@ -33,6 +33,11 @@
 @import url('blocks/comparison/comparison.css');
 @import url('blocks/process/process.css');
 @import url('blocks/highlight/highlight.css');
+@import url('blocks/step/step.css');
+@import url('blocks/quote/quote.css');
+@import url('blocks/video/video.css');
+@import url('blocks/bullet-list/bullet-list.css');
+@import url('blocks/exercise-card/exercise-card.css');
 
 /* ========================================
    UTILITY CLASSES
@@ -73,10 +78,17 @@
 .text-primary { color: var(--md-sys-color-primary); }
 .text-secondary { color: var(--md-sys-color-secondary); }
 .text-on-surface { color: var(--md-sys-color-on-surface); }
+.text-white { color: #FFFFFF; }
+
+/* Text alignment utilities */
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
 
 /* Flexbox utilities */
 .flex-column { flex-direction: column; }
 .flex-row { flex-direction: row; }
+.flex-row-mobile-column { flex-direction: row; } /* Becomes column on mobile */
 .align-items-center { align-items: center; }
 .align-items-start { align-items: flex-start; }
 .align-items-end { align-items: flex-end; }
@@ -91,12 +103,14 @@
 .flex-1 { flex: 1; }
 .flex-auto { flex: auto; }
 .flex-none { flex: none; }
+.flex-shrink-0 { flex-shrink: 0; }
 
 /* Fixed width flex items */
 .flex-fixed-320 { flex: 0 0 320px; }
 .flex-fixed-450 { flex: 0 0 450px; }
 
 /* Text sizing utilities */
+.text-xl { font-size: 2rem; }
 .text-lg { font-size: 1.2rem; }
 .text-md { font-size: 1rem; }
 .text-sm { font-size: 0.875rem; }
@@ -105,6 +119,9 @@
 .font-semibold { font-weight: 600; }
 .font-medium { font-weight: 500; }
 .font-normal { font-weight: 400; }
+
+/* Grid utilities */
+.grid-col-span-2 { grid-column: span 2; }
 
 /* Responsive utilities */
 @media (max-width: 1023px) {
@@ -115,12 +132,19 @@
   .hide-desktop { display: none; }
 }
 
+/* Reset grid-col-span on mobile when grid is single column */
+@media (max-width: 768px) {
+  .grid-col-span-2 {
+    grid-column: span 1;
+  }
+}
+
 @media (max-width: 768px) {
   .hide-tablet { display: none; }
 
-  /* Mobile: collapse flex layouts to column */
-  .d-flex {
-    flex-direction: column !important;
+  /* Responsive flex: row becomes column on mobile */
+  .flex-row-mobile-column {
+    flex-direction: column;
   }
 
   /* Fixed-width flex items become full-width */
@@ -200,9 +224,19 @@
     padding: 2cm;
   }
 
-  .slide--hero {
-    background: white !important;
-    color: black !important;
+  /* Override gradient backgrounds for print */
+  .slide.slide--hero,
+  section.slide--hero {
+    background: white;
+    background-image: none;
+    color: black;
+  }
+
+  .slide.slide--divider,
+  section.slide--divider {
+    background: white;
+    background-image: none;
+    color: black;
   }
 }
 

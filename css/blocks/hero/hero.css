@@ -267,3 +267,199 @@
     text-align: left;
   }
 }
+
+/* ========================================
+   HERO MODIFIERS FOR CONTACT SLIDE
+   ======================================== */
+
+/* Contact slide title modifier */
+.hero__title--contact {
+  font-size: 2.5rem;
+}
+
+/* Contact slide name modifier */
+.hero__name--contact {
+  font-size: 1.5rem;
+}
+
+/* Contact slide role modifier */
+.hero__role--contact {
+  font-size: 1.1rem;
+}
+
+/* Intro section for contact slide */
+.hero__intro {
+  /* Container for name and role */
+}
+
+/* ========================================
+   CONTACT SLIDE SECTIONS
+   ======================================== */
+
+/* QR codes section - visible on desktop */
+.hero__qr-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--md-sys-spacing-lg);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* QR item */
+.hero__qr-item {
+  /* Inherits text-center from utility class */
+}
+
+/* QR title */
+.hero__qr-title {
+  font-size: 1.2rem;
+  color: #FFFFFF;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin: 0;
+  text-align: center;
+}
+
+/* QR image wrapper */
+.hero__qr-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__qr-image img {
+  max-width: 180px;
+}
+
+/* Links section - hidden on desktop, visible on mobile */
+.hero__links-section {
+  display: none;
+}
+
+/* Contact info section */
+.hero__contact-info {
+  /* Container for contact text */
+}
+
+/* Contact text */
+.hero__contact-text {
+  font-size: 1.3rem;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+/* Contact link */
+.hero__link {
+  display: flex;
+  align-items: center;
+  gap: var(--md-sys-spacing-md);
+  padding: var(--md-sys-spacing-md) var(--md-sys-spacing-lg);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--md-sys-shape-corner-lg);
+  color: #FFFFFF;
+  font-size: var(--md-sys-typescale-title-medium-size);
+  font-weight: 500;
+  text-decoration: none;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero__link:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: var(--md-sys-elevation-3);
+}
+
+.hero__link .material-symbols-outlined {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+/* Phone link */
+.hero__phone {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all var(--md-sys-motion-duration-short) var(--md-sys-motion-easing-standard);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 2px;
+}
+
+.hero__phone:hover {
+  border-bottom-color: rgba(255, 255, 255, 0.8);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Tablet and Mobile: hide QR codes, show links */
+@media (max-width: 768px) {
+  .hero__qr-section {
+    display: none;
+    grid-template-columns: 1fr;
+  }
+
+  .hero__links-section {
+    display: block;
+  }
+
+  .hero__title--contact {
+    font-size: 2rem;
+  }
+
+  .hero__name--contact {
+    font-size: 1.25rem;
+  }
+
+  .hero__role--contact {
+    font-size: 1rem;
+  }
+
+  .hero__qr-title {
+    font-size: 1rem;
+  }
+
+  .hero__contact-text {
+    font-size: 1.1rem;
+  }
+
+  .hero__link {
+    font-size: var(--md-sys-typescale-title-small-size);
+    padding: var(--md-sys-spacing-sm) var(--md-sys-spacing-md);
+  }
+
+  .hero__link .material-symbols-outlined {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__title--contact {
+    font-size: 1.5rem;
+  }
+
+  .hero__name--contact {
+    font-size: 1.125rem;
+  }
+
+  .hero__role--contact {
+    font-size: 0.875rem;
+  }
+
+  .hero__contact-text {
+    font-size: 1rem;
+  }
+
+  .hero__link {
+    font-size: var(--md-sys-typescale-body-large-size);
+    padding: var(--md-sys-spacing-sm);
+    gap: var(--md-sys-spacing-sm);
+  }
+
+  .hero__link .material-symbols-outlined {
+    font-size: 24px;
+  }
+}

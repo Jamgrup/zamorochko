@@ -1,0 +1,130 @@
+/**
+ * Block: bullet-list
+ * Simple bullet list with colored circle markers
+ */
+
+.bullet-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--md-sys-spacing-md);
+}
+
+/* ========================================
+   BULLET LIST ELEMENTS
+   ======================================== */
+
+/* List item */
+.bullet-list__item {
+  display: flex;
+  align-items: center;
+  gap: var(--md-sys-spacing-sm);
+}
+
+/* Bullet marker */
+.bullet-list__marker {
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+/* Text */
+.bullet-list__text {
+  flex: 1;
+  font-size: var(--md-sys-typescale-body-medium-size);
+  color: var(--md-sys-color-on-surface);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ========================================
+   BULLET LIST MODIFIERS
+   ======================================== */
+
+/* Marker color variants */
+.bullet-list__marker--primary {
+  background-color: var(--md-sys-color-primary);
+}
+
+.bullet-list__marker--secondary {
+  background-color: var(--md-sys-color-secondary);
+}
+
+.bullet-list__marker--tertiary {
+  background-color: var(--md-sys-color-tertiary);
+}
+
+.bullet-list__marker--error {
+  background-color: var(--md-sys-color-error);
+}
+
+.bullet-list__marker--custom {
+  background-color: #9C27B0; /* Purple for custom color */
+}
+
+/* Single column layout */
+.bullet-list--single-col {
+  grid-template-columns: 1fr;
+}
+
+/* ========================================
+   DESKTOP: VIEWPORT HEIGHT ADAPTATION
+   ======================================== */
+
+@media (min-width: 1024px) {
+  .bullet-list {
+    gap: clamp(0.75rem, 1.5vh, 1.5rem);
+  }
+
+  .bullet-list__item {
+    gap: clamp(0.5rem, 1vh, 0.75rem);
+  }
+
+  .bullet-list__marker {
+    width: clamp(10px, 1.5vh, 12px);
+    height: clamp(10px, 1.5vh, 12px);
+  }
+
+  .bullet-list__text {
+    font-size: clamp(0.875rem, 1.5vh, 1.125rem);
+    line-height: 1.4;
+  }
+}
+
+/* ========================================
+   RESPONSIVE: TABLET
+   ======================================== */
+
+@media (max-width: 768px) {
+  .bullet-list {
+    grid-template-columns: 1fr;
+    gap: var(--md-sys-spacing-sm);
+  }
+
+  .bullet-list__item {
+    gap: var(--md-sys-spacing-xs);
+  }
+
+  .bullet-list__marker {
+    width: 10px;
+    height: 10px;
+  }
+
+  .bullet-list__text {
+    font-size: var(--md-sys-typescale-body-small-size);
+  }
+}
+
+/* ========================================
+   RESPONSIVE: MOBILE
+   ======================================== */
+
+@media (max-width: 480px) {
+  .bullet-list {
+    gap: var(--md-sys-spacing-xs);
+  }
+
+  .bullet-list__text {
+    font-size: var(--md-sys-typescale-label-large-size);
+  }
+}

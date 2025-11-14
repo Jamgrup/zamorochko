@@ -37,7 +37,7 @@
                 <button class="navigation__button" id="prevBtn" aria-label="Предыдущий слайд" disabled>
                     <span class="navigation__icon material-symbols-outlined">arrow_back</span>
                 </button>
-                <span class="navigation__counter" id="counter">1 / 11</span>
+                <span class="navigation__counter" id="counter">1 / 30</span>
                 <button class="navigation__button" id="nextBtn" aria-label="Следующий слайд">
                     <span class="navigation__icon material-symbols-outlined">arrow_forward</span>
                 </button>
@@ -117,7 +117,7 @@
                         </div>
                     </div>
                     <div class="d-flex align-items-center justify-content-center">
-                        <div class="infographic infographic--large">
+                        <div class="infographic infographic--large infographic--cover infographic--h-550">
                             <img src="images/слайд_4_врач+макет_таза.jpg"
                                  alt="Анатомия тазового дна"
                                  class="infographic__image">
@@ -151,7 +151,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="alert alert--warning mt-lg">
+                <div class="alert alert--info mt-lg">
                     <span class="alert__icon material-symbols-outlined">info</span>
                     <p class="alert__text">
                         <strong>Ключевая информация:</strong> Упражнения Кегеля воздействуют только на поверхностный слой,
@@ -166,7 +166,7 @@
             <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
             <div class="slide__container">
                 <h2 class="slide__title">Связь с диафрагмой</h2>
-                <div class="d-flex gap-lg align-items-center">
+                <div class="d-flex flex-row-mobile-column gap-lg align-items-center">
                     <div class="flex-1">
                         <div class="definition definition--info">
                             <p class="definition__text mb-md">
@@ -195,7 +195,7 @@
             <div class="slide__container">
                 <h2 class="slide__title">Работа тазового терапевта</h2>
                 <h3 class="slide__section-title">Что делает тазовый терапевт</h3>
-                <div class="d-flex gap-lg">
+                <div class="d-flex flex-row-mobile-column gap-lg">
                     <div class="flex-1">
                         <div class="grid grid--2col grid--gap-sm">
                             <div class="feature feature--compact">
@@ -423,7 +423,7 @@
                         </div>
                         <h3 class="card__title">Фармакотерапия</h3>
                         <p class="card__text">Препараты для расслабления мышц или антидепрессанты</p>
-                        <div class="alert alert--warning mt-md">
+                        <div class="alert alert--info mt-md">
                             <span class="alert__icon material-symbols-outlined">info</span>
                             <p class="alert__text">
                                 Действуют только в период приёма, после отмены симптомы возвращаются
@@ -441,7 +441,7 @@
         <section class="slide slide--divider" data-slide="10">
             <div class="slide__container">
                 <h2 class="slide__title">Йога - не замена реабилитации</h2>
-                <div class="infographic infographic--full infographic--center">
+                <div class="infographic infographic--large infographic--center infographic--constrained">
                     <img src="images/позы_йоги.webp" alt="Позы йоги" class="infographic__image">
                 </div>
             </div>
@@ -497,7 +497,782 @@
             </div>
         </section>
 
-        <!-- Слайды 12-29 будут добавлены позже -->
+        <!-- СЛАЙД 12: Упражнения Кегеля -->
+        <section class="slide slide--light" data-slide="12">
+            <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
+            <div class="slide__container">
+                <h2 class="slide__title">Упражнения Кегеля</h2>
+                <div class="definition definition--info mb-lg">
+                    <h3 class="definition__title">Что это такое?</h3>
+                    <p class="definition__text">Изолированные сокращения мышц тазового дна</p>
+                </div>
+                <div class="grid grid--2col">
+                    <div class="card">
+                        <h3 class="card__title">Шаги выполнения</h3>
+                        <div class="d-flex flex-column gap-md">
+                            <div class="step step--compact">
+                                <div class="step__number">1</div>
+                                <p class="step__text">Вдох в нижнюю часть живота</p>
+                            </div>
+                            <div class="step step--compact">
+                                <div class="step__number">2</div>
+                                <p class="step__text">В конце выдоха сокращаем мышцы тазового дна (как будто останавливаете струю мочи)</p>
+                            </div>
+                            <div class="step step--compact">
+                                <div class="step__number">3</div>
+                                <p class="step__text">Обязательно расслабляйте мышцы на вдохе</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3 class="card__title">Важные правила</h3>
+                        <div class="checklist">
+                            <div class="checklist__item">
+                                <span class="checklist__icon material-symbols-outlined">close</span>
+                                <span class="checklist__text">Нельзя делать во время мочеиспускания</span>
+                            </div>
+                            <div class="checklist__item">
+                                <span class="checklist__icon material-symbols-outlined">schedule</span>
+                                <span class="checklist__text">Сокращение достигает максимума за 6 секунд</span>
+                            </div>
+                            <div class="checklist__item">
+                                <span class="checklist__icon material-symbols-outlined">air</span>
+                                <span class="checklist__text">Поддерживайте ровное дыхание</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЛАЙД 13: Чего избегать при выполнении -->
+        <section class="slide slide--light" data-slide="13">
+            <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
+            <div class="slide__container">
+                <h2 class="slide__title">Чего избегать при выполнении</h2>
+                <div class="grid grid--2col grid--align-center">
+                    <div class="d-flex flex-column gap-md">
+                        <div class="alert alert--danger">
+                            <span class="alert__icon material-symbols-outlined">close</span>
+                            <p class="alert__text">
+                                <strong>Напряжения мышц живота выше пупка</strong>
+                            </p>
+                        </div>
+                        <div class="alert alert--danger">
+                            <span class="alert__icon material-symbols-outlined">close</span>
+                            <p class="alert__text">
+                                <strong>Напряжения ног и ягодиц</strong>
+                            </p>
+                        </div>
+                        <div class="alert alert--danger">
+                            <span class="alert__icon material-symbols-outlined">close</span>
+                            <p class="alert__text">
+                                <strong>Задержки дыхания — поддерживайте ровное дыхание</strong>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="infographic infographic--medium infographic--center infographic--constrained">
+                        <img src="images/kegel.gif" alt="Техника упражнений Кегеля" class="infographic__image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЛАЙД 14: Ограничения упражнений Кегеля -->
+        <section class="slide slide--divider" data-slide="14">
+            <div class="slide__container">
+                <h2 class="slide__title">Ограничения упражнений Кегеля</h2>
+                <div class="comparison mt-xl">
+                    <div class="comparison__item comparison__item--danger">
+                        <h3 class="comparison__title">Поверхностный слой</h3>
+                        <p class="comparison__text">Упражнения Кегеля воздействуют только на поверхностные мышцы</p>
+                    </div>
+                    <div class="comparison__vs">≠</div>
+                    <div class="comparison__item comparison__item--info">
+                        <h3 class="comparison__title">Глубокий слой</h3>
+                        <p class="comparison__text">Не включается в работу при изолированных упражнениях</p>
+                    </div>
+                </div>
+                <div class="definition definition--secondary mt-xl">
+                    <h3 class="definition__title">Как активировать глубокие слои?</h3>
+                    <p class="definition__text">
+                        Глубокие мышцы тазового дна включаются через <strong>активацию мышц кора</strong> —
+                        поперечной мышцы живота и внутренней косой. Они работают как единая система и не включаются изолированно.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЛАЙД 15: Традиционные упражнения на пресс -->
+        <section class="slide slide--light" data-slide="15">
+            <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
+            <div class="slide__container">
+                <h2 class="slide__title">Традиционные упражнения на пресс</h2>
+                <h3 class="slide__section-title">Проблема классических скручиваний</h3>
+                <div class="grid grid--2col grid--align-center">
+                    <div class="card card--danger">
+                        <h3 class="card__title">Что не так с классическими подъёмами корпуса?</h3>
+                        <div class="checklist">
+                            <div class="checklist__item">
+                                <span class="checklist__icon material-symbols-outlined">close</span>
+                                <span class="checklist__text">Сближение прямых мышц живота → повышение внутрибрюшного давления</span>
+                            </div>
+                            <div class="checklist__item">
+                                <span class="checklist__icon material-symbols-outlined">close</span>
+                                <span class="checklist__text">Сильное давление на тазовое дно вниз</span>
+                            </div>
+                            <div class="checklist__item">
+                                <span class="checklist__icon material-symbols-outlined">close</span>
+                                <span class="checklist__text">Может приводить к опущению органов малого таза</span>
+                            </div>
+                            <div class="checklist__item">
+                                <span class="checklist__icon material-symbols-outlined">close</span>
+                                <span class="checklist__text">Потеря физиологического поясничного лордоза</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="infographic infographic--medium infographic--center infographic--constrained-350">
+                        <img src="images/кранч.webp" alt="Классические скручивания" class="infographic__image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЛАЙД 16: Правильная техника упражнений на пресс -->
+        <section class="slide slide--light" data-slide="16">
+            <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
+            <div class="slide__container">
+                <h2 class="slide__title">Правильная техника упражнений на пресс</h2>
+                <div class="comparison mt-lg">
+                    <div class="comparison__item comparison__item--danger-light">
+                        <h3 class="comparison__title">Неправильно</h3>
+                        <div class="checklist">
+                            <div class="checklist__item">
+                                <span class="checklist__icon material-symbols-outlined">close</span>
+                                <span class="checklist__text">Поясница прижата к полу</span>
+                            </div>
+                            <div class="checklist__item">
+                                <span class="checklist__icon material-symbols-outlined">close</span>
+                                <span class="checklist__text">Резкие подъёмы</span>
+                            </div>
+                            <div class="checklist__item">
+                                <span class="checklist__icon material-symbols-outlined">close</span>
+                                <span class="checklist__text">Подкручивание таза в задний наклон</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comparison__vs comparison__vs--primary">→</div>
+                    <div class="comparison__item comparison__item--success-light">
+                        <h3 class="comparison__title">Правильно</h3>
+                        <div class="checklist">
+                            <div class="checklist__item">
+                                <span class="checklist__icon material-symbols-outlined">check</span>
+                                <span class="checklist__text">Сохранён поясничный изгиб</span>
+                            </div>
+                            <div class="checklist__item">
+                                <span class="checklist__icon material-symbols-outlined">check</span>
+                                <span class="checklist__text">Вдох-выдох</span>
+                            </div>
+                            <div class="checklist__item">
+                                <span class="checklist__icon material-symbols-outlined">check</span>
+                                <span class="checklist__text">В конце выдоха собираем низ живота</span>
+                            </div>
+                            <div class="checklist__item">
+                                <span class="checklist__icon material-symbols-outlined">check</span>
+                                <span class="checklist__text">Плавный подъём</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="highlight mt-xl">
+                    <p class="highlight__text">Такая техника укрепляет мышцы живота без избыточного давления на тазовое дно</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЛАЙД 17: Техника исполнения кранча (Видео) -->
+        <section class="slide slide--divider" data-slide="17">
+            <div class="slide__container">
+                <h2 class="slide__title">Техника исполнения кранча</h2>
+                <div class="video mt-lg">
+                    <div class="video__wrapper">
+                        <iframe
+                            class="video__iframe"
+                            src="https://rutube.ru/play/embed/7391523b94acde307f01233599a36bea/?p=ROOkZY4MSKIsySj_eANB1w"
+                            frameborder="0"
+                            allow="clipboard-write; autoplay"
+                            webkitAllowFullScreen
+                            mozallowfullscreen
+                            allowFullScreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЛАЙД 18: Беременность -->
+        <section class="slide slide--light" data-slide="18">
+            <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
+            <div class="slide__container">
+                <h2 class="slide__title">Беременность</h2>
+                <h3 class="slide__section-title">Почему так важна подготовка</h3>
+                <div class="grid grid--2col grid--align-center">
+                    <div>
+                        <div class="quote quote--error">
+                            <blockquote class="quote__text">
+                                9 месяцев на ваше тазовое дно давит растущий ребенок. Каждый день. Всё сильнее.
+                            </blockquote>
+                        </div>
+                        <div class="highlight mt-xl">
+                            <p class="highlight__text">Укрепление во время беременности — это необходимость!</p>
+                        </div>
+                    </div>
+                    <div class="infographic infographic--medium infographic--center infographic--constrained-sm">
+                        <img src="images/беременная.webp" alt="Беременность и подготовка" class="infographic__image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЛАЙД 19: Что даёт укрепление во время беременности -->
+        <section class="slide slide--light" data-slide="19">
+            <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
+            <div class="slide__container">
+                <h2 class="slide__title">Что даёт укрепление во время беременности</h2>
+                <div class="grid grid--4col mt-lg">
+                    <div class="card card--tertiary">
+                        <div class="card__icon">
+                            <img src="images/29_слайд_ребенок.svg" alt="">
+                        </div>
+                        <p class="card__text">Помогает в момент прохождения плода по родовым путям</p>
+                    </div>
+                    <div class="card card--tertiary">
+                        <div class="card__icon">
+                            <img src="images/15_слайд_таз.svg" alt="">
+                        </div>
+                        <p class="card__text">Предотвращает симфизит</p>
+                    </div>
+                    <div class="card card--tertiary">
+                        <div class="card__icon">
+                            <img src="images/29_слайд_недержание.svg" alt="">
+                        </div>
+                        <p class="card__text">Снижает риск недержания мочи после родов</p>
+                    </div>
+                    <div class="card card--tertiary">
+                        <div class="card__icon">
+                            <img src="images/29_слайд_диастаз.svg" alt="">
+                        </div>
+                        <p class="card__text">Профилактика диастаза</p>
+                    </div>
+                </div>
+                <div class="bullet-list mt-lg">
+                    <div class="bullet-list__item">
+                        <div class="bullet-list__marker bullet-list__marker--primary"></div>
+                        <p class="bullet-list__text">Снижение отеков и лимфатических застоев</p>
+                    </div>
+                    <div class="bullet-list__item">
+                        <div class="bullet-list__marker bullet-list__marker--secondary"></div>
+                        <p class="bullet-list__text">Улучшение подвижности ТБС</p>
+                    </div>
+                    <div class="bullet-list__item">
+                        <div class="bullet-list__marker bullet-list__marker--tertiary"></div>
+                        <p class="bullet-list__text">Коррекция осанки</p>
+                    </div>
+                    <div class="bullet-list__item">
+                        <div class="bullet-list__marker bullet-list__marker--custom"></div>
+                        <p class="bullet-list__text">Поддержание общего психомоторного фона и физического здоровья</p>
+                    </div>
+                </div>
+                <div class="alert alert--danger mt-lg">
+                    <span class="alert__icon material-symbols-outlined">warning</span>
+                    <p class="alert__text">
+                        <strong>Важно!</strong> Есть противопоказания. Сначала к врачу, потом к тренеру.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЛАЙД 20: Принципы нагрузки по триместрам -->
+        <section class="slide slide--light" data-slide="20">
+            <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
+            <div class="slide__container">
+                <h2 class="slide__title mb-lg">Принципы нагрузки по триместрам</h2>
+                <div class="grid grid--2col gap-lg">
+                    <div class="card card--secondary">
+                        <h3 class="card__title d-flex align-items-center gap-sm">
+                            <span class="material-symbols-outlined">person</span>
+                            Без спорта до беременности
+                        </h3>
+                        <div class="d-flex flex-column gap-md mt-md">
+                            <div class="step step--compact step--secondary">
+                                <div class="step__number">1</div>
+                                <div class="step__content">
+                                    <h4 class="step__title">1 триместр (1-12 нед)</h4>
+                                    <p class="step__description">
+                                        <span class="material-symbols-outlined step__icon text-on-surface">remove</span>
+                                        Начинаем с минимума
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="step step--compact step--secondary">
+                                <div class="step__number">2</div>
+                                <div class="step__content">
+                                    <h4 class="step__title">2 триместр (13-27 нед)</h4>
+                                    <p class="step__description">
+                                        <span class="material-symbols-outlined step__icon text-on-surface">trending_up</span>
+                                        Увеличение на 20-30%
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="step step--compact step--secondary">
+                                <div class="step__number">3</div>
+                                <div class="step__content">
+                                    <h4 class="step__title">3 триместр (28-40 нед)</h4>
+                                    <p class="step__description">
+                                        <span class="material-symbols-outlined step__icon text-on-surface">trending_down</span>
+                                        Плавное снижение
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card--tertiary">
+                        <h3 class="card__title d-flex align-items-center gap-sm">
+                            <span class="material-symbols-outlined">fitness_center</span>
+                            Со спортом до беременности
+                        </h3>
+                        <div class="d-flex flex-column gap-md mt-md">
+                            <div class="step step--compact step--tertiary">
+                                <div class="step__number">1</div>
+                                <div class="step__content">
+                                    <h4 class="step__title">1 триместр (1-12 нед)</h4>
+                                    <p class="step__description">
+                                        <span class="material-symbols-outlined step__icon text-on-surface">trending_down</span>
+                                        Снижение на 20-30%
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="step step--compact step--tertiary">
+                                <div class="step__number">2</div>
+                                <div class="step__content">
+                                    <h4 class="step__title">2 триместр (13-27 нед)</h4>
+                                    <p class="step__description">
+                                        <span class="material-symbols-outlined step__icon text-on-surface">trending_up</span>
+                                        Постепенное увеличение
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="step step--compact step--tertiary">
+                                <div class="step__number">3</div>
+                                <div class="step__content">
+                                    <h4 class="step__title">3 триместр (28-40 нед)</h4>
+                                    <p class="step__description">
+                                        <span class="material-symbols-outlined step__icon text-on-surface">trending_down</span>
+                                        Плавное снижение
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЛАЙД 21: Что исключается во время беременности -->
+        <section class="slide slide--light" data-slide="21">
+            <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
+            <div class="slide__container">
+                <h2 class="slide__title">Что исключается во время беременности</h2>
+                <div class="grid grid--2col grid--align-center mt-lg gap-lg">
+                    <div class="d-flex flex-column gap-md">
+                        <div class="alert alert--danger">
+                            <span class="alert__icon material-symbols-outlined">close</span>
+                            <p class="alert__text text-lg">
+                                <strong>Контактные виды спорта</strong> (бокс, единоборства)
+                            </p>
+                        </div>
+                        <div class="alert alert--danger">
+                            <span class="alert__icon material-symbols-outlined">close</span>
+                            <p class="alert__text text-lg">
+                                <strong>Виды с риском падения</strong> (лыжи, конный спорт, велосипед)
+                            </p>
+                        </div>
+                        <div class="alert alert--danger">
+                            <span class="alert__icon material-symbols-outlined">close</span>
+                            <p class="alert__text text-lg">
+                                <strong>Ударные нагрузки</strong> (бег, прыжки)
+                            </p>
+                        </div>
+                    </div>
+                    <div class="infographic infographic--medium infographic--constrained-460">
+                        <img src="images/бег_беременная.png" alt="Исключение ударных нагрузок при беременности" class="infographic__image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЛАЙД 22: Основная работа во время беременности -->
+        <section class="slide slide--light" data-slide="22">
+            <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
+            <div class="slide__container">
+                <h2 class="slide__title">Основная работа во время беременности</h2>
+                <div class="grid grid--4col mt-lg">
+                    <div class="card card--tertiary">
+                        <div class="card__icon">
+                            <span class="material-symbols-outlined">sync_alt</span>
+                        </div>
+                        <h3 class="card__title">1. Сокращение/расслабление</h3>
+                        <p class="card__text text-sm">Обучение контролю над мышцами тазового дна</p>
+                    </div>
+                    <div class="card card--tertiary">
+                        <div class="card__icon">
+                            <span class="material-symbols-outlined">child_care</span>
+                        </div>
+                        <h3 class="card__title">2. "Обними ребёнка"</h3>
+                        <p class="card__text text-sm">Включение поперечных мышц живота вместе с тазовым дном</p>
+                    </div>
+                    <div class="card card--tertiary">
+                        <div class="card__icon">
+                            <span class="material-symbols-outlined">fitness_center</span>
+                        </div>
+                        <h3 class="card__title">3. Укрепление ягодиц</h3>
+                        <p class="card__text text-sm">Мостики, приседания с правильной техникой</p>
+                    </div>
+                    <div class="card card--tertiary">
+                        <div class="card__icon">
+                            <span class="material-symbols-outlined">accessibility_new</span>
+                        </div>
+                        <h3 class="card__title">4. Укрепление верхних конечностей</h3>
+                        <p class="card__text text-sm">Подготовка к ношению ребенка, профилактика болей в спине и шее</p>
+                    </div>
+                </div>
+                <div class="infographic infographic--medium infographic--constrained-633 mt-lg">
+                    <img src="images/упражнение.gif" alt="Упражнения во время беременности" class="infographic__image">
+                </div>
+            </div>
+        </section>
+
+        <!-- СЛАЙД 23: Упражнения - можно и нельзя -->
+        <section class="slide slide--light" data-slide="23">
+            <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
+            <div class="slide__container">
+                <h2 class="slide__title">Упражнения: можно и нельзя</h2>
+                <div class="grid grid--2col gap-sm mt-lg">
+                    <!-- Можно 1 -->
+                    <div class="exercise-card exercise-card--success">
+                        <div class="exercise-card__badge">
+                            <span class="material-symbols-outlined exercise-card__badge-icon">check</span>
+                        </div>
+                        <img src="images/можно1.svg" alt="Правильное упражнение 1" class="exercise-card__image">
+                    </div>
+                    <!-- Нельзя 1 -->
+                    <div class="exercise-card exercise-card--danger">
+                        <div class="exercise-card__badge">
+                            <span class="material-symbols-outlined exercise-card__badge-icon">close</span>
+                        </div>
+                        <img src="images/нельзя_1.svg" alt="Неправильное упражнение 1" class="exercise-card__image">
+                    </div>
+                    <!-- Можно 2 -->
+                    <div class="exercise-card exercise-card--success">
+                        <div class="exercise-card__badge">
+                            <span class="material-symbols-outlined exercise-card__badge-icon">check</span>
+                        </div>
+                        <img src="images/можно_2.svg" alt="Правильное упражнение 2" class="exercise-card__image">
+                    </div>
+                    <!-- Нельзя 2 -->
+                    <div class="exercise-card exercise-card--danger">
+                        <div class="exercise-card__badge">
+                            <span class="material-symbols-outlined exercise-card__badge-icon">close</span>
+                        </div>
+                        <img src="images/нельзя_2.svg" alt="Неправильное упражнение 2" class="exercise-card__image">
+                    </div>
+                    <!-- Можно 3 -->
+                    <div class="exercise-card exercise-card--success">
+                        <div class="exercise-card__badge">
+                            <span class="material-symbols-outlined exercise-card__badge-icon">check</span>
+                        </div>
+                        <img src="images/можно_3.svg" alt="Правильное упражнение 3" class="exercise-card__image">
+                    </div>
+                    <!-- Нельзя 3 -->
+                    <div class="exercise-card exercise-card--danger">
+                        <div class="exercise-card__badge">
+                            <span class="material-symbols-outlined exercise-card__badge-icon">close</span>
+                        </div>
+                        <img src="images/нельзя_3.svg" alt="Неправильное упражнение 3" class="exercise-card__image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЛАЙД 24: Подготовка к родам -->
+        <section class="slide slide--light" data-slide="24">
+            <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
+            <div class="slide__container">
+                <h2 class="slide__title">Подготовка к родам с 34-й недели</h2>
+                <h3 class="slide__section-title">Переключаемся на эластичность</h3>
+                <div class="grid grid--2col mt-lg gap-lg">
+                    <div class="feature feature--large">
+                        <div class="feature__icon">
+                            <img src="images/33_салйд_массаж.svg" alt="">
+                        </div>
+                        <p class="feature__text"><strong>Массаж промежности</strong> — повышение эластичности тканей</p>
+                    </div>
+                    <div class="feature feature--large">
+                        <div class="feature__icon">
+                            <img src="images/33_катетор.svg" alt="">
+                        </div>
+                        <p class="feature__text"><strong>Специальные тренажеры</strong> — подготовка к растяжению</p>
+                    </div>
+                </div>
+                <div class="highlight mt-xl">
+                    <p class="highlight__text text-lg">Мы буквально репетируем роды!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЛАЙД 25: Послеродовая реабилитация -->
+        <section class="slide slide--light" data-slide="25">
+            <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
+            <div class="slide__container">
+                <h2 class="slide__title">Послеродовая реабилитация</h2>
+                <div class="alert alert--info mt-lg mb-lg">
+                    <span class="alert__icon material-symbols-outlined">schedule</span>
+                    <div>
+                        <h3 class="alert__title">6-8 недель после родов</h3>
+                        <p class="alert__text">
+                            Обычно наблюдается гипотонус мышц брюшной стенки и тазового дна,
+                            что может вызывать боли в поясничном и тазовом отделах
+                        </p>
+                    </div>
+                </div>
+                <h3 class="slide__section-title">Реабилитация начинается в роддоме</h3>
+                <div class="grid grid--2col gap-lg">
+                    <div class="card card--accent-border-tertiary">
+                        <div class="d-flex align-items-center gap-md mb-md">
+                            <div class="card__icon card__icon--circle card__icon--tertiary">
+                                <span class="material-symbols-outlined text-white">child_care</span>
+                            </div>
+                            <h3 class="card__title mb-0">Естественные роды</h3>
+                        </div>
+                        <p class="card__text text-md">
+                            Реабилитация примерно через 4-6 часов, первые дни — бандаж или подвязывание.
+                        </p>
+                    </div>
+                    <div class="card card--accent-border-secondary">
+                        <div class="d-flex align-items-center gap-md mb-md">
+                            <div class="card__icon card__icon--circle card__icon--secondary">
+                                <span class="material-symbols-outlined text-white">medical_services</span>
+                            </div>
+                            <h3 class="card__title mb-0">Кесарево сечение</h3>
+                        </div>
+                        <p class="card__text text-md">
+                            Начало реабилитации через 6-12 часов. Ранняя вертикализация. Первые дни, подвязывание или бандаж.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЛАЙД 26: Мужское здоровье -->
+        <section class="slide slide--light" data-slide="26">
+            <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
+            <div class="slide__container">
+                <h2 class="slide__title">Мужское здоровье</h2>
+                <h3 class="slide__section-title">Дисфункции тазового дна у мужчин</h3>
+                <div class="quote quote--error mb-lg">
+                    <blockquote class="quote__text">
+                        Ваше тазовое дно работает точно так же. И ломается точно так же. Просто об этом не принято говорить.
+                    </blockquote>
+                </div>
+                <div class="card card--secondary">
+                    <h3 class="card__title mb-md">Наиболее частые жалобы</h3>
+                    <div class="grid grid--2col gap-md">
+                        <div class="feature">
+                            <div class="feature__icon">
+                                <img src="images/37_слайд_простата.svg" alt="">
+                            </div>
+                            <p class="feature__text">Хронический простатит, не поддающийся стандартному лечению</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature__icon">
+                                <img src="images/частое_мочеиспускание.svg" alt="">
+                            </div>
+                            <p class="feature__text">Учащённое мочеиспускание</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature__icon">
+                                <img src="images/37_эрекция.svg" alt="">
+                            </div>
+                            <p class="feature__text">Эректильная дисфункция</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature__icon">
+                                <img src="images/37_боль.svg" alt="">
+                            </div>
+                            <p class="feature__text">Боль в области промежности</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЛАЙД 27: Принцип работы у мужчин -->
+        <section class="slide slide--divider" data-slide="27">
+            <div class="slide__container">
+                <h2 class="slide__title">Принцип работы аналогичен</h2>
+                <div class="comparison mt-xl">
+                    <div class="comparison__item comparison__item--danger">
+                        <h3 class="comparison__title">При наличии боли, жжения</h3>
+                        <p class="comparison__text">Работа на расслабление</p>
+                    </div>
+                    <div class="comparison__vs comparison__vs--text">vs</div>
+                    <div class="comparison__item comparison__item--info">
+                        <h3 class="comparison__title">При слабости, эректильной дисфункции</h3>
+                        <p class="comparison__text">Укрепление мышц таза и кора</p>
+                    </div>
+                </div>
+                <div class="definition definition--secondary mt-xl">
+                    <h3 class="definition__title">Комплексный подход</h3>
+                    <p class="definition__text">
+                        Как и у женщин, восстановление тазового дна у мужчин требует работы с <strong>глубокими мышцами через активацию кора</strong> —
+                        поперечной мышцы живота и внутренней косой. Изолированные упражнения дают ограниченный результат.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЛАЙД 28: Заключение - Основные тезисы -->
+        <section class="slide slide--light" data-slide="28">
+            <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
+            <div class="slide__container">
+                <h2 class="slide__title">Заключение</h2>
+                <h3 class="slide__section-title">Основные тезисы</h3>
+                <div class="grid grid--2col gap-md mt-lg">
+                    <div class="card card--gradient d-flex align-items-start gap-md">
+                        <span class="material-symbols-outlined text-xl flex-shrink-0">check_circle</span>
+                        <p class="text-md mb-0">Упражнения Кегеля эффективны, но воздействуют только на поверхностный слой</p>
+                    </div>
+                    <div class="card card--gradient d-flex align-items-start gap-md">
+                        <span class="material-symbols-outlined text-xl flex-shrink-0">check_circle</span>
+                        <p class="text-md mb-0">Глубокие мышцы включаются через работу с кором</p>
+                    </div>
+                    <div class="card card--gradient d-flex align-items-start gap-md">
+                        <span class="material-symbols-outlined text-xl flex-shrink-0">check_circle</span>
+                        <p class="text-md mb-0">Традиционные упражнения на пресс требуют корректировки техники</p>
+                    </div>
+                    <div class="card card--gradient d-flex align-items-start gap-md">
+                        <span class="material-symbols-outlined text-xl flex-shrink-0">check_circle</span>
+                        <p class="text-md mb-0">Беременность — оптимальное время для профилактики</p>
+                    </div>
+                    <div class="card card--gradient d-flex align-items-start gap-md grid-col-span-2">
+                        <span class="material-symbols-outlined text-xl flex-shrink-0">check_circle</span>
+                        <p class="text-md mb-0">Дисфункции тазового дна встречаются и у мужчин</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЛАЙД 29: Когда обратиться к специалисту -->
+        <section class="slide slide--light" data-slide="29">
+            <img src="images/Logo_угол.png" alt="BloomCare" class="slide__logo">
+            <div class="slide__container">
+                <h2 class="slide__title mb-lg">Когда стоит обратиться к специалисту</h2>
+                <div class="grid grid--2col gap-md mt-lg">
+                    <div class="card card--secondary d-flex align-items-center gap-md">
+                        <div class="card__icon card__icon--circle">
+                            <img src="images/37_боль.svg" alt="">
+                        </div>
+                        <p class="card__text mb-0">Любая боль или дискомфорт в области таза</p>
+                    </div>
+                    <div class="card card--secondary d-flex align-items-center gap-md">
+                        <div class="card__icon card__icon--circle">
+                            <img src="images/дефекация.svg" alt="">
+                        </div>
+                        <p class="card__text mb-0">Нарушения мочеиспускания или дефекации</p>
+                    </div>
+                    <div class="card card--secondary d-flex align-items-center gap-md">
+                        <div class="card__icon card__icon--circle">
+                            <img src="images/боли_при_сексе.svg" alt="">
+                        </div>
+                        <p class="card__text mb-0">Снижение качества сексуальной жизни</p>
+                    </div>
+                    <div class="card card--secondary d-flex align-items-center gap-md">
+                        <div class="card__icon card__icon--circle">
+                            <img src="images/29_слайд_ребенок.svg" alt="">
+                        </div>
+                        <p class="card__text mb-0">Планирование беременности</p>
+                    </div>
+                    <div class="card card--secondary d-flex align-items-center gap-md grid-col-span-2">
+                        <div class="card__icon card__icon--circle">
+                            <img src="images/32_слайд_1.svg" alt="">
+                        </div>
+                        <p class="card__text mb-0">Послеродовый период</p>
+                    </div>
+                </div>
+                <div class="highlight mt-lg">
+                    <p class="highlight__text text-lg">Большинство нарушений поддаётся коррекции при правильном подходе</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- СЛАЙД 30: Финальный - Контакты -->
+        <section class="slide slide--hero" data-slide="30">
+            <div class="slide__container">
+                <div class="hero">
+                    <h2 class="hero__title hero__title--contact mb-md">Благодарю за внимание!</h2>
+                    <div class="hero__intro mt-md">
+                        <p class="hero__name hero__name--contact mb-sm">BloomCare</p>
+                        <p class="hero__role hero__role--contact">Первая клиника в России по восстановлению тазового дна</p>
+                    </div>
+                    <!-- QR коды для desktop -->
+                    <div class="hero__qr-section mt-xl">
+                        <div class="hero__qr-item text-center">
+                            <h3 class="hero__qr-title mb-md">Продокторов</h3>
+                            <div class="hero__qr-image">
+                                <img src="images/продокторов.GIF" alt="Продокторов QR" class="infographic__image">
+                            </div>
+                        </div>
+                        <div class="hero__qr-item text-center">
+                            <h3 class="hero__qr-title mb-md">Инстаграм</h3>
+                            <div class="hero__qr-image">
+                                <img src="images/инста.jpg" alt="Instagram QR" class="infographic__image">
+                            </div>
+                        </div>
+                        <div class="hero__qr-item text-center">
+                            <h3 class="hero__qr-title mb-md">Телеграм</h3>
+                            <div class="hero__qr-image">
+                                <img src="images/Telegram_qrcode.gif" alt="Telegram QR" class="infographic__image">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ссылки для mobile -->
+                    <div class="hero__links-section mt-lg">
+                        <div class="d-flex flex-column gap-md">
+                            <a href="https://prodoctorov.ru/moskva/vrach/798865-zamorochko/" target="_blank" class="hero__link">
+                                <span class="material-symbols-outlined">person_search</span>
+                                Продокторов
+                            </a>
+                            <a href="https://www.instagram.com/zamorochko_kristina_?igsh=MWduNDM5ZThueXFtOA%3D%3D&utm_source=qr" target="_blank" class="hero__link">
+                                <span class="material-symbols-outlined">photo_camera</span>
+                                Инстаграм
+                            </a>
+                            <a href="https://t.me/+ooYG7ujcuQMwODRi" target="_blank" class="hero__link">
+                                <span class="material-symbols-outlined">send</span>
+                                Телеграм
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="hero__contact-info mt-lg text-center">
+                        <p class="hero__contact-text">
+                            Так же вы можете связаться со мной по телефону:<br>
+                            <a href="tel:+79916168277" class="hero__phone">+7 (991) 616-82-77</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     </main>
 
