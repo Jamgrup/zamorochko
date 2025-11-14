@@ -42,6 +42,15 @@
   color: var(--md-sys-color-primary);
 }
 
+/* Highlight text (emphasized conclusion) */
+.definition__highlight {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--md-sys-color-primary);
+  margin: var(--md-sys-spacing-md) 0 0 0;
+  line-height: 1.4;
+}
+
 /* ========================================
    DEFINITION MODIFIERS
    ======================================== */
