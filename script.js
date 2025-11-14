@@ -17,12 +17,13 @@ class PresentationController {
         this.setupScrollDetection();
         this.updateProgress();
         this.updateCounter();
+        this.setupShareButton();
     }
 
     setupNavigation() {
         // Кнопки навигации
-        document.getElementById('prev-btn').addEventListener('click', () => this.prevSlide());
-        document.getElementById('next-btn').addEventListener('click', () => this.nextSlide());
+        document.getElementById('prevBtn').addEventListener('click', () => this.prevSlide());
+        document.getElementById('nextBtn').addEventListener('click', () => this.nextSlide());
 
         // Боковая навигация
         const sidebarLinks = document.querySelectorAll('.sidebar__link');
@@ -121,7 +122,7 @@ class PresentationController {
     }
 
     updateProgress() {
-        const progressBar = document.getElementById('progress-bar');
+        const progressBar = document.getElementById('progressBar');
         const progress = (this.currentSlide / this.totalSlides) * 100;
         progressBar.style.width = `${progress}%`;
     }
@@ -129,6 +130,47 @@ class PresentationController {
     updateCounter() {
         const counter = document.getElementById('counter');
         counter.textContent = `${this.currentSlide} / ${this.totalSlides}`;
+
+        // Update navigation buttons state
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        prevBtn.disabled = this.currentSlide === 1;
+        nextBtn.disabled = this.currentSlide === this.totalSlides;
+    }
+
+    setupShareButton() {
+        const shareBtn = document.getElementById('shareBtn');
+
+        shareBtn.addEventListener('click', async () => {
+            const shareData = {
+                title: 'Здоровье тазового дна | BloomCare',
+                text: 'Важность укрепления мышц тазового дна для всех!',
+                url: window.location.href
+            };
+
+            try {
+                // Check if Web Share API is supported
+                if (navigator.share) {
+                    await navigator.share(shareData);
+                } else {
+                    // Fallback: copy link to clipboard
+                    await navigator.clipboard.writeText(window.location.href);
+
+                    // Show temporary feedback
+                    const originalIcon = shareBtn.querySelector('.navigation__icon');
+                    const originalText = originalIcon.textContent;
+                    originalIcon.textContent = 'check';
+
+                    setTimeout(() => {
+                        originalIcon.textContent = originalText;
+                    }, 2000);
+                }
+            } catch (error) {
+                // User cancelled or error occurred
+                console.log('Share cancelled or failed:', error);
+            }
+        });
     }
 }
 

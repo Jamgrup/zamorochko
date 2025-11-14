@@ -118,6 +118,17 @@
   box-shadow: none;
 }
 
+/* Share button modifier */
+.navigation__button--share {
+  background-color: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+}
+
+.navigation__button--share:hover {
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+}
+
 /* Icon */
 .navigation__icon {
   font-size: 24px;
