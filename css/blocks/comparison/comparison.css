@@ -60,48 +60,44 @@
 
 /* Danger variant (hyperactive) */
 .comparison__item--danger {
-  background: linear-gradient(135deg,
-    rgba(179, 38, 30, 0.08) 0%,
-    rgba(179, 38, 30, 0.04) 100%);
-  border-color: var(--md-sys-color-error);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .comparison__item--danger:hover {
-  background: linear-gradient(135deg,
-    rgba(179, 38, 30, 0.12) 0%,
-    rgba(179, 38, 30, 0.06) 100%);
-  border-color: var(--md-sys-color-error);
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .comparison__item--danger .comparison__icon {
-  color: var(--md-sys-color-error);
+  color: #FF6B6B;
 }
 
 .comparison__item--danger .comparison__label {
-  color: var(--md-sys-color-error);
+  color: #FFFFFF;
 }
 
 /* Info variant (hypoactive) */
 .comparison__item--info {
-  background: linear-gradient(135deg,
-    rgba(26, 115, 232, 0.08) 0%,
-    rgba(26, 115, 232, 0.04) 100%);
-  border-color: var(--md-sys-color-primary);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .comparison__item--info:hover {
-  background: linear-gradient(135deg,
-    rgba(26, 115, 232, 0.12) 0%,
-    rgba(26, 115, 232, 0.06) 100%);
-  border-color: var(--md-sys-color-primary);
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .comparison__item--info .comparison__icon {
-  color: var(--md-sys-color-primary);
+  color: #4DABF7;
 }
 
 .comparison__item--info .comparison__label {
-  color: var(--md-sys-color-primary);
+  color: #FFFFFF;
 }
 
 /* ========================================
