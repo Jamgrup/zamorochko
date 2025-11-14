@@ -17,7 +17,6 @@ class PresentationController {
         this.setupScrollDetection();
         this.updateProgress();
         this.updateCounter();
-        this.setupShareButton();
     }
 
     setupNavigation() {
@@ -147,113 +146,6 @@ class PresentationController {
 
         prevBtn.disabled = this.currentSlide === 1;
         nextBtn.disabled = this.currentSlide === this.totalSlides;
-    }
-
-    setupShareButton() {
-        const shareBtn = document.getElementById('shareBtn');
-
-        if (!shareBtn) {
-            console.warn('Share button not found');
-            return;
-        }
-
-        shareBtn.addEventListener('click', async (event) => {
-            // Prevent default and stop propagation
-            event.preventDefault();
-            event.stopPropagation();
-
-            // Detect iOS devices
-            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-
-            // iOS-specific share data format
-            // iOS Safari has issues with 'url' property, works better with text
-            const shareData = isIOS ? {
-                title: 'Здоровье тазового дна | BloomCare',
-                text: `Важность укрепления мышц тазового дна для всех!\n\n${window.location.href}`
-            } : {
-                title: 'Здоровье тазового дна | BloomCare',
-                text: 'Важность укрепления мышц тазового дна для всех!',
-                url: window.location.href
-            };
-
-            const originalIcon = shareBtn.querySelector('.navigation__icon');
-            const originalText = originalIcon.textContent;
-
-            const showFeedback = (success = true) => {
-                originalIcon.textContent = success ? 'check' : 'error';
-                setTimeout(() => {
-                    originalIcon.textContent = originalText;
-                }, 2000);
-            };
-
-            try {
-                // iOS/Safari requires user gesture for share/clipboard
-                // Check Web Share API first (works best on mobile)
-                if (navigator.share) {
-                    try {
-                        // iOS Safari sometimes needs a small delay
-                        if (isIOS) {
-                            await new Promise(resolve => setTimeout(resolve, 100));
-                        }
-                        await navigator.share(shareData);
-                        console.log('Shared successfully via Web Share API');
-                        showFeedback(true);
-                        return;
-                    } catch (shareError) {
-                        // User cancelled sharing or error occurred
-                        if (shareError.name === 'AbortError') {
-                            console.log('Share cancelled by user');
-                            return;
-                        }
-                        console.warn('Share API failed, trying clipboard:', shareError);
-                    }
-                }
-
-                // Fallback: Try Clipboard API
-                if (navigator.clipboard && navigator.clipboard.writeText) {
-                    try {
-                        await navigator.clipboard.writeText(window.location.href);
-                        console.log('Link copied to clipboard');
-                        showFeedback(true);
-                        return;
-                    } catch (clipboardError) {
-                        console.warn('Clipboard API failed:', clipboardError);
-                    }
-                }
-
-                // iOS Safari fallback: Create temporary input element
-                // This works when Clipboard API is blocked
-                const tempInput = document.createElement('input');
-                tempInput.style.position = 'absolute';
-                tempInput.style.left = '-9999px';
-                tempInput.style.top = '0';
-                tempInput.value = window.location.href;
-                document.body.appendChild(tempInput);
-
-                // Select and copy
-                tempInput.select();
-                tempInput.setSelectionRange(0, 99999); // For mobile devices
-
-                const successful = document.execCommand('copy');
-                document.body.removeChild(tempInput);
-
-                if (successful) {
-                    console.log('Link copied using execCommand fallback');
-                    showFeedback(true);
-                } else {
-                    // Final fallback: show alert with URL
-                    console.error('All copy methods failed');
-                    const copyText = prompt('Скопируйте ссылку:', window.location.href);
-                    if (copyText) {
-                        showFeedback(true);
-                    }
-                }
-
-            } catch (error) {
-                console.error('Share failed:', error);
-                showFeedback(false);
-            }
-        });
     }
 }
 
