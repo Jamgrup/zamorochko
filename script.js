@@ -202,35 +202,3 @@ document.addEventListener('DOMContentLoaded', () => {
         slide.style.animationDelay = `${index * 0.1}s`;
     });
 });
-
-// ========================================
-// Touch gestures для мобильных
-// ========================================
-
-let touchStartX = 0;
-let touchEndX = 0;
-
-document.addEventListener('touchstart', e => {
-    touchStartX = e.changedTouches[0].screenX;
-});
-
-document.addEventListener('touchend', e => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-});
-
-function handleSwipe() {
-    const swipeThreshold = 50;
-    if (touchEndX < touchStartX - swipeThreshold) {
-        // Swipe left - next slide
-        const presentation = document.getElementById('presentation');
-        const currentScroll = presentation.scrollTop;
-        presentation.scrollTop = currentScroll + window.innerHeight;
-    }
-    if (touchEndX > touchStartX + swipeThreshold) {
-        // Swipe right - prev slide
-        const presentation = document.getElementById('presentation');
-        const currentScroll = presentation.scrollTop;
-        presentation.scrollTop = currentScroll - window.innerHeight;
-    }
-}
