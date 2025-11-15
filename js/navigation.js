@@ -29,8 +29,18 @@ class PresentationNavigation {
     // Keyboard navigation
     document.addEventListener('keydown', (e) => this.handleKeyboard(e));
 
-    // Scroll detection
-    this.presentation.addEventListener('scroll', () => this.handleScroll());
+    // Scroll detection with immediate update and debounce
+    let scrollTimeout;
+    this.presentation.addEventListener('scroll', () => {
+      // Immediate update for responsiveness
+      this.handleScroll();
+
+      // Also schedule a delayed update in case of any timing issues
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+      }
+      scrollTimeout = setTimeout(() => this.handleScroll(), 100);
+    }, { passive: true });
 
     // Update UI
     this.updateUI();
@@ -122,6 +132,7 @@ class PresentationNavigation {
 
     // Update only if slide changed
     if (newSlide !== this.currentSlide) {
+      console.log(`Slide changed from ${this.currentSlide + 1} to ${newSlide + 1}`);
       this.currentSlide = newSlide;
       this.updateUI();
     }
