@@ -19,6 +19,9 @@ class PresentationNavigation {
   }
 
   init() {
+    // Detect current slide on load (in case of page reload with preserved scroll)
+    this.detectCurrentSlideOnLoad();
+
     // Navigation buttons
     this.prevBtn.addEventListener('click', () => this.goToPrevSlide());
     this.nextBtn.addEventListener('click', () => this.goToNextSlide());
@@ -31,6 +34,24 @@ class PresentationNavigation {
 
     // Update UI
     this.updateUI();
+  }
+
+  detectCurrentSlideOnLoad() {
+    // Detect which slide is visible on page load
+    const viewportHeight = window.innerHeight;
+    const scrollTop = this.presentation.scrollTop;
+    const viewportCenter = scrollTop + (viewportHeight / 2);
+
+    for (let i = 0; i < this.slides.length; i++) {
+      const slide = this.slides[i];
+      const slideTop = slide.offsetTop;
+      const slideBottom = slideTop + slide.offsetHeight;
+
+      if (viewportCenter >= slideTop && viewportCenter < slideBottom) {
+        this.currentSlide = i;
+        break;
+      }
+    }
   }
 
   goToSlide(index) {
@@ -79,12 +100,28 @@ class PresentationNavigation {
   }
 
   handleScroll() {
-    // Detect which slide is currently in view
-    const scrollPosition = this.presentation.scrollTop;
-    const slideHeight = window.innerHeight;
-    const newSlide = Math.round(scrollPosition / slideHeight);
+    // Detect which slide is currently in view based on viewport center
+    const viewportHeight = window.innerHeight;
+    const scrollTop = this.presentation.scrollTop;
+    const viewportCenter = scrollTop + (viewportHeight / 2);
 
-    if (newSlide !== this.currentSlide && newSlide >= 0 && newSlide < this.totalSlides) {
+    // Find the slide that contains the viewport center
+    let newSlide = this.currentSlide;
+
+    for (let i = 0; i < this.slides.length; i++) {
+      const slide = this.slides[i];
+      const slideTop = slide.offsetTop;
+      const slideBottom = slideTop + slide.offsetHeight;
+
+      // If viewport center is within this slide
+      if (viewportCenter >= slideTop && viewportCenter < slideBottom) {
+        newSlide = i;
+        break;
+      }
+    }
+
+    // Update only if slide changed
+    if (newSlide !== this.currentSlide) {
       this.currentSlide = newSlide;
       this.updateUI();
     }
