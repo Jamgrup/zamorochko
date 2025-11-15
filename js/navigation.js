@@ -26,9 +26,6 @@ class PresentationNavigation {
     // Keyboard navigation
     document.addEventListener('keydown', (e) => this.handleKeyboard(e));
 
-    // Touch gestures for mobile
-    this.initTouchGestures();
-
     // Scroll detection
     this.presentation.addEventListener('scroll', () => this.handleScroll());
 
@@ -78,52 +75,6 @@ class PresentationNavigation {
         e.preventDefault();
         this.goToSlide(this.totalSlides - 1);
         break;
-    }
-  }
-
-  initTouchGestures() {
-    let touchStartX = 0;
-    let touchStartY = 0;
-    let touchEndX = 0;
-    let touchEndY = 0;
-
-    this.presentation.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-      touchStartY = e.changedTouches[0].screenY;
-    }, { passive: true });
-
-    this.presentation.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      touchEndY = e.changedTouches[0].screenY;
-      this.handleSwipe(touchStartX, touchStartY, touchEndX, touchEndY);
-    }, { passive: true });
-  }
-
-  handleSwipe(startX, startY, endX, endY) {
-    const swipeThreshold = 50;
-    const deltaX = endX - startX;
-    const deltaY = endY - startY;
-
-    // Vertical swipe (primary for presentation)
-    if (Math.abs(deltaY) > Math.abs(deltaX) && Math.abs(deltaY) > swipeThreshold) {
-      if (deltaY < 0) {
-        // Swipe up - next slide
-        this.goToNextSlide();
-      } else {
-        // Swipe down - previous slide
-        this.goToPrevSlide();
-      }
-    }
-
-    // Horizontal swipe (alternative)
-    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > swipeThreshold) {
-      if (deltaX < 0) {
-        // Swipe left - next slide
-        this.goToNextSlide();
-      } else {
-        // Swipe right - previous slide
-        this.goToPrevSlide();
-      }
     }
   }
 
